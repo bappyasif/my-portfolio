@@ -1,4 +1,3 @@
-import { UIEvent } from "react"
 import { About } from "./components/About"
 import { Additionals } from "./components/Additionals"
 import { Footer } from "./components/Footer"

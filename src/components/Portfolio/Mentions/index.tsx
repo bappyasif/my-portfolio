@@ -81,10 +81,7 @@ const RenderCircle = () => {
 }
 
 const RenderText = ({ count }: SvgProps) => {
-    const [total2, setTotal2] = useState<number>(count)
-
     const { total } = useIncrementingCounter(count)
-    // const {total} = useCallback(() => useIncrementingCounter(count), [])
 
     return (
         <text
@@ -92,7 +89,6 @@ const RenderText = ({ count }: SvgProps) => {
             x="50%" y="50%" textAnchor="middle"
             fill="teal" dy=".3em"
         >
-            {/* {total2} -- {total} */}
             {total}
         </text>
     )

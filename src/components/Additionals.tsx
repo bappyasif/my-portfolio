@@ -1,5 +1,4 @@
 import { testimonials } from "./Portfolio/data"
-import { ImQuotesLeft, ImQuotesRight } from "react-icons/im"
 
 export const Additionals = () => {
     return (

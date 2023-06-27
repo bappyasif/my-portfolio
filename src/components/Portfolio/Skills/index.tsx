@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { skills } from "../data"
 import { useHandlePercentileCount } from "../../../hooks";
 
