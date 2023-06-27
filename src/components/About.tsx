@@ -56,7 +56,6 @@ type EntityProps = {
 const ContributedEntity = ({name, imgSrc}:EntityProps) => {
     return (
         <div title={name}>
-            {/* <span>{name}</span> */}
             <img className="w-44 h-20" src={imgSrc} alt={name} />
         </div>
     )
@@ -66,7 +65,6 @@ const Contacts = ({setZIdx}: PropsType) => {
     const renderContacts = () => contacts.map(item => <RenderContact key={item.text} label={item.label} text={item.text} />)
 
     const bringHeadingTextFront = () => {
-        // setZIdx(false)
         if (!window.getSelection()?.toString().length) {
             setZIdx(false)
         }
@@ -76,8 +74,6 @@ const Contacts = ({setZIdx}: PropsType) => {
         <div 
             className="self-start text-justify"
             onClick={bringHeadingTextFront}
-            // onMouseEnter={bringHeadingTextFront}
-            // onMouseLeave={bringHeadingTextFront}
         >
             <h2>My Contacts</h2>
             <div>
@@ -109,7 +105,6 @@ type PropsType = {
 
 const Details = ({setZIdx}: PropsType) => {
     const bringHeadingTextFront = () => {
-        // setZIdx(false)
         if (!window.getSelection()?.toString().length) {
             setZIdx(false)
         }
@@ -119,22 +114,11 @@ const Details = ({setZIdx}: PropsType) => {
         <div
             className="flex flex-col justify-start gap-2 items-start text-justify text-2xl"
             onClick={bringHeadingTextFront}
-            // onMouseEnter={bringHeadingTextFront}
-            // onMouseLeave={bringHeadingTextFront}
         >
             <p className="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque debitis repellat dolorem, voluptate blanditiis sit eveniet repellendus, unde placeat nobis dolore ad labore odio? Nam fugit eum architecto aut itaque.</p>
             <a className="text-blue-600 font-extrabold" href="#">Checkout my resume</a>
             <RenderLinks />
         </div>
-        
-        // <div className="flex gap-4 mt-6">
-        //     <img 
-        //     className="w-96" 
-        //     src="https://source.unsplash.com/random/?professional&Man&&Office&Corporate" 
-        //     alt="picture" 
-        //     />
-            
-        // </div>
     )
 }
 
@@ -202,11 +186,9 @@ const Heading = ({zIdx, setZIdx}: HeadingProps) => {
                 ${zIdx === true ? "z-20" : "z-0"}`}
                     style={{
                         fontSize: "200px",
-                        // transform: "translateX(31px) translateY(112px)"
                     }}
                     onClick={handleOnClickSelectionOfText}
                 >
-                    {/* AAAAA. BBBBBBB. */}
                     ABOUT
                 </p>
                 <h2
@@ -239,141 +221,3 @@ const socialLinks = [
     { name: "Twitter", icon: <AiFillTwitterSquare /> },
     { name: "HackerRank", icon: <AiFillCode /> }
 ]
-
-
-// const Heading = () => {
-//     const [zIdx, setZIdx] = useState<boolean>(false)
-
-//     const handleOnClickSelectionOfText = () => {
-//         console.log(window.getSelection()?.toString())
-//         if (window.getSelection()?.toString().length) {
-//             setZIdx(true)
-//         }
-//     }
-
-//     // const mouseAwayHandler = () => {
-//     //     if (!window.getSelection()?.toString().length) {
-//     //         setZIdx(false)
-//     //     } 
-//     //     // else {
-//     //     //     setZIdx(true)
-//     //     // }
-//     // }
-
-//     // const ref = useRef(null)
-    
-//     // useOnClickOutside(ref, mouseAwayHandler)
-
-//     return (
-//         <div
-//             // ref={ref}
-//             onClick={() => setZIdx(false)}
-//         >
-//             <div
-//                 className="relative w-fit"
-//                 // onMouseLeave={() => setZIdx(false)}
-//                 onMouseLeave={() => {
-//                     if (!window.getSelection()?.toString().length) {
-//                         setZIdx(false)
-//                     } else {
-//                         setZIdx(true)
-//                     }
-//                 }}
-//                 onMouseEnter={() => {
-//                     if (window.getSelection()?.toString().length) {
-//                         setZIdx(true)
-//                     }
-//                 }}
-//             >
-//                 <p
-//                     className={`relative text-7xl text-blue-950 opacity-90 
-//                 ${zIdx === true ? "z-20" : "z-0"}`}
-//                     style={{
-//                         fontSize: "150px",
-//                         transform: "translateX(31px) translateY(112px)"
-//                     }}
-//                     onClick={handleOnClickSelectionOfText}
-//                 // onMouseDown={handleOnClickSelectionOfText}
-//                 >
-//                     AAAAA. BBBBBBB.</p>
-//                 <h2
-//                     className={`relative text-6xl text-red-400 font-extrabold ${zIdx === true ? "z-0" : "z-20"} w-fit m-auto`}
-//                 >Hello, I'm ab :)</h2>
-//             </div>
-//         </div>
-//     )
-// }
-
-// const Heading = () => {
-//     const [zIdx, setZIdx] = useState<boolean>(false)
-//     // const handleOnClickSelectionOfText = (e: any) => {
-//     //     const start = e.target.selectionStart;
-//     //     const end = e.target.selectionEnd;
-//     //     console.log(start, end, e.target.texContent)
-//     //     // alert(e.target.value.substring(start, end));
-//     //     // console.log(e.target.value.substring(start, end))
-
-//     //     // var txt :(Selection | string | null) = '';
-//     //     // if (window.getSelection) {
-//     //     //     txt = window.getSelection();
-//     //     // }
-//     //     // else if (document.getSelection) {
-//     //     //     txt = document.getSelection();
-//     //     // }
-//     //     // // else if (Document.selection) {
-//     //     // //     txt = document.selection.createRange().text;
-//     //     // // }
-//     //     // // else { return; }
-//     //     // console.log(txt, "txt!!")
-//     // }
-
-//     const handleOnClickSelectionOfText = () => {
-//         console.log(window.getSelection()?.toString())
-//         if(window.getSelection()?.toString().length) {
-//             setZIdx(true)
-//         }
-//     }
-
-//     useEffect(() => {
-//         if(zIdx) {
-//             setZIdx(false)
-//         }
-//     }, [zIdx])
-
-//     return (
-//         <div
-//             className="relative w-fit"
-//             // onClick={() => setZIdx(false) }
-//         >
-//             <p
-//                 className={`relative text-7xl text-blue-950 opacity-90 
-//                 ${zIdx === true ? "z-20" : "z-0"}`}
-//                 style={{
-//                     fontSize: "150px",
-//                     transform: "translateX(31px) translateY(112px)"
-//                 }}
-//                 // onClick={() => console.log("2222", window.getSelection())}
-//                 onClick={handleOnClickSelectionOfText}
-//             >
-//                 AAAAA. BBBBBBB.</p>
-//             <h2 
-//             className={`relative text-6xl text-red-400 font-extrabold ${zIdx === true ? "z-0" : "z-20"} w-fit m-auto`}
-//             // onClick={() => setZIdx(false) }
-//             >Hello, I'm ab :)</h2>
-//         </div>
-//     )
-// }
-
-// const Heading = () => {
-//     return (
-//         <div 
-//             // className="relative m-auto"
-//             style={{
-//                 position: "relative"
-//             }}
-//         >
-//             <p className="text-7xl -z-10">AAAAA. BBBBBBB.</p>
-//             <h2 className="absolute top-0 left-1/2 text-4xl">Hello, I'm ab :)</h2>
-//         </div>
-//     )
-// }

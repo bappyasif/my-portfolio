@@ -1,4 +1,3 @@
-// import { formFields } from "./Portfolio/data"
 import { ChangeEvent, FormEvent, useRef, useState } from "react"
 import emailjs from '@emailjs/browser';
 
@@ -69,32 +68,6 @@ const Form = () => {
     //     // const test = Example.
     //     Email.send(config).then(() => console.log("email sent!!"))
     //     // EmployeeProcessor
-    // }
-
-    // const emailTransport = nodemailer.createTransport({
-    //     host: "smtp.elasticemail.com",
-    //     port: 2525,
-    //     secure: true, // upgrade later with STARTTLS
-    //     auth: {
-    //         user: import.meta.env.VITE_Username,
-    //         pass: import.meta.env.VITE_Password,
-    //     },
-    // })
-
-    // const sendEmail = () => {
-    //     const mailOptions = {
-    //         to: import.meta.env.VITE_TO,
-    //         from: formData.email,
-    //         subject: `This is the subject <<${formData.subject}>>`,
-    //         text: `And this is the body <<<<${formData.message}>>>>`
-    //     }
-    //     emailTransport.sendMail(mailOptions, err => {
-    //         if(err) {
-    //             console.log("Unable to send email", err)
-    //         } else {
-    //             console.log("Email is sent successfully")
-    //         }
-    //     })
     // }
 
     // const ref = useRef<HTMLFormElement | undefined>(null)

@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { figs } from "../data"
 import { useIncrementingCounter } from "../../../hooks"
 

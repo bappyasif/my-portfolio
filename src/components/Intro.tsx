@@ -73,11 +73,9 @@ const ShowName = (): ReactElement => {
 
 const ShowRoles = (): ReactElement => {
     const [text, setText] = useState<string>("Web Development")
-    // const [text, setText] = useState<string>("")
     const [newText, setNewText] = useState<string>("")
     const [waitBacktrack, setWaitBacktrack] = useState<boolean>(false)
     const [idx, setIdx] = useState<number>(0)
-    // const [firstTime, setFirstTime] = useState<boolean>(true)
 
     const forwardEntryText = () => {
         if (newText.length !== -1) {

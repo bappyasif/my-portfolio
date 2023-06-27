@@ -51,11 +51,6 @@ const ShowTestimony = ({ ...item }: TestimonialProps) => {
                 <span className="quotes__qr" content="”"></span>
             </h2>
 
-            {/* <h2 className="flex gap-4 text-justify">
-                <span><ImQuotesLeft /></span>
-                <span className="w-1/2 mx-auto">{text}</span>
-                <span className="self-end"><ImQuotesRight /></span>
-            </h2> */}
             <ShowUserDetails user={user} />
         </div>
     )
@@ -126,25 +121,3 @@ const HireMe = () => {
             </div>
     )
 }
-
-// const HireMe = () => {
-//     return (
-//         <div
-//             className="pattern w-full h-60 relative"
-//         >
-//             <div
-//                 // className="absolute left-1/3 top-4 flex flex-col gap-6 text-blue-900 font-extrabold"
-//                 className="flex flex-col justify-center items-center gap-6 text-blue-900 font-extrabold"
-//             >
-//                 <h2>Im available for Freelance or Contractual or Fulltime or Valued Internships</h2>
-//                 <button>Hire Me</button>
-//             </div>
-//             {/* <img
-//                 className="w-full h-full"
-//                 src="https://source.unsplash.com/random/?Cryptocurrency&1"
-//                 alt=""
-//             /> */}
-
-//         </div>
-//     )
-// }

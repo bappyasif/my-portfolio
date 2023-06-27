@@ -106,35 +106,3 @@ const footers = {
         { name: "HackerRank", url: "hackerrank.com", icon: null },
     ]
 }
-
-
-// const RenderNavSection = ({ ...items }: NavsProps, { heading }: HeadingType) => {
-//     const { learningSites, recruitingSites, socials } = items;
-
-//     const renderItems = () => (learningSites || recruitingSites || socials)?.map(item => <RenderNav key={item.name} name={item.name} url={item.url} icon={item.icon} />)
-
-//     return (
-//         <div>
-//             <h2>{heading}</h2>
-//             <div>{renderItems()}</div>
-//         </div>
-//     )
-// }
-
-// const RenderNavs = ({ ...items }: NavsProps) => {
-//     const { learningSites, recruitingSites, socials } = items;
-
-//     return (
-//         <div>
-//             <RenderNavSection 
-//                 learningSites={learningSites}
-//             />
-//             <RenderNavSection 
-//                 recruitingSites={recruitingSites}
-//             />
-//             <RenderNavSection 
-//                 socials={socials}
-//             />
-//         </div>
-//     )
-// }

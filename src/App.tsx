@@ -9,14 +9,9 @@ import { useOnPageScroll } from "./hooks"
 
 function App() {
 
-  // const handleScroll = (e: UIEvent<HTMLElement>) => {
-  //   // console.log(document.body.clientHeight, screen.availHeight, screen.height)
-  //   console.log(e.currentTarget.clientHeight, "?!?!??!")
-  // }
-
   const { scrolled } = useOnPageScroll()
 
-  console.log(scrolled, "scrolled")
+  // console.log(scrolled, "scrolled")
 
   const content = (
     <>
@@ -31,17 +26,7 @@ function App() {
         }}
       ></div>
 
-      <div className='App w-3/4 h-screen mx-auto'
-      // onScroll={(e) => console.log("foknay", e.currentTarget.clientHeight)} 
-      // onScroll={handleScroll}
-      // onScrollCapture={handleScroll}
-      // style={{
-      //   border: '3px solid black',
-      //   // width: '400px',
-      //   height: '100%',
-      //   // overflow: 'scroll',
-      // }}
-      >
+      <div className='App w-3/4 h-screen mx-auto'>
         <div className="flex flex-col gap-20 py-4">
           <Header />
           <Intro />

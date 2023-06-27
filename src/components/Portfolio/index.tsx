@@ -45,13 +45,6 @@ const Projects = () => {
 const AccordionView = ({ data, heading }: ReusableProps) => {
     const { cnInfo, handleNext, handlePrev } = useForAccordionSlides()
 
-    // const renderData = () => data.map((item: ProjectProps, idx: number) =>
-    //     // idx >= cnInfo.currSilde && idx <= cnInfo.nextSlide && 
-    //     (idx === cnInfo.currSilde || idx === cnInfo.nextSlide) &&
-    //     <RenderAccordionCardView key={item.name} description={item.description} imgSrc={item.imgSrc} live={item.live} name={item.name} repo={item.repo} />)
-
-    // console.log(cnInfo, "cnInfo")
-
     const item1 = data[cnInfo.currSilde]
     const item2 = data[cnInfo.nextSlide]
 
@@ -94,17 +87,6 @@ type ProjectProps = {
     description: string,
     imgSrc: string
 }
-
-// const NoteableWorks = () => {
-//     const renderProjects = () => projects.map(item => <RenderWork key={item.name} description={item.description} live={item.live} name={item.name} repo={item.repo} imgSrc={item.imgSrc} />)
-
-//     return (
-//         <div>
-//             <h2>Some Noteable Works</h2>
-//             <div>{renderProjects()}</div>
-//         </div>
-//     )
-// }
 
 type ReusableProps = {
     data: ProjectProps[],
@@ -179,17 +161,10 @@ const ImageView = ({ imgSrc, description, live }: ImageProps) => {
             onMouseEnter={handleMouseOver}
             onMouseLeave={handleMouseOut}
         >
-            {/* <video width="320" height="240" controls autoPlay>
-                <source src={imgSrc} type="video/mp4">
-                </source>
-            </video> */}
-
             <img
                 className="w-96 h-80"
                 src={imgSrc}
                 alt={description}
-            // onMouseEnter={handleMouseOver}
-            // onMouseLeave={handleMouseOut}
             />
             {
                 hovered
