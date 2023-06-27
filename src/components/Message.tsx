@@ -49,13 +49,13 @@ const Form = () => {
 
     const handleUserInputs = (evt: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setFormData(prev => ({ ...prev, [evt.target.name]: evt.target.value }))
 
-    const config = {
-        SecureToken: import.meta.env.VITE_SECURE_TOKEN,
-        To: import.meta.env.VITE_TO,
-        From: formData.email,
-        Subject: `This is the subject <<${formData.subject}>>`,
-        Body: `And this is the body <<<<${formData.message}>>>>`
-    }
+    // const config = {
+    //     SecureToken: import.meta.env.VITE_SECURE_TOKEN,
+    //     To: import.meta.env.VITE_TO,
+    //     From: formData.email,
+    //     Subject: `This is the subject <<${formData.subject}>>`,
+    //     Body: `And this is the body <<<<${formData.message}>>>>`
+    // }
 
     // const sendMail = async () => {
     //     const cdnUrl = "https://smtpjs.com/v3/smtp.js"
