@@ -41,9 +41,9 @@ body {
 
 .dissolve-text {
     animation-timing-function: ease-in-out;
-    animation-duration: 2s;
+    animation-duration: 4s;
     animation-iteration-count: 1;
-    animation-delay: 2s;
+    animation-delay: 1s;
     animation-direction: alternate;
     animation-fill-mode: forwards;
     animation-name: dissolve;
@@ -63,7 +63,7 @@ body {
     animation-timing-function: ease-in-out;
     animation-duration: 4s;
     animation-iteration-count: 1;
-    animation-delay: 2s;
+    animation-delay: 0s;
     /* animation-direction: alternate; */
     animation-fill-mode: backwards;
     animation-name: reappear;

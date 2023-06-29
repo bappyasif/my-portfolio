@@ -20,7 +20,9 @@ export const skills = [
     { name: "Firebase", text: "Profeciency", percentile: 72 },
     { name: "React Queries", text: "Profeciency", percentile: 72 },
     { name: "Axios", text: "Profeciency", percentile: 72 },
-    { name: "Next Auth", text: "Profeciency", percentile: 72 }
+    { name: "Next Auth", text: "Profeciency", percentile: 72 },
+    { name: "ReduxToolkits", text: "Profeciency", percentile: 72 },
+    { name: "React Redux", text: "Profeciency", percentile: 72 }
 ];
 
 export const figs = [
@@ -38,10 +40,11 @@ export const projects = [
 ];
 
 export const designs = [
-    { name: "Landing Page", repo: "github.com", live: "some.site", description: "some news some news some news some news", imgSrc: testImg },
-    { name: "Animations Saavy", repo: "github.com", live: "some.site", description: "some news some news some news some news", imgSrc: testImg },
-    { name: "Self-driving Corp", repo: "github.com", live: "some.site", description: "some news some news some news some news", imgSrc: testImg },
-    { name: "Product Review Page", repo: "github.com", live: "some.site", description: "some news some news some news some news", imgSrc: testImg }
+    { name: "Tourism Worldwide", repo: "github.com", live: "some.site", description: "Frontend view, design and user interactivity for presumeably a tourism company", imgSrc: testImg },
+    { name: "Landing Page", repo: "github.com", live: "some.site", description: "landing page prototype for a company website. this spa is a more generic design ", imgSrc: testImg },
+    { name: "Animations Saavy", repo: "github.com", live: "some.site", description: "a single page application frontend view for a forum or news based site", imgSrc: testImg },
+    { name: "Self-driving Corp", repo: "github.com", live: "some.site", description: "another single page web applicatioin example, this is based ona self driving truck company", imgSrc: testImg },
+    { name: "Product Review Page", repo: "github.com", live: "some.site", description: "product review page prototype desogn.", imgSrc: testImg }
 ]
 
 export const testimonials = [

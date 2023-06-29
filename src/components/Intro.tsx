@@ -47,13 +47,15 @@ const ShowName = (): ReactElement => {
     const [text, setText] = useState<string>("Asifuzzaman Bappy")
     const [className, setClassName] = useState<string>("dissolve-text")
 
-    const swapText = (): void => setText(prev => prev === "Originally From Bangladesh" ? "Asifuzzaman Bappy" : "Originally From Bangladesh")
+    const swapText = (): void => setText(prev => prev === "Originally From Bangladesh" ? "Asifuzzaman Bappy" : prev === "Asifuzzaman Bappy" ? "A Keen Learner" : "Originally From Bangladesh")
 
     const swapClassname = (): void => setClassName(prev => prev === "dissolve-text" ? "reappear-text" : "dissolve-text")
 
     useEffect(() => {
-        let timerIntvl = setInterval(swapText, 20000)
-        let anotherInterval = setInterval(swapClassname, 6000)
+        // let timerIntvl = setInterval(swapText, 20000)
+        // let anotherInterval = setInterval(swapClassname, 6000)
+        let timerIntvl = setInterval(swapText, 8000)
+        let anotherInterval = setInterval(swapClassname, 4000)
 
         return () => {
             clearInterval(timerIntvl)
@@ -63,8 +65,8 @@ const ShowName = (): ReactElement => {
 
     const content = (
         <div className="flex gap-1 justify-between">
-            <span className="w-20 self-end">I'm</span>
-            <span className={`${className} w-80 self-start`}>{text}</span>
+            <span className="w-20 self-end text-right mr-1">I'm</span>
+            <span className={`${className} w-80 self-start text-left`}>{text}</span>
         </div>
     )
 
@@ -151,11 +153,11 @@ const ShowRoles = (): ReactElement => {
 
     const content = (
         <div className="test1234 relative text-4xl">
-            I'm a self taught <span>{text}</span>
+            A Self Taught <span>{text}</span>
         </div>
     )
 
     return content
 }
 
-const roles = ["Web Developer ", "Frontend Developer ", "Backend Developer ", "Fullstack Developer ", "SQA Automation Engineer ", "Keen Learner "]
+const roles = [" Web Developer ", " Frontend Developer ", " Backend Developer ", " Fullstack Developer ", " SQA Automation Engineer "]

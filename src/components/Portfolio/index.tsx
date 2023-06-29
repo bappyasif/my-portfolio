@@ -68,7 +68,7 @@ const RenderAccordionCardView = ({ ...item }: ProjectProps) => {
     const { description, imgSrc, live, name, repo } = item;
 
     return (
-        <article className="flex flex-col justify-center items-center gap-6 w-1/3">
+        <article className="flex flex-col justify-between items-center gap-2 w-2/5">
             <ImageView
                 description={description} imgSrc={imgSrc} live={live}
             />
@@ -139,11 +139,11 @@ type DetailProps = Omit<ProjectProps, "imgSrc">
 const RenderProjectDetailInfo = ({ ...item }: DetailProps) => {
     const { description, live, name, repo } = item;
     return (
-        <div className="w-3/4 text-xl flex flex-col gap-4">
+        <div className="w-3/4 text-xl text-justify flex flex-col gap-4">
             <h2 className="text-4xl">{name}</h2>
             <a href="">Repo: {repo}</a>
             <a href="">Live: {live}</a>
-            <p className="text-2xl">{description}</p>
+            <p className="text-2xl h-60 overflow-y-auto" style={{scrollbarGutter: "unset"}}>{description}</p>
         </div>
     )
 }
@@ -157,12 +157,12 @@ const ImageView = ({ imgSrc, description, live }: ImageProps) => {
 
     return (
         <figure
-            className="relative"
+            className="relative w-2/4"
             onMouseEnter={handleMouseOver}
             onMouseLeave={handleMouseOut}
         >
             <img
-                className="w-96 h-80"
+                className="w-full h-full"
                 src={imgSrc}
                 alt={description}
             />

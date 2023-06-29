@@ -106,7 +106,7 @@ const ShowRegulars = ({ data }: MetricsData) => {
 
     return (
         <div
-            className="flex justify-center w-1/2 flex-wrap gap-16 text-2xl"
+            className="flex justify-around w-1/2 flex-wrap gap-8 text-2xl"
         >
             {showMetrics()}
         </div>
@@ -120,7 +120,7 @@ const ShowSkillProgress = ({ ...item }: MetricProps) => {
 
     return (
         <div 
-            className={`w-1/3`}
+            className={`w-1/3 flex flex-col gap-4`}
             onMouseEnter={handleBegin}
             onMouseLeave={handleStop}
         >
