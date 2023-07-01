@@ -207,7 +207,7 @@ const contributes = [
     {name: "MDN", imgSrc: mdnLogo},
     {name: "The Odin Project", imgSrc: topLogo},
     {name: "W3C", imgSrc: w3cLogo},
-    {name: "FreeCodeCamp", imgSrc: fccLogo}
+    // {name: "FreeCodeCamp", imgSrc: fccLogo}
 ]
 
 const contacts = [

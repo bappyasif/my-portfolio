@@ -54,8 +54,8 @@ const ShowName = (): ReactElement => {
     useEffect(() => {
         // let timerIntvl = setInterval(swapText, 20000)
         // let anotherInterval = setInterval(swapClassname, 6000)
-        let timerIntvl = setInterval(swapText, 8000)
-        let anotherInterval = setInterval(swapClassname, 4000)
+        let timerIntvl = setInterval(swapText, 6000)
+        let anotherInterval = setInterval(swapClassname, 3000)
 
         return () => {
             clearInterval(timerIntvl)

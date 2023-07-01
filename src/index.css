@@ -17,6 +17,23 @@ body {
     text-align: center;
 }
 
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.next-btn, 
+.prev-btn {
+    height: 479px;
+    align-self: baseline;
+    width: 83px;
+}
+
+.next-btn:hover, 
+.prev-btn:hover {
+    background-color: rgb(24, 24, 24);
+    font-weight: bold;
+}
+
 /* dissolving text in intro */
 /* animation: 2s alternate infinite dissolve; */
 /* .dissolve-text {

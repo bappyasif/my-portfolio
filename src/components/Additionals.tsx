@@ -113,11 +113,20 @@ const ShowRecentBlogs = () => {
 const HireMe = () => {
     return (
         <div
-                // className="absolute left-1/3 top-4 flex flex-col gap-6 text-blue-900 font-extrabold"
-                className="pattern h-60 w-full flex flex-col justify-center items-center gap-6 text-blue-900 font-extrabold text-4xl"
-            >
-                <h2 className="">Im available for Freelance or Contractual or Fulltime or Valued Internships</h2>
-                <button className="bg-slate-400 px-6 py-2 flex items-baseline rounded-full">Hire Me</button>
-            </div>
+            // className="absolute left-1/3 top-4 flex flex-col gap-6 text-blue-900 font-extrabold"
+            className="pattern h-60 w-full flex flex-col justify-center items-center gap-6 text-blue-900 font-extrabold text-4xl"
+        >
+            <h2 className="">Im available for Freelance or Contractual or Fulltime or Valued Internships</h2>
+            {/* <button className="bg-slate-400 px-6 py-2 flex items-baseline rounded-full">Hire Me</button> */}
+            <HireMeForm />
+        </div>
+    )
+}
+
+const HireMeForm = () => {
+    return (
+        <form action="mailto:bappy.asif@icloud.com" method="post" encType="text/plain">
+            <button type="submit" className="bg-slate-400 px-6 py-2 flex items-baseline rounded-full">Hire Me</button>
+        </form>
     )
 }

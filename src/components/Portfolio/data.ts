@@ -40,11 +40,11 @@ export const projects = [
 ];
 
 export const designs = [
-    { name: "Tourism Worldwide", repo: "github.com", live: "some.site", description: "Frontend view, design and user interactivity for presumeably a tourism company", imgSrc: testImg },
-    { name: "Landing Page", repo: "github.com", live: "some.site", description: "landing page prototype for a company website. this spa is a more generic design ", imgSrc: testImg },
-    { name: "Animations Saavy", repo: "github.com", live: "some.site", description: "a single page application frontend view for a forum or news based site", imgSrc: testImg },
-    { name: "Self-driving Corp", repo: "github.com", live: "some.site", description: "another single page web applicatioin example, this is based ona self driving truck company", imgSrc: testImg },
-    { name: "Product Review Page", repo: "github.com", live: "some.site", description: "product review page prototype desogn.", imgSrc: testImg }
+    { name: "Tourism Worldwide", repo: "https://github.com/bappyasif/recreating-designs/tree/travel-worldwide", live: "some.site", description: "Frontend view, design and user interactivity for presumeably a tourism company", imgSrc: testImg },
+    { name: "Landing Page", repo: "https://github.com/bappyasif/recreating-designs/tree/landing-page-for-abcd", live: "some.site", description: "landing page prototype for a company website. this spa is a more generic design ", imgSrc: testImg },
+    { name: "Animations Saavy", repo: "https://github.com/bappyasif/recreating-designs/tree/orbitals-design", live: "some.site", description: "a single page application frontend view for a forum or news based site", imgSrc: testImg },
+    { name: "Self-driving Corp", repo: "https://github.com/bappyasif/recreating-designs/tree/autonomous-trucks", live: "some.site", description: "another single page web applicatioin example, this is based ona self driving truck company", imgSrc: testImg },
+    { name: "Product Review Page", repo: "https://github.com/bappyasif/recreating-designs/tree/product-review-page-mockup", live: "some.site", description: "product review page prototype desogn.", imgSrc: testImg }
 ]
 
 export const testimonials = [

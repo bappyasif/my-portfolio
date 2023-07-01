@@ -37,12 +37,13 @@ const Projects = () => {
             <AccordionView
                 data={designs}
                 heading="Responsive UI Design Prototypes"
+                smallerSize={true}
             />
         </div>
     )
 }
 
-const AccordionView = ({ data, heading }: ReusableProps) => {
+const AccordionView = ({ data, heading, smallerSize }: ReusableProps) => {
     const { cnInfo, handleNext, handlePrev } = useForAccordionSlides()
 
     const item1 = data[cnInfo.currSilde]
@@ -52,29 +53,29 @@ const AccordionView = ({ data, heading }: ReusableProps) => {
         <div className="flex flex-col gap-20">
             <h2 className="text-4xl">{heading}</h2>
             <div className="flex gap-4 items-center">
-                <button className="bg-slate-800 px-4" onClick={handlePrev}>Prev</button>
+                <button className="bg-slate-800 px-4 text-2xl prev-btn" onClick={handlePrev}>Prev</button>
                 {/* <div className="flex justify-around gap-20 flex-wrap">{renderData()}</div> */}
                 <div className="flex justify-around gap-20 flex-wrap">
-                    <RenderAccordionCardView key={item1.name} description={item1.description} imgSrc={item1.imgSrc} live={item1.live} name={item1.name} repo={item1.repo} />
-                    <RenderAccordionCardView key={item2.name} description={item2.description} imgSrc={item2.imgSrc} live={item2.live} name={item2.name} repo={item2.repo} />
+                    <RenderAccordionCardView key={item1.name} description={item1.description} imgSrc={item1.imgSrc} live={item1.live} name={item1.name} repo={item1.repo} smallerSize={smallerSize} />
+                    <RenderAccordionCardView key={item2.name} description={item2.description} imgSrc={item2.imgSrc} live={item2.live} name={item2.name} repo={item2.repo} smallerSize={smallerSize} />
                 </div>
-                <button className="bg-slate-800 px-4" onClick={handleNext}>Next</button>
+                <button className="bg-slate-800 px-4 text-2xl next-btn" onClick={handleNext}>Next</button>
             </div>
         </div>
     )
 }
 
 const RenderAccordionCardView = ({ ...item }: ProjectProps) => {
-    const { description, imgSrc, live, name, repo } = item;
+    const { description, imgSrc, live, name, repo, smallerSize } = item;
 
     return (
         <article className="flex flex-col justify-between items-center gap-2 w-2/5">
             <ImageView
-                description={description} imgSrc={imgSrc} live={live}
+                description={description} imgSrc={imgSrc} live={live} smallerSize={smallerSize}
             />
             <RenderProjectDetailInfo
                 description={description} live={live}
-                name={name} repo={repo}
+                name={name} repo={repo} smallerSize={smallerSize}
             />
         </article>
     )
@@ -85,12 +86,14 @@ type ProjectProps = {
     repo: string,
     live: string,
     description: string,
-    imgSrc: string
+    imgSrc: string,
+    smallerSize?: boolean
 }
 
 type ReusableProps = {
     data: ProjectProps[],
-    heading: string
+    heading: string,
+    smallerSize?: boolean
 }
 
 const ReusableNoteableWorks = ({ data, heading }: ReusableProps) => {
@@ -102,7 +105,7 @@ const ReusableNoteableWorks = ({ data, heading }: ReusableProps) => {
         >
             <h2 className="text-4xl">{heading}</h2>
             <div
-                className="flex flex-col justify-center items-center gap-6 "
+                className={`flex flex-col justify-center items-center gap-16`}
             >
                 {renderProjects()}
             </div>
@@ -123,13 +126,12 @@ const RenderWork = ({ ...item }: ProjectProps) => {
 
     return (
         <article
-            className={`flex ${check() ? "flex-row-reverse" : "flex-row"} gap-4 items-center justify-center`}
+            className={`flex ${check() ? "flex-row-reverse" : "flex-row"} gap-10 items-center justify-center`}
         >
             <ImageView imgSrc={imgSrc} description={description} live={live} />
             <RenderProjectDetailInfo
                 description={description} live={live}
-                name={name} repo={repo}
-            />
+                name={name} repo={repo} />
         </article>
     )
 }
@@ -137,34 +139,37 @@ const RenderWork = ({ ...item }: ProjectProps) => {
 type DetailProps = Omit<ProjectProps, "imgSrc">
 
 const RenderProjectDetailInfo = ({ ...item }: DetailProps) => {
-    const { description, live, name, repo } = item;
+    const { description, live, name, repo, smallerSize } = item;
     return (
-        <div className="w-3/4 text-xl text-justify flex flex-col gap-4">
+        <div className={`${smallerSize ? "w-full" : "w-3/4"} text-xl ${smallerSize ? "text-center" : "text-justify"} flex flex-col gap-4`}>
             <h2 className="text-4xl">{name}</h2>
             <a href="">Repo: {repo}</a>
             <a href="">Live: {live}</a>
-            <p className="text-2xl h-60 overflow-y-auto" style={{scrollbarGutter: "unset"}}>{description}</p>
+            <p className="text-justify text-2xl h-60 overflow-y-auto hide-scrollbar" style={{scrollbarGutter: "unset"}}>{description}</p>
         </div>
     )
 }
 
 type ImageProps = Omit<ProjectProps, "repo" | "name">
 
-const ImageView = ({ imgSrc, description, live }: ImageProps) => {
+const ImageView = ({ imgSrc, description, live, smallerSize }: ImageProps) => {
     const [hovered, setHovered] = useState<boolean>(false)
     const handleMouseOver = () => setHovered(true)
     const handleMouseOut = () => setHovered(false)
 
     return (
         <figure
-            className="relative w-2/4"
+            className={`relative ${smallerSize ? "w-full" : "w-3/4"} h-full`}
             onMouseEnter={handleMouseOver}
             onMouseLeave={handleMouseOut}
         >
             <img
-                className="w-full h-full"
+                className="w-full h-auto"
                 src={imgSrc}
                 alt={description}
+                style={{
+                    height: !smallerSize ? "373px" : "263px"
+                }}
             />
             {
                 hovered
@@ -181,12 +186,12 @@ const ShowImgCard = ({ live }: ImgCardProp) => {
 
     return (
         <div
-            className="absolute top-0 bg-blue-900 h-full w-full opacity-80"
+            className="absolute top-0 bg-blue-900 h-full w-full opacity-80 flex flex-col items-center justify-center text-xl"
         >
-            <h2>Some Text is here about this project</h2>
+            <h2 className="text-4xl">Care to See it Live?</h2>
             <p>
-                <span>Care to See it Live?</span>
-                <a href={live}>Click Here</a>
+                {/* <span>Care to See it Live?</span> */}
+                <a className="bg-slate-600 px-6 font-bold rounded-xl" target="_blank" href={live}>Click Here</a>
             </p>
         </div>
     )
