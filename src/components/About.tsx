@@ -1,6 +1,5 @@
 import { ReactElement, useState } from "react"
 import { AiFillCode, AiFillFacebook, AiFillLinkedin, AiFillTwitterSquare } from "react-icons/ai"
-import fccLogo from "../assets/fcc-logo.png"
 import mdnLogo from "../assets/mdn-logo.jpg"
 import topLogo from "../assets/top-logo.png"
 import w3cLogo from "../assets/w3c-logo.png"
