@@ -1,5 +1,5 @@
 import { ReactElement, useState } from "react"
-import { AiFillCode, AiFillFacebook, AiFillLinkedin, AiFillTwitterSquare } from "react-icons/ai"
+import { AiFillCode, AiFillGithub, AiFillLinkedin, AiFillTwitterSquare } from "react-icons/ai"
 import mdnLogo from "../assets/mdn-logo.jpg"
 import topLogo from "../assets/top-logo.png"
 import w3cLogo from "../assets/w3c-logo.png"
@@ -139,10 +139,10 @@ const RenderLink = ({ name, icon }: LinkPropsType) => {
     // const {icon, name} = item;
 
     return (
-        <div title={name}>
+        <a href={"#"} title={name}>
             <span>{icon}</span>
             {/* <span>{name}</span> */}
-        </div>
+        </a>
     )
 }
 
@@ -215,7 +215,7 @@ const contacts = [
 ]
 
 const socialLinks = [
-    { name: "Github", icon: <AiFillFacebook /> },
+    { name: "Github", icon: <AiFillGithub /> },
     { name: "LinkedIn", icon: <AiFillLinkedin /> },
     { name: "Twitter", icon: <AiFillTwitterSquare /> },
     { name: "HackerRank", icon: <AiFillCode /> }

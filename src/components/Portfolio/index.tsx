@@ -53,13 +53,13 @@ const AccordionView = ({ data, heading, smallerSize }: ReusableProps) => {
         <div className="flex flex-col gap-20">
             <h2 className="text-4xl">{heading}</h2>
             <div className="flex gap-4 items-center">
-                <button className="bg-slate-800 px-4 text-2xl prev-btn" onClick={handlePrev}>Prev</button>
+                <button className="bg-transparent px-4 text-2xl prev-btn" onClick={handlePrev}>Prev</button>
                 {/* <div className="flex justify-around gap-20 flex-wrap">{renderData()}</div> */}
                 <div className="flex justify-around gap-20 flex-wrap">
                     <RenderAccordionCardView key={item1.name} description={item1.description} imgSrc={item1.imgSrc} live={item1.live} name={item1.name} repo={item1.repo} smallerSize={smallerSize} />
                     <RenderAccordionCardView key={item2.name} description={item2.description} imgSrc={item2.imgSrc} live={item2.live} name={item2.name} repo={item2.repo} smallerSize={smallerSize} />
                 </div>
-                <button className="bg-slate-800 px-4 text-2xl next-btn" onClick={handleNext}>Next</button>
+                <button className="bg-transparent px-4 text-2xl next-btn" onClick={handleNext}>Next</button>
             </div>
         </div>
     )
@@ -143,8 +143,8 @@ const RenderProjectDetailInfo = ({ ...item }: DetailProps) => {
     return (
         <div className={`${smallerSize ? "w-full" : "w-3/4"} text-xl ${smallerSize ? "text-center" : "text-justify"} flex flex-col gap-4`}>
             <h2 className="text-4xl">{name}</h2>
-            <a href="">Repo: {repo}</a>
-            <a href="">Live: {live}</a>
+            <a target="_blank" href={repo}>Repo: {repo}</a>
+            <a target="_blank" href={live}>Live: {live}</a>
             <p className="text-justify text-2xl h-60 overflow-y-auto hide-scrollbar" style={{scrollbarGutter: "unset"}}>{description}</p>
         </div>
     )
