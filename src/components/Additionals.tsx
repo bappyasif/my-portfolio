@@ -95,23 +95,23 @@ const ShowLinks = ({ ...items }: LinksProps) => {
     )
 }
 
-const ShowRecentBlogs = () => {
-    return (
-        <div className="flex flex-col gap-6">
-            <h2 className="text-4xl">Recent Blogs</h2>
-            <div
-                className="flex gap-4"
-            >
-                <img
-                    className="h-80 w-96"
-                    src="https://source.unsplash.com/random/?Cryptocurrency&1"
-                    alt=""
-                />
-                <h3>Work In Progress, Will Go Live Soon....</h3>
-            </div>
-        </div>
-    )
-}
+// const ShowRecentBlogs = () => {
+//     return (
+//         <div className="flex flex-col gap-6">
+//             <h2 className="text-4xl">Recent Blogs</h2>
+//             <div
+//                 className="flex gap-4"
+//             >
+//                 <img
+//                     className="h-80 w-96"
+//                     src="https://source.unsplash.com/random/?Cryptocurrency&1"
+//                     alt=""
+//                 />
+//                 <h3>Work In Progress, Will Go Live Soon....</h3>
+//             </div>
+//         </div>
+//     )
+// }
 
 const HireMe = () => {
     return (
