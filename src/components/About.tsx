@@ -115,14 +115,14 @@ const Details = ({setZIdx}: PropsType) => {
             onClick={bringHeadingTextFront}
         >
             <p className="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque debitis repellat dolorem, voluptate blanditiis sit eveniet repellendus, unde placeat nobis dolore ad labore odio? Nam fugit eum architecto aut itaque.</p>
-            <a className="text-blue-600 font-extrabold" href="#">Checkout my resume</a>
+            <a className="text-blue-600 font-extrabold" target="_blank" href="https://drive.google.com/file/d/1vszl4SBsWtY44tFVPfkBHwirFFjnq2Ja/view?usp=sharing">Checkout my resume</a>
             <RenderLinks />
         </div>
     )
 }
 
 const RenderLinks = () => {
-    const linkItems = () => socialLinks.map(item => <RenderLink key={item.name} icon={item.icon} name={item.name} />)
+    const linkItems = () => socialLinks.map(item => <RenderLink key={item.name} icon={item.icon} name={item.name} url={item.url} />)
     return (
         <div className="flex gap-4 text-xl">
             {linkItems()}
@@ -132,14 +132,15 @@ const RenderLinks = () => {
 
 type LinkPropsType = {
     name: string,
-    icon: ReactElement
+    icon: ReactElement,
+    url: string
 }
 
-const RenderLink = ({ name, icon }: LinkPropsType) => {
+const RenderLink = ({ name, icon, url }: LinkPropsType) => {
     // const {icon, name} = item;
 
     return (
-        <a href={"#"} title={name}>
+        <a href={url} title={name} target="_blank">
             <span>{icon}</span>
             {/* <span>{name}</span> */}
         </a>
@@ -215,8 +216,8 @@ const contacts = [
 ]
 
 const socialLinks = [
-    { name: "Github", icon: <AiFillGithub /> },
-    { name: "LinkedIn", icon: <AiFillLinkedin /> },
-    { name: "Twitter", icon: <AiFillTwitterSquare /> },
-    { name: "HackerRank", icon: <AiFillCode /> }
+    { name: "Github", icon: <AiFillGithub />, url: "https://github.com/bappyasif" },
+    { name: "LinkedIn", icon: <AiFillLinkedin />, url: "https://www.linkedin.com/in/asifuzzaman-bappy-3583236b" },
+    { name: "Twitter", icon: <AiFillTwitterSquare />, url: "https://twitter.com/bappyasif" },
+    { name: "HackerRank", icon: <AiFillCode />, url: "https://www.hackerrank.com/dashboard" }
 ]

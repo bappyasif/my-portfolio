@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { testimonials } from "./Portfolio/data"
 
 export const Additionals = () => {
@@ -7,7 +8,7 @@ export const Additionals = () => {
             className="flex flex-col justify-center items-center gap-20 w-full"
         >
             <RenderTestimonials />
-            <ShowRecentBlogs />
+            {/* <ShowRecentBlogs /> */}
             <HireMe />
         </div>
     )
@@ -41,10 +42,12 @@ const RenderTestimonials = () => {
 const ShowTestimony = ({ ...item }: TestimonialProps) => {
     const { text, user } = item;
 
+    const decideFlow = () => ["Skyler"].includes(user.name)
+
     return (
-        <div className="flex flex-col gap-4">
+        <div className={`flex ${decideFlow()? "flex-row-reverse" : "flex-row"}  gap-4 relative`}>
             <h2
-                className="relative w-1/2 mx-auto text-2xl"
+                className="relative w-4/5 mx-auto text-2xl"
             >
                 <span className="quotes__ql" content="“"></span>
                 <span className="text-justify">{text}</span>
@@ -62,7 +65,7 @@ const ShowUserDetails = ({ user }: UserProps) => {
     const { name, title, links } = user;
 
     return (
-        <div className="flex flex-col gap-2 bg-slate-600 opacity-60 text-blue-200 w-fit mx-auto px-6 py-2 rounded-lg">
+        <div className="flex flex-col gap-2 bg-slate-900 opacity-60 font-bold text-blue-200 w-1/4 mx-auto px-6 py-2 rounded-lg ">
             <div>
                 <h2 className="text-xl">{name}</h2>
                 <h3>{title}</h3>
@@ -79,15 +82,15 @@ const ShowLinks = ({ ...items }: LinksProps) => {
     const { profile, twitter } = items
 
     return (
-        <div>
-            <p>
-                <span>Profile: </span>
-                <span>{profile}</span>
-            </p>
-            <p>
-                <span>Twitter: </span>
-                <span>{twitter}</span>
-            </p>
+        <div className="flex gap-6 justify-center">
+            <a href={profile} target="_blank" title={profile}>
+                {/* <span>Profile: </span> */}
+                <span>Website</span>
+            </a>
+            <a href={twitter} target="_blank" title={twitter}>
+                <span>Twitter</span>
+                {/* <span>{twitter}</span> */}
+            </a>
         </div>
     )
 }
@@ -124,9 +127,12 @@ const HireMe = () => {
 }
 
 const HireMeForm = () => {
+    const [rotate, setRotate] = useState<boolean>(false)
+    const onMouseEnter = () => setRotate(true);
+    const onMouseleave = () => setRotate(false)
     return (
-        <form action="mailto:bappy.asif@icloud.com" method="post" encType="text/plain">
-            <button type="submit" className="bg-slate-400 px-6 py-2 flex items-baseline rounded-full">Hire Me</button>
+        <form action="mailto:bappy.asif@icloud.com" method="post" encType="text/plain" onMouseEnter={onMouseEnter} onMouseLeave={onMouseleave}>
+            <button type="submit" className="bg-slate-400 px-6 py-2 rounded-full flex items-center"><span className="relative">Begin Process</span> <span className={`px-4 ${rotate ? "rotate-90" : ""}`}>:-)</span></button>
         </form>
     )
 }

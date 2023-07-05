@@ -46,7 +46,7 @@ const RenderSpecial = ({ ...item }: SpecialsProps) => {
     }
     return (
         <div 
-            className={adjustTopMargin()}
+            className={`${adjustTopMargin()} h-fit hover:text-red-800 hover:animate-bounce`}
         >
             <h2>{name}</h2>
             <RenderCircleWithText count={count} />

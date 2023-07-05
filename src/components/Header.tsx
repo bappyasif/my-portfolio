@@ -11,7 +11,7 @@ export const Header = (): ReactElement => {
   const openMenu = () => setShow(true);
 
   return (
-    <div className="flex justify-between text-4xl mb-16">
+    <div className="flex justify-between text-4xl mb-16 z-20">
         <p>Greetings :)</p>
         <button onClick={openMenu}><AiOutlineMenuFold /></button>
         {

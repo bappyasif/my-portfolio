@@ -7,12 +7,12 @@ export const MessageMe = () => {
             id="Contact"
             className="w-full flex flex-col gap-6 items-center"
         >
-            <h2 className="text-4xl">Write Me</h2>
+            <h2 className="text-4xl">Let's Get In Touch</h2>
             <div
-                className="flex justify-center gap-6 w-3/4 h-96 text-lg"
+                className="flex justify-center items-center gap-6 w-3/4 text-lg"
             >
                 <img
-                    className="h-auto w-2/3"
+                    className="h-96 w-1/2"
                     src="https://source.unsplash.com/random/?Cryptocurrency&1"
                     alt=""
                 />
@@ -97,7 +97,7 @@ const Form = () => {
     return (
         <form
             ref={formRef}
-            className="h-full w-1/3 flex flex-col gap-4"
+            className="w-2/5 flex flex-col gap-4"
             action=""
             onSubmit={handleSubmit}
         >
@@ -111,8 +111,8 @@ const Fieldset = ({ ...item }: FieldsetProps) => {
     const { label, type, placeholder, handleInput } = item
 
     return (
-        <fieldset className="flex flex-col justify-start items-start w-f">
-            <label htmlFor={label}>{label} *</label>
+        <fieldset className="flex flex-col justify-start items-start">
+            <label className="text-2xl" htmlFor={label}>{label} *</label>
             {
                 label === "Message"
                     ? <textarea className="w-full" onChange={handleInput} required={true} name={label.toLowerCase()} id={label} cols={30} rows={4}></textarea>

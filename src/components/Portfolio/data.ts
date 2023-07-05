@@ -48,6 +48,6 @@ export const designs = [
 ]
 
 export const testimonials = [
-    { text: "here is testimonial. it is so full of this and that and what not and some more. here is testimonial. it is so full of this and that and what not and some more. here is testimonial. it is so full of this and that and what not and some more", user: { name: "Hoxie", title: "none of your business", links: { profile: "github.com", twitter: "@handle" } } },
-    { text: "here is testimonial. it is so full of this and that and what not and some more. here is testimonial. it is so full of this and that and what not and some more. here is testimonial. it is so full of this and that and what not and some more", user: { name: "Skyler", title: "none of your business", links: { profile: "github.com", twitter: "@handle" } } }
+    { text: "here is testimonial. it is so full of this and that and what not and some more. here is testimonial. it is so full of this and that and what not and some more. here is testimonial. it is so full of this and that and what not and some more", user: { name: "Hoxie", title: "none of your business", links: { profile: "github.com", twitter: "twitter.com" } } },
+    { text: "here is testimonial. it is so full of this and that and what not and some more. here is testimonial. it is so full of this and that and what not and some more. here is testimonial. it is so full of this and that and what not and some more", user: { name: "Skyler", title: "none of your business", links: { profile: "github.com", twitter: "twitter.com" } } }
 ];

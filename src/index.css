@@ -105,7 +105,7 @@ body {
     height: 40px;
     background-color: maroon;
     display: inline-block;
-    animation: alternate infinite 2s blink-cursor;
+    animation: alternate infinite .2s blink-cursor;
 }
 
 @keyframes blink-cursor {

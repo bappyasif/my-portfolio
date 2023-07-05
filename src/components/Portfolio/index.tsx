@@ -55,7 +55,7 @@ const AccordionView = ({ data, heading, smallerSize }: ReusableProps) => {
             <div className="flex gap-4 items-center">
                 <button className="bg-transparent px-4 text-2xl prev-btn" onClick={handlePrev}>Prev</button>
                 {/* <div className="flex justify-around gap-20 flex-wrap">{renderData()}</div> */}
-                <div className="flex justify-around gap-20 flex-wrap">
+                <div className="flex justify-around gap-20">
                     <RenderAccordionCardView key={item1.name} description={item1.description} imgSrc={item1.imgSrc} live={item1.live} name={item1.name} repo={item1.repo} smallerSize={smallerSize} />
                     <RenderAccordionCardView key={item2.name} description={item2.description} imgSrc={item2.imgSrc} live={item2.live} name={item2.name} repo={item2.repo} smallerSize={smallerSize} />
                 </div>
@@ -140,12 +140,13 @@ type DetailProps = Omit<ProjectProps, "imgSrc">
 
 const RenderProjectDetailInfo = ({ ...item }: DetailProps) => {
     const { description, live, name, repo, smallerSize } = item;
+    const ifAccordions = () => ["Tourism Worldwide", "Landing Page", "Animations Saavy", "Self-driving Corp", "Product Review Page"].includes(name)
     return (
         <div className={`${smallerSize ? "w-full" : "w-3/4"} text-xl ${smallerSize ? "text-center" : "text-justify"} flex flex-col gap-4`}>
             <h2 className="text-4xl">{name}</h2>
             <a target="_blank" href={repo}>Repo: {repo}</a>
             <a target="_blank" href={live}>Live: {live}</a>
-            <p className="text-justify text-2xl h-60 overflow-y-auto hide-scrollbar" style={{scrollbarGutter: "unset"}}>{description}</p>
+            <p className={`text-justify text-2xl ${ifAccordions() ? "h-32" : "h-60 overflow-y-auto hide-scrollbar"}`} style={{scrollbarGutter: "unset"}}>{description}</p>
         </div>
     )
 }

@@ -42,7 +42,7 @@ type NavSectionProps = {
 }
 
 const RenderNavs = ({ ...items }: NavsProps) => {
-    const { learningSites, recruitingSites, socials } = items;
+    const { learningSites, recruitingSites } = items;
 
     return (
         <div
@@ -56,10 +56,10 @@ const RenderNavs = ({ ...items }: NavsProps) => {
                 items={recruitingSites}
                 heading="Recruiting Sites"
             />
-            <RenderNavSection
+            {/* <RenderNavSection
                 items={socials}
                 heading="Social Sites"
-            />
+            /> */}
         </div>
     )
 }
@@ -69,9 +69,9 @@ const RenderNavSection = ({ items, heading }: NavSectionProps) => {
     const renderItems = () => items?.map(item => <RenderNav key={item.name} name={item.name} url={item.url} icon={item.icon} />)
 
     return (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 items-start">
             <h2 className="text-2xl">{heading}</h2>
-            <div className="flex flex-col gap-6 flex-wrap h-36">{renderItems()}</div>
+            <div className="flex flex-col gap-7 flex-wrap h-36 text-2xl">{renderItems()}</div>
         </div>
     )
 }

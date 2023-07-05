@@ -5,14 +5,24 @@ export const Intro = (): ReactElement => {
     const content = (
         <div
             id="Home"
-            className="text-2xl flex flex-col gap-72 items-center justify-end"
+            className="relative text-2xl flex flex-col gap-72 items-center justify-end"
         >
+            <ViewMasking />
             <ShowName />
             <ShowRoles />
             <PointingArrow />
         </div>
     )
     return content
+}
+
+const ViewMasking = () => {
+    return (
+        <div className="absolute w-screen h-screen flex justify-between">
+            <span className="left w-1/2 bg-slate-800 opacity-40"></span>
+            <span className="right w-1/2 bg-slate-800 opacity-60"></span>
+        </div>
+    )
 }
 
 const PointingArrow = (): ReactElement => {
@@ -64,9 +74,9 @@ const ShowName = (): ReactElement => {
     }, [])
 
     const content = (
-        <div className="flex gap-1 justify-between">
-            <span className="w-20 self-end text-right mr-1">I'm</span>
-            <span className={`${className} w-80 self-start text-left`}>{text}</span>
+        <div className="flex gap-1 justify-between w-2/4">
+            <span className="w-1/2 self-end text-right mr-1 text-2xl font-extrabold">I'm</span>
+            <span className={`${className} w-1/2 self-start text-left`}>{text}</span>
         </div>
     )
 
