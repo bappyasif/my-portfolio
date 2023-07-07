@@ -9,10 +9,10 @@ export const MessageMe = () => {
         >
             <h2 className="text-4xl">Let's Get In Touch</h2>
             <div
-                className="flex justify-center items-center gap-6 w-3/4 text-lg"
+                className="flex xxs:flex-col lg:flex-row justify-center items-center gap-6 xxs:w-auto lg:w-3/4 text-lg"
             >
                 <img
-                    className="h-96 w-1/2"
+                    className="h-96 xxs:w-full lg:w-1/2"
                     src="https://source.unsplash.com/random/?Cryptocurrency&1"
                     alt=""
                 />
@@ -97,7 +97,7 @@ const Form = () => {
     return (
         <form
             ref={formRef}
-            className="w-2/5 flex flex-col gap-4"
+            className="xxs:w-full lg:w-2/5 flex flex-col gap-4"
             action=""
             onSubmit={handleSubmit}
         >

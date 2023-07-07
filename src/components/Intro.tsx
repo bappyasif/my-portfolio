@@ -5,7 +5,10 @@ export const Intro = (): ReactElement => {
     const content = (
         <div
             id="Home"
-            className="relative text-2xl flex flex-col gap-72 items-center justify-end"
+            className="relative xxs:text-lg lg:text-2xl flex flex-col xxs:gap-40 lg:gap-72 items-center justify-end"
+            style={{
+                minHeight: "465px"
+            }}
         >
             <ViewMasking />
             <ShowName />
@@ -74,9 +77,9 @@ const ShowName = (): ReactElement => {
     }, [])
 
     const content = (
-        <div className="flex gap-1 justify-between w-2/4">
-            <span className="w-1/2 self-end text-right mr-1 text-2xl font-extrabold">I'm</span>
-            <span className={`${className} w-1/2 self-start text-left`}>{text}</span>
+        <div className="flex gap-1 justify-between items-baseline xxs:w-screen lg:w-2/4">
+            <span className="w-1/2 text-right mr-1 text-2xl font-extrabold">I'm</span>
+            <span className={`${className} xxs:text-lg lg:text-2xl w-1/2 text-left`}>{text}</span>
         </div>
     )
 
@@ -162,8 +165,9 @@ const ShowRoles = (): ReactElement => {
     }, [])
 
     const content = (
-        <div className="test1234 relative text-4xl">
-            A Self Taught <span>{text}</span>
+        <div className="test1234 relative xxs:text-xl lg:text-4xl flex gap-2">
+            <span className="xxs:hidden sm:block">A Self Taught</span>
+            <span className="">{text}</span>
         </div>
     )
 

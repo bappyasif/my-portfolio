@@ -9,19 +9,19 @@ export const About = () => {
 
     return (
         <div
-            id="Resume" 
+            id="Resume"
             className="flex flex-col items-center gap-6"
         >
 
-            <div className="flex gap-4 mt-6">
-                <img 
-                className="w-96" 
-                src="https://source.unsplash.com/random/?professional&Man&&Office&Corporate" 
-                alt="picture" 
+            <div className="flex xxs:flex-col lg:flex-row gap-4 mt-6">
+                <img
+                    className="xxs:w-full lg:w-96"
+                    src="https://source.unsplash.com/random/?professional&Man&&Office&Corporate"
+                    alt="picture"
                 />
 
-                <div 
-                    className="w-2/4 mx-auto flex flex-col gap-4 
+                <div
+                    className="xxs: w-full lg:w-2/4 mx-auto flex flex-col gap-4 
                     justify-end items-center "
                 >
                     <Heading zIdx={zIdx} setZIdx={setZIdx} />
@@ -52,15 +52,15 @@ type EntityProps = {
     imgSrc: string
 }
 
-const ContributedEntity = ({name, imgSrc}:EntityProps) => {
+const ContributedEntity = ({ name, imgSrc }: EntityProps) => {
     return (
         <div title={name}>
-            <img className="w-44 h-20" src={imgSrc} alt={name} />
+            <img className="xxs:w-20 lg:w-44 xxs:h-16 lg:h-20" src={imgSrc} alt={name} />
         </div>
     )
 }
 
-const Contacts = ({setZIdx}: PropsType) => {
+const Contacts = ({ setZIdx }: PropsType) => {
     const renderContacts = () => contacts.map(item => <RenderContact key={item.text} label={item.label} text={item.text} />)
 
     const bringHeadingTextFront = () => {
@@ -70,7 +70,7 @@ const Contacts = ({setZIdx}: PropsType) => {
     }
 
     return (
-        <div 
+        <div
             className="self-start text-justify"
             onClick={bringHeadingTextFront}
         >
@@ -87,8 +87,8 @@ type ContactProps = {
     text: string
 }
 
-const RenderContact = ({...item}: ContactProps) => {
-    const {label, text} = item;
+const RenderContact = ({ ...item }: ContactProps) => {
+    const { label, text } = item;
 
     return (
         <div>
@@ -102,13 +102,13 @@ type PropsType = {
     setZIdx: (v: boolean) => void
 }
 
-const Details = ({setZIdx}: PropsType) => {
+const Details = ({ setZIdx }: PropsType) => {
     const bringHeadingTextFront = () => {
         if (!window.getSelection()?.toString().length) {
             setZIdx(false)
         }
     }
-    
+
     return (
         <div
             className="flex flex-col justify-start gap-2 items-start text-justify text-2xl"
@@ -152,7 +152,7 @@ type HeadingProps = {
     setZIdx: (v: boolean) => void
 }
 
-const Heading = ({zIdx, setZIdx}: HeadingProps) => {
+const Heading = ({ zIdx, setZIdx }: HeadingProps) => {
     // const [zIdx, setZIdx] = useState<boolean>(false)
 
     const handleOnClickSelectionOfText = () => {
@@ -185,17 +185,17 @@ const Heading = ({zIdx, setZIdx}: HeadingProps) => {
                     className={`relative text-7xl text-blue-950 opacity-90 
                 ${zIdx === true ? "z-20" : "z-0"}`}
                     style={{
-                        fontSize: "200px",
+                        // fontSize: "200px",
                     }}
                     onClick={handleOnClickSelectionOfText}
                 >
                     ABOUT
                 </p>
                 <h2
-                    className={`relative text-7xl text-red-400 font-extrabold ${zIdx === true ? "z-0" : "z-20"} w-fit m-auto`}
+                    className={`relative xxs:text-4xl lg:text-5xl xxs:-translate-y-14 lg:-translate-y-16 text-red-400 font-extrabold ${zIdx === true ? "z-0" : "z-20"} w-fit m-auto`}
                     style={{
                         // fontSize: "150px",
-                        transform: "translateX(0px) translateY(-144px)"
+                        // transform: "translateX(0px) translateY(-144px)"
                     }}
                 >Hello, I'm ab :)</h2>
             </div>
@@ -204,15 +204,15 @@ const Heading = ({zIdx, setZIdx}: HeadingProps) => {
 }
 
 const contributes = [
-    {name: "MDN", imgSrc: mdnLogo},
-    {name: "The Odin Project", imgSrc: topLogo},
-    {name: "W3C", imgSrc: w3cLogo},
+    { name: "MDN", imgSrc: mdnLogo },
+    { name: "The Odin Project", imgSrc: topLogo },
+    { name: "W3C", imgSrc: w3cLogo },
     // {name: "FreeCodeCamp", imgSrc: fccLogo}
 ]
 
 const contacts = [
-    {label: "Email", text: "abcd@efghi.jkl.mno"},
-    {label: "Mobile", text: "+1234567890"}
+    { label: "Email", text: "abcd@efghi.jkl.mno" },
+    { label: "Mobile", text: "+1234567890" }
 ]
 
 const socialLinks = [

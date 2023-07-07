@@ -8,7 +8,7 @@ export const Skills = () => {
     return (
         <div
             id="Skills"
-            className="flex flex-row justify-between gap-0 w-full"
+            className="flex xxs:flex-col lg:flex-row justify-between xxs:gap-6 lg:gap-0 w-full"
         >
             <ShowHighPercentilesSkills data={highPercentiles} />
             <ShowRegulars data={regularPercentiles} />
@@ -29,7 +29,7 @@ type MetricsData = {
 const ShowHighPercentilesSkills = ({ data }: MetricsData) => {
     const renderMetrics = () => data?.map(item => <ShowMetric name={item.name} percentile={item.percentile} text={item.text} key={item.name} />)
     return (
-        <div className="flex gap-1 flex-wrap w-1/2">
+        <div className="flex flex-wrap xxs:gap-0 lg:gap-4 xxs:w-full lg:w-1/2">
             {renderMetrics()}
         </div>
     )
@@ -42,7 +42,7 @@ const ShowMetric = ({ ...item }: MetricProps) => {
     
     return (
         <div
-            className="w-1/4 mx-auto bg-slate-600 rounded-2xl py-4"
+            className="xxs:w-3/6 lg:w-1/4 mx-auto bg-slate-600 rounded-2xl py-2"
             // onClick={handleToggle}
             onMouseEnter={handleBegin}
             onMouseLeave={handleStop}
@@ -106,7 +106,7 @@ const ShowRegulars = ({ data }: MetricsData) => {
 
     return (
         <div
-            className="flex justify-around w-1/2 flex-wrap gap-8 text-2xl"
+            className="flex justify-around xxs:w-full lg:w-1/2 flex-wrap gap-8 text-2xl"
         >
             {showMetrics()}
         </div>
@@ -120,14 +120,14 @@ const ShowSkillProgress = ({ ...item }: MetricProps) => {
 
     return (
         <div 
-            className={`w-1/3 flex flex-col gap-4`}
+            className={`xxs:w-2/5 lg:w-1/3 flex flex-col justify-end gap-2`}
             onMouseEnter={handleBegin}
             onMouseLeave={handleStop}
         >
             <h2 className="text-xl">{name}</h2>
             {/* <LinearProgressBar percentile={percentile} /> */}
             <LinearProgressBar percentile={ currPercentile || percentile} />
-            <p className="text-sm">Current {text} *</p>
+            <p className="text-sm xxs:hidden lg:block">Current {text} *</p>
         </div>
     )
 }

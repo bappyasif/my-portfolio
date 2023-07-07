@@ -45,7 +45,7 @@ const ShowTestimony = ({ ...item }: TestimonialProps) => {
     const decideFlow = () => ["Skyler"].includes(user.name)
 
     return (
-        <div className={`flex ${decideFlow()? "flex-row-reverse" : "flex-row"}  gap-4 relative`}>
+        <div className={`flex xxs:flex-col lg:flex-row ${decideFlow()? "flex-row-reverse" : "flex-row"}  gap-4 relative`}>
             <h2
                 className="relative w-4/5 mx-auto text-2xl"
             >
@@ -65,7 +65,7 @@ const ShowUserDetails = ({ user }: UserProps) => {
     const { name, title, links } = user;
 
     return (
-        <div className="flex flex-col gap-2 bg-slate-900 opacity-60 font-bold text-blue-200 w-1/4 mx-auto px-6 py-2 rounded-lg ">
+        <div className="flex flex-col gap-2 bg-slate-900 opacity-60 font-bold text-blue-200 xxs:w-1/2 lg:w-1/4 mx-auto px-6 py-2 rounded-lg ">
             <div>
                 <h2 className="text-xl">{name}</h2>
                 <h3>{title}</h3>
@@ -117,7 +117,7 @@ const HireMe = () => {
     return (
         <div
             // className="absolute left-1/3 top-4 flex flex-col gap-6 text-blue-900 font-extrabold"
-            className="pattern h-60 w-full flex flex-col justify-center items-center gap-6 text-blue-900 font-extrabold text-4xl"
+            className="pattern h-60 w-full flex flex-col justify-center items-center gap-6 text-blue-900 font-extrabold xxs:text-lg lg:text-4xl"
         >
             <h2 className="">Im available for Freelance or Contractual or Fulltime or Valued Internships</h2>
             {/* <button className="bg-slate-400 px-6 py-2 flex items-baseline rounded-full">Hire Me</button> */}

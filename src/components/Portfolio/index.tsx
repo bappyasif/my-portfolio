@@ -52,14 +52,26 @@ const AccordionView = ({ data, heading, smallerSize }: ReusableProps) => {
     return (
         <div className="flex flex-col gap-20">
             <h2 className="text-4xl">{heading}</h2>
-            <div className="flex gap-4 items-center">
+            {/* while in bigger screen */}
+            <div className="xxs:hidden lg:flex gap-4 items-center">
                 <button className="bg-transparent px-4 text-2xl prev-btn" onClick={handlePrev}>Prev</button>
-                {/* <div className="flex justify-around gap-20 flex-wrap">{renderData()}</div> */}
-                <div className="flex justify-around gap-20">
+                <div className="flex justify-around xxs:gap-6 lg:gap-20">
                     <RenderAccordionCardView key={item1.name} description={item1.description} imgSrc={item1.imgSrc} live={item1.live} name={item1.name} repo={item1.repo} smallerSize={smallerSize} />
                     <RenderAccordionCardView key={item2.name} description={item2.description} imgSrc={item2.imgSrc} live={item2.live} name={item2.name} repo={item2.repo} smallerSize={smallerSize} />
                 </div>
+            
                 <button className="bg-transparent px-4 text-2xl next-btn" onClick={handleNext}>Next</button>
+            </div>
+
+            {/* while in smaller screen */}
+            <div className="xxs:flex lg:hidden flex-col gap-4 items-center">
+                <div className="flex justify-around xxs:gap-6 lg:gap-20">
+                    <RenderAccordionCardView key={item1.name} description={item1.description} imgSrc={item1.imgSrc} live={item1.live} name={item1.name} repo={item1.repo} smallerSize={smallerSize} />
+                </div>
+                <div className="flex gap-4 w-full">
+                    <button className="px-4 text-2xl bg-slate-900 w-full" onClick={handlePrev}>Prev</button>
+                    <button className="px-4 text-2xl bg-slate-900 w-full" onClick={handleNext}>Next</button>
+                </div>
             </div>
         </div>
     )
@@ -69,7 +81,14 @@ const RenderAccordionCardView = ({ ...item }: ProjectProps) => {
     const { description, imgSrc, live, name, repo, smallerSize } = item;
 
     return (
-        <article className="flex flex-col justify-between items-center gap-2 w-2/5">
+        <article className="flex flex-col justify-between items-center gap-2 xxs:w-full lg:w-2/5">
+            {/* {
+                smallerSize
+                    ? null
+                    : <ImageView
+                        description={description} imgSrc={imgSrc} live={live} smallerSize={smallerSize}
+                    />
+            } */}
             <ImageView
                 description={description} imgSrc={imgSrc} live={live} smallerSize={smallerSize}
             />
@@ -126,7 +145,7 @@ const RenderWork = ({ ...item }: ProjectProps) => {
 
     return (
         <article
-            className={`flex ${check() ? "flex-row-reverse" : "flex-row"} gap-10 items-center justify-center`}
+            className={`flex xxs:flex-col lg:flex-row ${check() ? "flex-row-reverse" : "flex-row"} gap-10 items-center justify-center`}
         >
             <ImageView imgSrc={imgSrc} description={description} live={live} />
             <RenderProjectDetailInfo
@@ -146,7 +165,7 @@ const RenderProjectDetailInfo = ({ ...item }: DetailProps) => {
             <h2 className="text-4xl">{name}</h2>
             <a target="_blank" href={repo}>Repo: {repo}</a>
             <a target="_blank" href={live}>Live: {live}</a>
-            <p className={`text-justify text-2xl ${ifAccordions() ? "h-32" : "h-60 overflow-y-auto hide-scrollbar"}`} style={{scrollbarGutter: "unset"}}>{description}</p>
+            <p className={`text-justify text-2xl ${ifAccordions() ? "h-32" : "h-60 overflow-y-auto hide-scrollbar"}`} style={{ scrollbarGutter: "unset" }}>{description}</p>
         </div>
     )
 }
@@ -160,7 +179,7 @@ const ImageView = ({ imgSrc, description, live, smallerSize }: ImageProps) => {
 
     return (
         <figure
-            className={`relative ${smallerSize ? "w-full" : "w-3/4"} h-full`}
+            className={`relative ${smallerSize ? "w-full" : "xxs:w-full lg:w-3/4"} h-full`}
             onMouseEnter={handleMouseOver}
             onMouseLeave={handleMouseOut}
         >
