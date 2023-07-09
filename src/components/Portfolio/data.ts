@@ -29,7 +29,7 @@ export const figs = [
     { name: "Github Repos", count: 127, text: "and more" },
     { name: "HackerRank", count: 4, text: "Stars and more" },
     { name: "OSP Contributions", count: 24, text: "Merges and more" },
-    { name: "FCC Forum", count: 58, text: "Solutions and more" },
+    { name: "FCC Forum", count: 55, text: "Solutions and more" },
 ];
 
 export const projects = [
@@ -40,11 +40,12 @@ export const projects = [
 ];
 
 export const designs = [
-    { name: "Tourism Worldwide", repo: "https://github.com/bappyasif/recreating-designs/tree/travel-worldwide", live: "some.site", description: "Frontend view, design and user interactivity for presumeably a tourism company", imgSrc: testImg },
-    { name: "Landing Page", repo: "https://github.com/bappyasif/recreating-designs/tree/landing-page-for-abcd", live: "some.site", description: "landing page prototype for a company website. this spa is a more generic design ", imgSrc: testImg },
-    { name: "Animations Saavy", repo: "https://github.com/bappyasif/recreating-designs/tree/orbitals-design", live: "some.site", description: "a single page application frontend view for a forum or news based site", imgSrc: testImg },
-    { name: "Self-driving Corp", repo: "https://github.com/bappyasif/recreating-designs/tree/autonomous-trucks", live: "some.site", description: "another single page web applicatioin example, this is based ona self driving truck company", imgSrc: testImg },
-    { name: "Product Review Page", repo: "https://github.com/bappyasif/recreating-designs/tree/product-review-page-mockup", live: "some.site", description: "product review page prototype desogn.", imgSrc: testImg }
+    { name: "Restaurant Site", repo: "https://github.com/bappyasif/recreating-designs/tree/restaurant-site", live: "https://shorturl.at/czBO1", description: "Frontend view, Where it displays menu, popular items and events details.", imgSrc: testImg },
+    { name: "Tourism Worldwide", repo: "https://github.com/bappyasif/recreating-designs/tree/travel-worldwide", live: "https://shorturl.at/grEP2", description: "Frontend view, design and user interactivity for presumeably a tourism company", imgSrc: testImg },
+    { name: "Landing Page", repo: "https://github.com/bappyasif/recreating-designs/tree/landing-page-for-abcd", live: "https://shorturl.at/iGOY8", description: "landing page prototype for a company website. this spa is a more generic design ", imgSrc: testImg },
+    { name: "Animations Saavy", repo: "https://github.com/bappyasif/recreating-designs/tree/orbitals-design", live: "https://shorturl.at/fvAH4", description: "a single page application frontend view for a forum or news based site", imgSrc: testImg },
+    { name: "Self-driving Corp", repo: "https://github.com/bappyasif/recreating-designs/tree/autonomous-trucks", live: "https://shorturl.at/tT138", description: "another single page web applicatioin example, this is based ona self driving truck company", imgSrc: testImg },
+    { name: "Product Review Page", repo: "https://github.com/bappyasif/recreating-designs/tree/product-review-page-mockup", live: "https://shorturl.at/ahiL3", description: "product review page prototype desogn.", imgSrc: testImg }
 ]
 
 export const testimonials = [

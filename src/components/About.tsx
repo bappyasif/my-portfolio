@@ -114,7 +114,7 @@ const Details = ({ setZIdx }: PropsType) => {
             className="flex flex-col justify-start gap-2 items-start text-justify text-2xl"
             onClick={bringHeadingTextFront}
         >
-            <p className="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque debitis repellat dolorem, voluptate blanditiis sit eveniet repellendus, unde placeat nobis dolore ad labore odio? Nam fugit eum architecto aut itaque.</p>
+            <p className="">A community driven self-taught Full Stack Developer specializing in the MERN stack (MongoDB, Express, React, Node), bringing a proven track record of building many web applications. My passion for coding and continuous learning has led me to hone my technical abilities and deepen my knowledge of the MERN stack, and other related technologies, such as Next.JS and TypeScript.</p>
             <a className="text-blue-600 font-extrabold" target="_blank" href="https://drive.google.com/file/d/1vszl4SBsWtY44tFVPfkBHwirFFjnq2Ja/view?usp=sharing">Checkout my resume</a>
             <RenderLinks />
         </div>
@@ -167,7 +167,7 @@ const Heading = ({ zIdx, setZIdx }: HeadingProps) => {
             onClick={() => setZIdx(false)}
         >
             <div
-                className="relative w-fit"
+                className="relative w-fit xxs:h-20 lg:h-48"
                 onMouseLeave={() => {
                     if (!window.getSelection()?.toString().length) {
                         setZIdx(false)
@@ -181,8 +181,28 @@ const Heading = ({ zIdx, setZIdx }: HeadingProps) => {
                     }
                 }}
             >
+                {/* when on bigger screen */}
                 <p
-                    className={`relative text-7xl text-blue-950 opacity-90 
+                    className={`relative xxs:hidden lg:block text-7xl text-blue-950 opacity-90 
+                ${zIdx === true ? "z-20" : "z-0"}`}
+                    style={{
+                        fontSize: "200px",
+                    }}
+                    onClick={handleOnClickSelectionOfText}
+                >
+                    ABOUT
+                </p>
+                <h2
+                    className={`relative xxs:hidden lg:block text-red-400 font-extrabold ${zIdx === true ? "z-0" : "z-20"} w-fit m-auto`}
+                    style={{
+                        fontSize: "90px",
+                        transform: "translateX(0px) translateY(-175px)"
+                    }}
+                >Hello, I'm ab :)</h2>
+
+                {/* when in smaller screen */}
+                <p
+                    className={`relative xxs:block lg:hidden text-7xl text-blue-950 opacity-90 
                 ${zIdx === true ? "z-20" : "z-0"}`}
                     style={{
                         // fontSize: "200px",
@@ -192,7 +212,7 @@ const Heading = ({ zIdx, setZIdx }: HeadingProps) => {
                     ABOUT
                 </p>
                 <h2
-                    className={`relative xxs:text-4xl lg:text-5xl xxs:-translate-y-14 lg:-translate-y-16 text-red-400 font-extrabold ${zIdx === true ? "z-0" : "z-20"} w-fit m-auto`}
+                    className={`relative xxs:block lg:hidden xxs:text-4xl lg:text-5xl xxs:-translate-y-14 lg:-translate-y-16 text-red-400 font-extrabold ${zIdx === true ? "z-0" : "z-20"} w-fit m-auto`}
                     style={{
                         // fontSize: "150px",
                         // transform: "translateX(0px) translateY(-144px)"

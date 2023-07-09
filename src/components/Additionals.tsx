@@ -45,7 +45,7 @@ const ShowTestimony = ({ ...item }: TestimonialProps) => {
     const decideFlow = () => ["Skyler"].includes(user.name)
 
     return (
-        <div className={`flex xxs:flex-col lg:flex-row ${decideFlow()? "flex-row-reverse" : "flex-row"}  gap-4 relative`}>
+        <div className={`flex xxs:flex-col ${decideFlow()? "lg:flex-row-reverse" : "lg:flex-row"}  gap-4 relative`}>
             <h2
                 className="relative w-4/5 mx-auto text-2xl"
             >

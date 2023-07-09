@@ -69,8 +69,8 @@ const AccordionView = ({ data, heading, smallerSize }: ReusableProps) => {
                     <RenderAccordionCardView key={item1.name} description={item1.description} imgSrc={item1.imgSrc} live={item1.live} name={item1.name} repo={item1.repo} smallerSize={smallerSize} />
                 </div>
                 <div className="flex gap-4 w-full">
-                    <button className="px-4 text-2xl bg-slate-900 w-full" onClick={handlePrev}>Prev</button>
-                    <button className="px-4 text-2xl bg-slate-900 w-full" onClick={handleNext}>Next</button>
+                    <button className="px-4 text-4xl py-2 bg-slate-900 w-full rounded-2xl" onClick={handlePrev}>Prev</button>
+                    <button className="px-4 text-4xl py-2 bg-slate-900 w-full rounded-2xl" onClick={handleNext}>Next</button>
                 </div>
             </div>
         </div>
@@ -145,7 +145,7 @@ const RenderWork = ({ ...item }: ProjectProps) => {
 
     return (
         <article
-            className={`flex xxs:flex-col lg:flex-row ${check() ? "flex-row-reverse" : "flex-row"} gap-10 items-center justify-center`}
+            className={`flex xxs:flex-col ${check() ? "lg:flex-row-reverse" : "lg:flex-row"} gap-10 items-center justify-center`}
         >
             <ImageView imgSrc={imgSrc} description={description} live={live} />
             <RenderProjectDetailInfo
@@ -159,9 +159,9 @@ type DetailProps = Omit<ProjectProps, "imgSrc">
 
 const RenderProjectDetailInfo = ({ ...item }: DetailProps) => {
     const { description, live, name, repo, smallerSize } = item;
-    const ifAccordions = () => ["Tourism Worldwide", "Landing Page", "Animations Saavy", "Self-driving Corp", "Product Review Page"].includes(name)
+    const ifAccordions = () => ["Restaurant Site", "Tourism Worldwide", "Landing Page", "Animations Saavy", "Self-driving Corp", "Product Review Page"].includes(name)
     return (
-        <div className={`${smallerSize ? "w-full" : "w-3/4"} text-xl ${smallerSize ? "text-center" : "text-justify"} flex flex-col gap-4`}>
+        <div className={`${smallerSize ? "w-full" : "xxs:w-full lg:w-3/4"} text-xl ${smallerSize ? "text-center" : "text-justify"} flex flex-col gap-4`}>
             <h2 className="text-4xl">{name}</h2>
             <a target="_blank" href={repo}>Repo: {repo}</a>
             <a target="_blank" href={live}>Live: {live}</a>
