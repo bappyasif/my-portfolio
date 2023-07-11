@@ -7,7 +7,7 @@ export const Additionals = () => {
             id="Testimonials"
             className="flex flex-col justify-center items-center gap-20 w-full"
         >
-            <RenderTestimonials />
+            {/* <RenderTestimonials /> */}
             {/* <ShowRecentBlogs /> */}
             <HireMe />
         </div>
@@ -33,7 +33,7 @@ const RenderTestimonials = () => {
 
     return (
         <div className="flex flex-col gap-4">
-            <h2 className="text-4xl">Testimonials</h2>
+            <h2 className="text-4xl">Community Feedback</h2>
             <div className="flex flex-col gap-28">{renderTestimonies()}</div>
         </div>
     )

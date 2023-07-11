@@ -1,4 +1,5 @@
 import { AiOutlineClose } from "react-icons/ai"
+import photo from "../assets/about-pic.jpeg"
 
 type MenuProp = {
     closeMenu: () => void
@@ -33,7 +34,8 @@ const RenderImage = () => {
     return (
         <img
             className="h-full w-1/3"
-            src={`https://source.unsplash.com/random/?Profile,User`}
+            // src={`https://source.unsplash.com/random/?Profile,User`}
+            src={photo}
             alt="User Picture"
         />
     )

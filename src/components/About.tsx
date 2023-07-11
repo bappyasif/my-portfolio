@@ -1,8 +1,12 @@
 import { ReactElement, useState } from "react"
-import { AiFillCode, AiFillGithub, AiFillLinkedin, AiFillTwitterSquare } from "react-icons/ai"
+import { AiOutlineGithub, AiOutlineTwitter } from "react-icons/ai"
+import {FaLinkedinIn, FaQuora} from "react-icons/fa"
+import {LiaHackerrank} from "react-icons/lia"
 import mdnLogo from "../assets/mdn-logo.jpg"
 import topLogo from "../assets/top-logo.png"
 import w3cLogo from "../assets/w3c-logo.png"
+import photo from "../assets/about-pic.jpeg"
+// import photo from "../assets/contact-pic.jpg"
 
 export const About = () => {
     const [zIdx, setZIdx] = useState<boolean>(false)
@@ -15,8 +19,9 @@ export const About = () => {
 
             <div className="flex xxs:flex-col lg:flex-row gap-4 mt-6">
                 <img
-                    className="xxs:w-full lg:w-96"
-                    src="https://source.unsplash.com/random/?professional&Man&&Office&Corporate"
+                    className="xxs:w-full lg:w-1/3"
+                    // src="https://source.unsplash.com/random/?professional&Man&&Office&Corporate"
+                    src={photo}
                     alt="picture"
                 />
 
@@ -26,7 +31,7 @@ export const About = () => {
                 >
                     <Heading zIdx={zIdx} setZIdx={setZIdx} />
                     <Details setZIdx={setZIdx} />
-                    <Contacts setZIdx={setZIdx} />
+                    {/* <Contacts setZIdx={setZIdx} /> */}
                 </div>
             </div>
             <ShowContributingEntities />
@@ -60,43 +65,43 @@ const ContributedEntity = ({ name, imgSrc }: EntityProps) => {
     )
 }
 
-const Contacts = ({ setZIdx }: PropsType) => {
-    const renderContacts = () => contacts.map(item => <RenderContact key={item.text} label={item.label} text={item.text} />)
+// const Contacts = ({ setZIdx }: PropsType) => {
+//     const renderContacts = () => contacts.map(item => <RenderContact key={item.text} label={item.label} text={item.text} />)
 
-    const bringHeadingTextFront = () => {
-        if (!window.getSelection()?.toString().length) {
-            setZIdx(false)
-        }
-    }
+//     const bringHeadingTextFront = () => {
+//         if (!window.getSelection()?.toString().length) {
+//             setZIdx(false)
+//         }
+//     }
 
-    return (
-        <div
-            className="self-start text-justify"
-            onClick={bringHeadingTextFront}
-        >
-            <h2>My Contacts</h2>
-            <div>
-                {renderContacts()}
-            </div>
-        </div>
-    )
-}
+//     return (
+//         <div
+//             className="self-start text-justify"
+//             onClick={bringHeadingTextFront}
+//         >
+//             <h2>My Contacts</h2>
+//             <div>
+//                 {renderContacts()}
+//             </div>
+//         </div>
+//     )
+// }
 
-type ContactProps = {
-    label: string,
-    text: string
-}
+// type ContactProps = {
+//     label: string,
+//     text: string
+// }
 
-const RenderContact = ({ ...item }: ContactProps) => {
-    const { label, text } = item;
+// const RenderContact = ({ ...item }: ContactProps) => {
+//     const { label, text } = item;
 
-    return (
-        <div>
-            <span>{label}</span>
-            <span>{text}</span>
-        </div>
-    )
-}
+//     return (
+//         <div className="flex gap-2">
+//             <span>{label}</span>
+//             <span>{text}</span>
+//         </div>
+//     )
+// }
 
 type PropsType = {
     setZIdx: (v: boolean) => void
@@ -115,7 +120,7 @@ const Details = ({ setZIdx }: PropsType) => {
             onClick={bringHeadingTextFront}
         >
             <p className="">A community driven self-taught Full Stack Developer specializing in the MERN stack (MongoDB, Express, React, Node), bringing a proven track record of building many web applications. My passion for coding and continuous learning has led me to hone my technical abilities and deepen my knowledge of the MERN stack, and other related technologies, such as Next.JS and TypeScript.</p>
-            <a className="text-blue-600 font-extrabold" target="_blank" href="https://drive.google.com/file/d/1vszl4SBsWtY44tFVPfkBHwirFFjnq2Ja/view?usp=sharing">Checkout my resume</a>
+            {/* <a className="text-blue-600 font-extrabold" target="_blank" href="https://drive.google.com/file/d/1vszl4SBsWtY44tFVPfkBHwirFFjnq2Ja/view?usp=sharing">Checkout my resume</a> */}
             <RenderLinks />
         </div>
     )
@@ -140,7 +145,7 @@ const RenderLink = ({ name, icon, url }: LinkPropsType) => {
     // const {icon, name} = item;
 
     return (
-        <a href={url} title={name} target="_blank">
+        <a className="text-7xl" href={url} title={name} target="_blank">
             <span>{icon}</span>
             {/* <span>{name}</span> */}
         </a>
@@ -230,14 +235,15 @@ const contributes = [
     // {name: "FreeCodeCamp", imgSrc: fccLogo}
 ]
 
-const contacts = [
-    { label: "Email", text: "abcd@efghi.jkl.mno" },
-    { label: "Mobile", text: "+1234567890" }
-]
+// const contacts = [
+//     { label: "Email", text: "bappy.asif@icloud.com" },
+//     { label: "Mobile", text: "+8801915645093" }
+// ]
 
 const socialLinks = [
-    { name: "Github", icon: <AiFillGithub />, url: "https://github.com/bappyasif" },
-    { name: "LinkedIn", icon: <AiFillLinkedin />, url: "https://www.linkedin.com/in/asifuzzaman-bappy-3583236b" },
-    { name: "Twitter", icon: <AiFillTwitterSquare />, url: "https://twitter.com/bappyasif" },
-    { name: "HackerRank", icon: <AiFillCode />, url: "https://www.hackerrank.com/dashboard" }
+    { name: "Github", icon: <AiOutlineGithub />, url: "https://github.com/bappyasif" },
+    { name: "LinkedIn", icon: <FaLinkedinIn />, url: "https://www.linkedin.com/in/asifuzzaman-bappy-3583236b" },
+    { name: "HackerRank", icon: <LiaHackerrank />, url: "https://www.hackerrank.com/dashboard" },
+    { name: "Quora", icon: <FaQuora />, url: "https://www.quora.com/profile/Asifuzzaman-Bappy" },
+    { name: "Twitter", icon: <AiOutlineTwitter />, url: "https://twitter.com/bappyasif" },
 ]

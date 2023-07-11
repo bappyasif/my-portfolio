@@ -1,5 +1,6 @@
 import { ChangeEvent, FormEvent, useRef, useState } from "react"
 import emailjs from '@emailjs/browser';
+import photo from "../assets/about-pic.jpeg"
 
 export const MessageMe = () => {
     return (
@@ -13,7 +14,8 @@ export const MessageMe = () => {
             >
                 <img
                     className="h-96 xxs:w-full lg:w-1/2"
-                    src="https://source.unsplash.com/random/?Cryptocurrency&1"
+                    // src="https://source.unsplash.com/random/?write"
+                    src={photo}
                     alt=""
                 />
                 <Form />
