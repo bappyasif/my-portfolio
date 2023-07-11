@@ -17,6 +17,14 @@ body {
     text-align: center;
 }
 
+textarea,
+input {
+    background-color: dimgrey;
+    color: whitesmoke;
+    font-size: larger;
+    font-weight: bolder;
+}
+
 .hide-scrollbar::-webkit-scrollbar {
     display: none;
 }
