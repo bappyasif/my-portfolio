@@ -26,10 +26,10 @@ export const skills = [
 ];
 
 export const figs = [
-    { name: "Github Repos", count: 127, text: "and more" },
     { name: "HackerRank", count: 4, text: "Stars and more" },
-    { name: "OSP Contributions", count: 24, text: "Merges and more" },
+    { name: "OSP Contributions", count: 24, text: "Successfull Merges and more" },
     { name: "FCC Forum", count: 55, text: "Solutions and more" },
+    { name: "Github Repos", count: 127, text: "and more" },
 ];
 
 export const projects = [

@@ -26,15 +26,36 @@ function App() {
         }}
       ></div>
 
-      <div className='App w-3/4 h-screen mx-auto'>
-        <div className="flex flex-col gap-20 py-4">
-          <Header />
-          <Intro />
-          <About />
-          <Portfolio />
-          <Additionals />
-          <MessageMe />
-          <Footer />
+      <div className="flex flex-col gap-20 bg-slate-800">
+        <div className='App w-3/4 mx-auto'>
+          <div className="flex flex-col gap-20 py-4">
+            <Header />
+            <Intro />
+            <About />
+            <Portfolio />
+            <Additionals />
+            <MessageMe />
+            {/* <Footer /> */}
+          </div>
+        </div>
+
+        <div
+          className='w-full flex flex-col items-center'
+          style={{
+            // backgroundImage: `url("${photo}")`,
+            backgroundImage: `url("https://source.unsplash.com/random/?Coding")`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "100% 100%",
+            objectFit: "cover",
+            backgroundColor: "rgba(17,17,17,0.6)",
+            backgroundBlendMode: "darken"
+          }}
+        >
+          <div className="w-3/4 flex flex-col gap-20">
+            {/* <Additionals />
+            <MessageMe /> */}
+            <Footer />
+          </div>
         </div>
       </div>
     </>

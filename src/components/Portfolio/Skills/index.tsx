@@ -29,7 +29,7 @@ type MetricsData = {
 const ShowHighPercentilesSkills = ({ data }: MetricsData) => {
     const renderMetrics = () => data?.map(item => <ShowMetric name={item.name} percentile={item.percentile} text={item.text} key={item.name} />)
     return (
-        <div className="flex flex-wrap xxs:gap-0 lg:gap-4 xxs:w-full lg:w-1/2">
+        <div className="flex flex-wrap xxs:gap-0 sm:gap-1 lg:gap-4 xxs:w-full lg:w-1/2">
             {renderMetrics()}
         </div>
     )
@@ -42,7 +42,7 @@ const ShowMetric = ({ ...item }: MetricProps) => {
     
     return (
         <div
-            className="xxs:w-3/6 lg:w-1/4 mx-auto bg-slate-600 rounded-2xl py-2"
+            className="xxs:w-3/6 sm:w-1/4 lg:w-1/4 mx-auto bg-slate-600 rounded-2xl py-2"
             // onClick={handleToggle}
             onMouseEnter={handleBegin}
             onMouseLeave={handleStop}

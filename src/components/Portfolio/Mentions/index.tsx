@@ -34,11 +34,11 @@ const RenderSpecial = ({ ...item }: SpecialsProps) => {
     // console.log(name, count)
     const adjustTopMargin = () => {
         let str = "mt-0"
-        if(name === "HackerRank") {
+        if(name === "OSP Contributions") {
             str="xxs:mt-2 lg:mt-28"
-        } else if(name === "OSP Contributions") {
-            str="xxs:mt-2 lg:mt-60"
         } else if(name === "FCC Forum") {
+            str="xxs:mt-2 lg:mt-60"
+        } else if(name === "Github Repos") {
             str="xxs:mt-2 lg:mt-96"
         }
 

@@ -12,7 +12,7 @@ export const Menu = ({ closeMenu }: MenuProp) => {
         <div
             className="absolute left-0 top-0 py-40 
             flex gap-10 justify-center items-center
-            bg-slate-400 h-screen w-screen
+            bg-slate-800 h-screen w-screen
            z-40"
         >
             <RenderImage />
@@ -53,4 +53,4 @@ const RenderMenuItem = ({ item, closeMenu }: ItemProp) => {
     )
 }
 
-const menuItems = ["Home", "Resume", "Skills", "Mentions", "Portfolio", "Testimonials", "Contact"]
+const menuItems = ["Home", "About", "Skills", "Mentions", "Portfolio", "Contact"]

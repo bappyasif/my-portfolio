@@ -10,7 +10,7 @@ export const MessageMe = () => {
         >
             <h2 className="text-4xl">Let's Get In Touch</h2>
             <div
-                className="flex xxs:flex-col lg:flex-row justify-center items-center gap-6 xxs:w-auto lg:w-3/4 text-lg"
+                className="flex xxs:flex-col lg:flex-row justify-center items-center gap-6 xxs:w-auto sm:w-full lg:w-3/4 text-lg"
             >
                 <img
                     className="h-96 xxs:w-full lg:w-1/2"
@@ -34,7 +34,6 @@ const Form = () => {
     const formRef = useRef<HTMLFormElement>(document.querySelector("form") as HTMLFormElement)
 
     const sendEmail = () => {
-        // emailjs.sendForm('service_s6nbnw8', 'template_osaw7h9', formRef.current, 'si9oOl75tTk-IxSI-')
         emailjs.sendForm(import.meta.env.VITE_EMAIL_SERVICE_NAME, import.meta.env.VITE_EMAIL_TEMPLATE_NAME, formRef.current, import.meta.env.VITE_EMAIL_PUBLIC_KEY)
           .then(() => {
               console.log("success!!");

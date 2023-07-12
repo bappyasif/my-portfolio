@@ -12,7 +12,7 @@ export const About = () => {
 
     return (
         <div
-            id="Resume"
+            id="About"
             className="flex flex-col items-center gap-6"
         >
 
@@ -169,7 +169,7 @@ const Heading = ({ zIdx, setZIdx }: HeadingProps) => {
                 </p>
                 <h2
                     className={`relative xxs:block lg:hidden xxs:text-4xl lg:text-5xl xxs:-translate-y-14 lg:-translate-y-16 text-red-400 font-extrabold ${zIdx === true ? "z-0" : "z-20"} w-fit m-auto`}
-                >Hello, I'm ab :)</h2>
+                >Hi, call me ab :)</h2>
             </div>
         </div>
     )

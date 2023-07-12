@@ -43,26 +43,6 @@ input {
 }
 
 /* dissolving text in intro */
-/* animation: 2s alternate infinite dissolve; */
-/* .dissolve-text {
-    animation-timing-function: ease-in-out;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    animation-delay: 2s;
-    animation-direction: alternate;
-    animation-fill-mode: forwards;
-    animation-name: dissolve;
-}
-
-@keyframes dissolve {
-    from {
-        filter: blur(0px);
-    }
-
-    to {
-        filter: blur(60px);
-    }
-} */
 
 .dissolve-text {
     animation-timing-function: ease-in-out;
@@ -108,9 +88,10 @@ input {
 .test1234::after {
     content: "";
     position: absolute;
-    right: -11px;
-    width: 4px;
-    height: 40px;
+    right: -22px;
+    width: 20px;
+    height: 4px;
+    bottom: 0;
     background-color: maroon;
     display: inline-block;
     animation: alternate infinite .2s blink-cursor;

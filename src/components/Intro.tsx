@@ -21,17 +21,26 @@ export const Intro = (): ReactElement => {
 
 const ViewMasking = () => {
     return (
-        <div className="absolute w-screen h-screen flex justify-between">
-            <span className="left w-1/2 bg-slate-800 opacity-40"></span>
-            <span className="right w-1/2 bg-slate-800 opacity-60"></span>
-        </div>
+        <div
+            className="absolute w-screen h-screen flex justify-between"
+            style={{
+                // backgroundImage: `url("${photo}")`,
+                backgroundImage: `url("https://source.unsplash.com/random/?Coding,Code")`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "100% 100%",
+                objectFit: "cover"
+            }}
+        >
+            < span className="left w-1/2 bg-slate-800 opacity-80" ></span >
+            <span className="right w-1/2 bg-slate-800 opacity-90"></span>
+        </div >
     )
 }
 
 const PointingArrow = (): ReactElement => {
     const content = (
         <a
-            href="#Resume"
+            href="#About"
             className="animate-pulse text-4xl relative 
                 border border-zinc-600 border-b-8 text-amber-300"
         >
@@ -60,7 +69,7 @@ const ShowName = (): ReactElement => {
     const [text, setText] = useState<string>("Asifuzzaman Bappy")
     const [className, setClassName] = useState<string>("dissolve-text")
 
-    const swapText = (): void => setText(prev => prev === "Originally From Bangladesh" ? "Asifuzzaman Bappy" : prev === "Asifuzzaman Bappy" ? "A Keen Learner" : "Originally From Bangladesh")
+    const swapText = (): void => setText(prev => prev === "From Bangladesh" ? "Asifuzzaman Bappy" : prev === "Asifuzzaman Bappy" ? "A Keen Learner" : "From Bangladesh")
 
     const swapClassname = (): void => setClassName(prev => prev === "dissolve-text" ? "reappear-text" : "dissolve-text")
 
@@ -78,8 +87,8 @@ const ShowName = (): ReactElement => {
 
     const content = (
         <div className="flex gap-1 justify-between items-baseline xxs:w-screen lg:w-2/4">
-            <span className="w-1/2 text-right mr-1 text-2xl font-extrabold">I'm</span>
-            <span className={`${className} xxs:text-lg lg:text-2xl w-1/2 text-left`}>{text}</span>
+            <span className="w-1/2 text-right mr-1 xxs:text-2xl lg:text-6xl font-extrabold z-10">I'm</span>
+            <span className={`${className} xxs:text-lg lg:text-4xl w-1/2 text-left`}>{text}</span>
         </div>
     )
 
@@ -138,7 +147,7 @@ const ShowRoles = (): ReactElement => {
         } else {
             setText(subTxt)
         }
-        console.log("rtunning bactrack!!")
+        // console.log("rtunning bactrack!!")
     }
 
     useEffect(() => {
@@ -165,8 +174,8 @@ const ShowRoles = (): ReactElement => {
     }, [])
 
     const content = (
-        <div className="test1234 relative xxs:text-xl lg:text-4xl flex gap-2">
-            <span className="xxs:hidden sm:block">A Self Taught</span>
+        <div className="test1234 relative xxs:text-xl lg:text-6xl flex xxs:gap-2 lg:gap-4">
+            <span className="xxs:hidden sm:block">A Self Taught </span>
             <span className="">{text}</span>
         </div>
     )
