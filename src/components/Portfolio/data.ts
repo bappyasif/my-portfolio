@@ -1,4 +1,9 @@
-import testImg from "../../assets/react.svg"
+import animSaavy from "../../assets/anim-saavy.gif"
+import automatedTrucks from "../../assets/automated-trucks.gif"
+import landingPage from "../../assets/landing-page.gif"
+import prodReview from "../../assets/prod-rev-page.gif"
+import restaurantSite from "../../assets/restaurant-site.gif"
+import travelWorldwide from "../../assets/travel-worldwide.gif"
 import just_news_gif from "../../assets/just_news_rec.gif"
 import odbo_live_gif from "../../assets/odbo_live_rec.gif"
 import twitter_prototype_gif from "../../assets/twitter_prototype_rec.gif"
@@ -40,12 +45,12 @@ export const projects = [
 ];
 
 export const designs = [
-    { name: "Restaurant Site", repo: "https://github.com/bappyasif/recreating-designs/tree/restaurant-site", live: "https://shorturl.at/czBO1", description: "Frontend view, Where it displays menu, popular items and events details.", imgSrc: testImg },
-    { name: "Tourism Worldwide", repo: "https://github.com/bappyasif/recreating-designs/tree/travel-worldwide", live: "https://shorturl.at/grEP2", description: "Frontend view, design and user interactivity for presumeably a tourism company", imgSrc: testImg },
-    { name: "Landing Page", repo: "https://github.com/bappyasif/recreating-designs/tree/landing-page-for-abcd", live: "https://shorturl.at/iGOY8", description: "landing page prototype for a company website. this spa is a more generic design ", imgSrc: testImg },
-    { name: "Animations Saavy", repo: "https://github.com/bappyasif/recreating-designs/tree/orbitals-design", live: "https://shorturl.at/fvAH4", description: "a single page application frontend view for a forum or news based site", imgSrc: testImg },
-    { name: "Self-driving Corp", repo: "https://github.com/bappyasif/recreating-designs/tree/autonomous-trucks", live: "https://shorturl.at/tT138", description: "another single page web applicatioin example, this is based ona self driving truck company", imgSrc: testImg },
-    { name: "Product Review Page", repo: "https://github.com/bappyasif/recreating-designs/tree/product-review-page-mockup", live: "https://shorturl.at/ahiL3", description: "product review page prototype desogn.", imgSrc: testImg }
+    { name: "Restaurant Site", repo: "https://github.com/bappyasif/recreating-designs/tree/restaurant-site", live: "https://shorturl.at/czBO1", description: "Frontend view, Where it displays menu, popular items and events details.", imgSrc: restaurantSite },
+    { name: "Tourism Worldwide", repo: "https://github.com/bappyasif/recreating-designs/tree/travel-worldwide", live: "https://shorturl.at/grEP2", description: "Frontend view, design and user interactivity for presumeably a tourism company", imgSrc: travelWorldwide },
+    { name: "Landing Page", repo: "https://github.com/bappyasif/recreating-designs/tree/landing-page-for-abcd", live: "https://shorturl.at/iGOY8", description: "landing page prototype for a company website. this spa is a more generic design ", imgSrc: landingPage },
+    { name: "Animations Saavy", repo: "https://github.com/bappyasif/recreating-designs/tree/orbitals-design", live: "https://shorturl.at/fvAH4", description: "a single page application frontend view for a forum or news based site", imgSrc: animSaavy },
+    { name: "Self-driving Corp", repo: "https://github.com/bappyasif/recreating-designs/tree/autonomous-trucks", live: "https://shorturl.at/tT138", description: "another single page web applicatioin example, this is based ona self driving truck company", imgSrc: automatedTrucks },
+    { name: "Product Review Page", repo: "https://github.com/bappyasif/recreating-designs/tree/product-review-page-mockup", live: "https://shorturl.at/ahiL3", description: "product review page prototype desogn.", imgSrc: prodReview }
 ]
 
 export const testimonials = [

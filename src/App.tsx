@@ -26,7 +26,7 @@ function App() {
         }}
       ></div>
 
-      <div className="flex flex-col gap-20 bg-slate-800">
+      <div className="flex flex-col gap-20 bg-gray-800">
         <div className='App w-3/4 mx-auto'>
           <div className="flex flex-col gap-20 py-4">
             <Header />
@@ -45,7 +45,7 @@ function App() {
             // backgroundImage: `url("${photo}")`,
             backgroundImage: `url("https://source.unsplash.com/random/?Coding")`,
             backgroundRepeat: "no-repeat",
-            backgroundSize: "100% 100%",
+            // backgroundSize: "100% 100%",
             objectFit: "cover",
             backgroundColor: "rgba(17,17,17,0.6)",
             backgroundBlendMode: "darken"

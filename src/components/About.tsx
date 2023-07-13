@@ -13,10 +13,10 @@ export const About = () => {
     return (
         <div
             id="About"
-            className="flex flex-col items-center gap-6"
+            className="flex flex-col items-center xxs:gap-6 lg:gap-16"
         >
 
-            <div className="flex xxs:flex-col lg:flex-row gap-4 mt-6">
+            <div className="flex xxs:flex-col lg:flex-row xxs:gap-4 lg:gap-9 mt-6">
                 <img
                     className="xxs:w-full lg:w-1/3"
                     src={photo}
@@ -41,7 +41,7 @@ const ShowContributingEntities = () => {
     const renderEntities = () => contributes.map(item => <ContributedEntity key={item.name} name={item.name} imgSrc={item.imgSrc} />)
 
     return (
-        <div className="w-full flex flex-col gap-10">
+        <div className="w-full flex flex-col xxs:gap-10 lg:gap-16">
             <h2 className="text-4xl">Successfull Contributions</h2>
             <div className="flex justify-between w-full">
                 {renderEntities()}
@@ -58,7 +58,7 @@ type EntityProps = {
 const ContributedEntity = ({ name, imgSrc }: EntityProps) => {
     return (
         <div title={name}>
-            <img className="xxs:w-20 lg:w-44 xxs:h-16 lg:h-20" src={imgSrc} alt={name} />
+            <img className="xxs:w-20 sm:w-52 lg:w-72 xxs:h-16 lg:h-20" src={imgSrc} alt={name} />
         </div>
     )
 }
@@ -76,7 +76,7 @@ const Details = ({ setZIdx }: PropsType) => {
 
     return (
         <div
-            className="flex flex-col justify-start gap-2 items-start text-justify text-2xl"
+            className="flex flex-col justify-start xxs:gap-2 lg:gap-11 items-start text-justify text-2xl"
             onClick={bringHeadingTextFront}
         >
             <p className="">A community driven self-taught Full Stack Developer specializing in the MERN stack (MongoDB, Express, React, Node), bringing a proven track record of building many web applications. My passion for coding and continuous learning has led me to hone my technical abilities and deepen my knowledge of the MERN stack, and other related technologies, such as Next.JS and TypeScript.</p>
@@ -89,7 +89,7 @@ const Details = ({ setZIdx }: PropsType) => {
 const RenderLinks = () => {
     const linkItems = () => socialLinks.map(item => <RenderLink key={item.name} icon={item.icon} name={item.name} url={item.url} />)
     return (
-        <div className="flex gap-4 text-xl">
+        <div className="flex xxs:gap-4 lg:gap-8 justify-between text-xl w-full">
             {linkItems()}
         </div>
     )
