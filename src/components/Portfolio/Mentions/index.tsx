@@ -1,5 +1,6 @@
 import { figs } from "../data"
 import { useIncrementingCounter } from "../../../hooks"
+import { useState } from "react"
 
 export const Mentions = () => {
 
@@ -21,8 +22,8 @@ const Specials = () => {
     const renderFigs = () => figs.map(item => <RenderSpecial key={item.name} count={item.count} name={item.name} text={item.text} />)
 
     return (
-        <div 
-            className="flex justify-center flex-wrap xxs:gap-2 lg:gap-10 text-2xl"
+        <div
+            className="grid xxs:grid-cols-1 sm:grid-cols-2 xxl:grid-cols-4 xxs:gap-4 lg:gap-10 text-2xl"
         >
             {renderFigs()}
         </div>
@@ -30,28 +31,36 @@ const Specials = () => {
 }
 
 const RenderSpecial = ({ ...item }: SpecialsProps) => {
+    const [animate, setAnimate] = useState<string>("")
+
+    const handleHover = () => setAnimate(item.name)
+
     const { name, count, text } = item;
-    // console.log(name, count)
+    
     const adjustTopMargin = () => {
         let str = "mt-0"
-        if(name === "OSP Contributions") {
-            str="xxs:mt-2 lg:mt-28"
-        } else if(name === "FCC Forum") {
-            str="xxs:mt-2 lg:mt-60"
-        } else if(name === "Github Repos") {
-            str="xxs:mt-2 lg:mt-96"
+        if (name === "OSP Contributions") {
+            str = "xxs:mt-2 xxl:mt-28"
+        } else if (name === "FCC Forum") {
+            str = "xxs:mt-2 xxl:mt-60"
+        } else if (name === "Github Repos") {
+            str = "xxs:mt-2 xxl:mt-96"
         }
 
         return str;
     }
+
     return (
-        <div 
-            className={`${adjustTopMargin()} h-fit hover:text-red-800 hover:animate-bounce`}
+        <div
+            className={`flex align-middle ${adjustTopMargin()} h-fit hover:text-blue-200`}
+            onMouseEnter={handleHover}
+            onMouseLeave={() => setAnimate("")}
         >
-            <h2>{name}</h2>
-            <RenderCircleWithText count={count} />
-            <p>{text}</p>
-            {/* <SomeCounter /> */}
+            <div className={`${name === animate ? "animate-bounce" : ""}`}>
+                <h2>{name}</h2>
+                <RenderCircleWithText count={count} />
+                <p>{text}</p>
+            </div>
         </div>
     )
 }

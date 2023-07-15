@@ -7,11 +7,9 @@ export const useOnClickOutside = (ref: any, cb: (e: MouseEvent) => void) => {
             cb(event)
         }
 
-        // document.addEventListener("mouseleave", listener);
         document.addEventListener("mousedown", listener);
 
         return () => {
-            // document.removeEventListener("mouseleave", listener)
             document.removeEventListener("mousedown", listener)
         }
     }, [ref, cb])
@@ -52,22 +50,6 @@ const initialCn: CnPropsType = {
 export const useForAccordionSlides = () => {
     const [cnInfo, setCnInfo] = useState<CnPropsType>(initialCn)
 
-    // const handleNext = () => {
-    //     if(cnInfo.nextSlide === 3) {
-    //         setCnInfo({currSilde: 0, nextSlide: 1})
-    //     } else {
-    //         setCnInfo(prev => ({currSilde: prev.currSilde + 1, nextSlide: prev.nextSlide + 1}))
-    //     }
-    // }
-
-    // const handlePrev = () => {
-    //     if(cnInfo.currSilde === 0) {
-    //         setCnInfo({currSilde: 2, nextSlide: 3})
-    //     } else {
-    //         setCnInfo(prev => ({currSilde: prev.currSilde - 1, nextSlide: prev.nextSlide - 1}))
-    //     }
-    // }
-
     const handleNext = () => {
         if (cnInfo.nextSlide === 3) {
             setCnInfo({ currSilde: 3, nextSlide: 0 })
@@ -106,7 +88,7 @@ export const useHandlePercentileCount = (percentile: number) => {
 
     const incrementPercentileCount = () => {
         const timer = setTimeout(() => {
-            console.log(currPercentile, percentile, currPercentile < percentile, timer)
+            // console.log(currPercentile, percentile, currPercentile < percentile, timer)
             if (currPercentile < percentile) {
                 setCurrPercentile(prev => prev + 1)
             } else {
@@ -132,15 +114,6 @@ export const useOnPageScroll = () => {
 
     const app = document.body.querySelector(".App") as HTMLElement;
 
-    // function getDocHeight2() {
-    //     var D = document;
-    //     return Math.max(
-    //         app.scrollHeight, app.scrollHeight,
-    //         app.offsetHeight, app.offsetHeight,
-    //         app.clientHeight, app.clientHeight
-    //     )
-    // }
-
     function getDocHeight() {
         var D = document;
         return Math.max(
@@ -151,11 +124,7 @@ export const useOnPageScroll = () => {
     }
 
     window.addEventListener("scroll", () => {
-        // var winheight = window.innerHeight
-        // e.target
-        // var winheight = window.innerHeight || (document.documentElement || document.body).clientHeight
         var winheight = window.innerHeight || app.clientHeight
-        // var docheight = document.body.clientHeight
         var docheight = getDocHeight()
         var scrollTop = (document.documentElement).scrollTop
         var trackLength = docheight - winheight

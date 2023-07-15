@@ -1,7 +1,7 @@
 import { ReactElement, useState } from "react"
 import { AiOutlineGithub, AiOutlineTwitter } from "react-icons/ai"
-import {FaLinkedinIn, FaQuora} from "react-icons/fa"
-import {LiaHackerrank} from "react-icons/lia"
+import { FaLinkedinIn, FaQuora } from "react-icons/fa"
+import { LiaHackerrank } from "react-icons/lia"
 import mdnLogo from "../assets/mdn-logo.jpg"
 import topLogo from "../assets/top-logo.png"
 import w3cLogo from "../assets/w3c-logo.png"
@@ -16,15 +16,25 @@ export const About = () => {
             className="flex flex-col items-center xxs:gap-6 lg:gap-16"
         >
 
-            <div className="flex xxs:flex-col lg:flex-row xxs:gap-4 lg:gap-9 mt-6">
+            <div className="flex xxs:flex-col xxl:flex-row xxs:gap-4 lg:gap-9 mt-6">
                 <img
-                    className="xxs:w-full lg:w-1/3"
+                    className="xxs:block xxl:hidden xxs:w-full xxl:w-fit aspect-square self-center"
                     src={photo}
                     alt="picture"
                 />
 
+                <img
+                    className="xxs:hidden xxl:block xxl:w-fit aspect-square"
+                    src={photo}
+                    alt="picture"
+                    style={{
+                        width: "530px",
+                        height: "580px"
+                    }}
+                />
+
                 <div
-                    className="xxs: w-full lg:w-2/4 mx-auto flex flex-col gap-4 
+                    className="xxs: w-full xxl:w-2/4 mx-auto flex flex-col gap-4 
                     justify-end items-center "
                 >
                     <Heading zIdx={zIdx} setZIdx={setZIdx} />
@@ -76,11 +86,10 @@ const Details = ({ setZIdx }: PropsType) => {
 
     return (
         <div
-            className="flex flex-col justify-start xxs:gap-2 lg:gap-11 items-start text-justify text-2xl"
+            className="flex flex-col justify-start xxs:gap-2 sm:gap-9 lg:gap-11 items-start text-justify text-2xl"
             onClick={bringHeadingTextFront}
         >
-            <p className="">A community driven self-taught Full Stack Developer specializing in the MERN stack (MongoDB, Express, React, Node), bringing a proven track record of building many web applications. My passion for coding and continuous learning has led me to hone my technical abilities and deepen my knowledge of the MERN stack, and other related technologies, such as Next.JS and TypeScript.</p>
-            {/* <a className="text-blue-600 font-extrabold" target="_blank" href="https://drive.google.com/file/d/1vszl4SBsWtY44tFVPfkBHwirFFjnq2Ja/view?usp=sharing">Checkout my resume</a> */}
+            <p className="xxs:text-inherit xl:text-4xl xxl:text-2xl">A community driven self-taught Full Stack Developer specializing in the MERN stack (MongoDB, Express, React, Node), bringing a proven track record of building many web applications. My passion for coding and continuous learning has led me to hone my technical abilities and deepen my knowledge of the MERN stack, and other related technologies, such as Next.JS and TypeScript.</p>
             <RenderLinks />
         </div>
     )
@@ -152,7 +161,7 @@ const Heading = ({ zIdx, setZIdx }: HeadingProps) => {
                     ABOUT
                 </p>
                 <h2
-                    className={`relative xxs:hidden lg:block text-red-400 font-extrabold ${zIdx === true ? "z-0" : "z-20"} w-fit m-auto`}
+                    className={`relative xxs:hidden lg:block text-blue-400 font-extrabold ${zIdx === true ? "z-0" : "z-20"} w-fit m-auto`}
                     style={{
                         fontSize: "90px",
                         transform: "translateX(0px) translateY(-175px)"

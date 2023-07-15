@@ -45,7 +45,7 @@ function App() {
             // backgroundImage: `url("${photo}")`,
             backgroundImage: `url("https://source.unsplash.com/random/?Coding")`,
             backgroundRepeat: "no-repeat",
-            // backgroundSize: "100% 100%",
+            backgroundSize: "100% 100%",
             objectFit: "cover",
             backgroundColor: "rgba(17,17,17,0.6)",
             backgroundBlendMode: "darken"

@@ -10,10 +10,10 @@ export const MessageMe = () => {
         >
             <h2 className="text-4xl">Let's Get In Touch</h2>
             <div
-                className="flex xxs:flex-col lg:flex-row justify-center items-center gap-6 xxs:w-auto sm:w-full lg:w-3/4 text-lg"
+                className="flex xxs:flex-col lg:flex-row justify-center items-center gap-6 xxs:w-auto sm:w-full xxl:w-3/4 text-lg"
             >
                 <img
-                    className="h-96 xxs:w-full lg:w-1/2"
+                    className="h-96 xxs:w-full lg:w-1/2 aspect-square"
                     src={photo}
                     alt=""
                 />
