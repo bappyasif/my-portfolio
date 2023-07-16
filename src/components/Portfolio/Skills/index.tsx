@@ -8,7 +8,7 @@ export const Skills = () => {
     return (
         <div
             id="Skills"
-            className="flex xxs:flex-col lg:flex-row justify-between xxs:gap-6 lg:gap-0 w-full"
+            className="flex xxs:flex-col xl:flex-row justify-between xxs:gap-6 lg:gap-0 w-full"
         >
             <ShowHighPercentilesSkills data={highPercentiles} />
             <ShowRegulars data={regularPercentiles} />
@@ -29,7 +29,7 @@ type MetricsData = {
 const ShowHighPercentilesSkills = ({ data }: MetricsData) => {
     const renderMetrics = () => data?.map(item => <ShowMetric name={item.name} percentile={item.percentile} text={item.text} key={item.name} />)
     return (
-        <div className="flex flex-wrap xxs:gap-0 sm:gap-1 lg:gap-4 xxs:w-full lg:w-1/2">
+        <div className="flex flex-wrap xxs:gap-0 sm:gap-1 lg:gap-4 xxs:w-full xxl:w-1/2">
             {renderMetrics()}
         </div>
     )
@@ -102,11 +102,11 @@ const RadialProgressBar = ({ percentile }: ProgressProps) => {
 }
 
 const ShowRegulars = ({ data }: MetricsData) => {
-    const showMetrics = () => data.map(item => <ShowSkillProgress name={item.name} percentile={item.percentile} text={item.text} key={item.name} />)
+    const showMetrics = () => data.sort((a,b)=>a.percentile > b.percentile ? 1 : -1).map(item => <ShowSkillProgress name={item.name} percentile={item.percentile} text={item.text} key={item.name} />)
 
     return (
         <div
-            className="flex justify-around xxs:w-full lg:w-1/2 flex-wrap gap-8 text-2xl"
+            className="flex justify-around xxs:w-full xxl:w-1/2 flex-wrap gap-8 text-2xl"
         >
             {showMetrics()}
         </div>
@@ -141,7 +141,7 @@ const LinearProgressBar = ({ percentile }: ProgressProps) => {
         <div className='h-2 w-full bg-gray-300 rounded overflow-hidden'>
             <div
                 style={{ width: `${percentile}%` }}
-                className={`h-full ${percentile < 70 ? 'bg-red-600' : 'bg-green-600'
+                className={`h-full ${percentile < 56 ? 'bg-red-600' : 'bg-green-600'
                     }`}
             ></div>
         </div>

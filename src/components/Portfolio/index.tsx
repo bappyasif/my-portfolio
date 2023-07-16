@@ -9,7 +9,7 @@ export const Portfolio = () => {
         <div
             className="flex flex-col gap-20"
         >
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-16">
                 <h2 className="text-4xl">Some Noteable Skills</h2>
                 <Skills />
             </div>
@@ -53,7 +53,7 @@ const AccordionView = ({ data, heading, smallerSize }: ReusableProps) => {
         <div className="flex flex-col gap-20">
             <h2 className="text-4xl">{heading}</h2>
             {/* while in bigger screen */}
-            <div className="xxs:hidden lg:flex gap-4 items-center">
+            <div className="xxs:hidden xxl:flex gap-4 items-center">
                 <button className="bg-transparent px-4 text-2xl prev-btn" onClick={handlePrev}>Prev</button>
                 <div className="flex justify-around xxs:gap-6 lg:gap-20">
                     <RenderAccordionCardView key={item1.name} description={item1.description} imgSrc={item1.imgSrc} live={item1.live} name={item1.name} repo={item1.repo} smallerSize={smallerSize} />
@@ -64,7 +64,7 @@ const AccordionView = ({ data, heading, smallerSize }: ReusableProps) => {
             </div>
 
             {/* while in smaller screen */}
-            <div className="xxs:flex lg:hidden flex-col gap-4 items-center">
+            <div className="xxs:flex xxl:hidden flex-col gap-4 items-center">
                 <div className="flex justify-around xxs:gap-6 lg:gap-20">
                     <RenderAccordionCardView key={item1.name} description={item1.description} imgSrc={item1.imgSrc} live={item1.live} name={item1.name} repo={item1.repo} smallerSize={smallerSize} />
                 </div>
@@ -81,7 +81,7 @@ const RenderAccordionCardView = ({ ...item }: ProjectProps) => {
     const { description, imgSrc, live, name, repo, smallerSize } = item;
 
     return (
-        <article className="flex flex-col justify-between items-center gap-2 xxs:w-full lg:w-2/5">
+        <article className="flex flex-col justify-between items-center gap-2 xxs:w-full xxl:w-2/5">
             {/* {
                 smallerSize
                     ? null
@@ -165,7 +165,9 @@ const RenderProjectDetailInfo = ({ ...item }: DetailProps) => {
             <h2 className="text-4xl">{name}</h2>
             <a target="_blank" href={repo}>Repo: {repo}</a>
             <a target="_blank" href={live}>Live: {live}</a>
-            <p className={`text-justify text-2xl ${ifAccordions() ? "h-32" : "h-60 overflow-y-auto hide-scrollbar"}`} style={{ scrollbarGutter: "unset" }}>{description}</p>
+            <p className={`text-justify ${ifAccordions() ? "h-32 text-2xl" : "h-60 overflow-y-auto hide-scrollbar text-xl"} pr-2 custom-scrollbar`} 
+            // style={{ scrollbarGutter: "unset" }}
+            >{description}</p>
         </div>
     )
 }

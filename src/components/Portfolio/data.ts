@@ -17,17 +17,17 @@ export const skills = [
     { name: "Javascript", text: "Profeciency", percentile: 85 },
     { name: "React", text: "Profeciency", percentile: 85 },
     { name: "ExpressJS", text: "Profeciency", percentile: 80 },
-    { name: "NextJS", text: "Profeciency", percentile: 80 },
-    { name: "MongoDB", text: "Profeciency", percentile: 80 },
-    { name: "Authentications", text: "Profeciency", percentile: 80 },
+    { name: "NextJS", text: "Profeciency", percentile: 70 },
+    { name: "MongoDB", text: "Profeciency", percentile: 72 },
+    { name: "Authentications", text: "Profeciency", percentile: 76 },
     { name: "MERN Stack", text: "Profeciency", percentile: 86 },
-    { name: "Typescript", text: "Profeciency", percentile: 72 },
-    { name: "Firebase", text: "Profeciency", percentile: 72 },
+    { name: "Typescript", text: "Profeciency", percentile: 63 },
+    { name: "Firebase", text: "Profeciency", percentile: 62 },
     { name: "React Queries", text: "Profeciency", percentile: 72 },
-    { name: "Axios", text: "Profeciency", percentile: 72 },
+    { name: "Axios", text: "Profeciency", percentile: 81 },
     { name: "Next Auth", text: "Profeciency", percentile: 72 },
-    { name: "ReduxToolkits", text: "Profeciency", percentile: 72 },
-    { name: "React Redux", text: "Profeciency", percentile: 72 }
+    { name: "ReduxToolkits", text: "Profeciency", percentile: 58 },
+    { name: "React Redux", text: "Profeciency", percentile: 56 }
 ];
 
 export const figs = [

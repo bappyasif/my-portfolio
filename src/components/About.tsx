@@ -16,15 +16,15 @@ export const About = () => {
             className="flex flex-col items-center xxs:gap-6 lg:gap-16"
         >
 
-            <div className="flex xxs:flex-col xxl:flex-row xxs:gap-4 lg:gap-9 mt-6">
+            <div className="flex xxs:flex-col xxl:flex-row xxs:gap-4 lg:gap-9 place-items-center mt-6">
                 <img
-                    className="xxs:block xxl:hidden xxs:w-full xxl:w-fit aspect-square self-center"
+                    className="xxs:block lg:hidden xxs:w-full xxl:w-fit aspect-square self-center"
                     src={photo}
                     alt="picture"
                 />
 
                 <img
-                    className="xxs:hidden xxl:block xxl:w-fit aspect-square"
+                    className="xxs:hidden lg:block xxl:w-fit aspect-square"
                     src={photo}
                     alt="picture"
                     style={{
@@ -48,7 +48,7 @@ export const About = () => {
 }
 
 const ShowContributingEntities = () => {
-    const renderEntities = () => contributes.map(item => <ContributedEntity key={item.name} name={item.name} imgSrc={item.imgSrc} />)
+    const renderEntities = () => contributes.map(item => <ContributedEntity key={item.name} name={item.name} imgSrc={item.imgSrc} url={item.url} />)
 
     return (
         <div className="w-full flex flex-col xxs:gap-10 lg:gap-16">
@@ -62,13 +62,16 @@ const ShowContributingEntities = () => {
 
 type EntityProps = {
     name: string,
-    imgSrc: string
+    imgSrc: string,
+    url: string
 }
 
-const ContributedEntity = ({ name, imgSrc }: EntityProps) => {
+const ContributedEntity = ({ name, imgSrc, url }: EntityProps) => {
     return (
         <div title={name}>
-            <img className="xxs:w-20 sm:w-52 lg:w-72 xxs:h-16 lg:h-20" src={imgSrc} alt={name} />
+            <a target="_blank" href={url}>
+                <img className="xxs:w-20 sm:w-40 lg:w-64 xxl:w-80 xxs:h-16 lg:h-20" src={imgSrc} alt={name} />
+            </a>
         </div>
     )
 }
@@ -185,9 +188,9 @@ const Heading = ({ zIdx, setZIdx }: HeadingProps) => {
 }
 
 const contributes = [
-    { name: "MDN", imgSrc: mdnLogo },
-    { name: "The Odin Project", imgSrc: topLogo },
-    { name: "W3C", imgSrc: w3cLogo }
+    { name: "MDN", imgSrc: mdnLogo, url: "https://github.com/mdn/content/pulls?q=is%3Apr+author%3Abappyasif+is%3Aclosed" },
+    { name: "The Odin Project", imgSrc: topLogo, url: "https://github.com/TheOdinProject/curriculum/pulls?q=is%3Apr+author%3Abappyasif+is%3Aclosed" },
+    { name: "W3C", imgSrc: w3cLogo, url: "https://github.com/w3c/wai-tutorials/pulls?q=is%3Apr+author%3Abappyasif+is%3Aclosed" }
 ]
 
 const socialLinks = [
