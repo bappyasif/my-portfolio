@@ -71,7 +71,7 @@ const RenderNavSection = ({ items, heading }: NavSectionProps) => {
     return (
         <div className="flex flex-col gap-4 items-start">
             <h2 className="xxs:text-4xl xxl:text-6xl">{heading}</h2>
-            <div className="flex flex-col xxs:gap-2 sm:gap-6 md:gap-4 xxl:gap-7 flex-wrap xxs:h-fit sm:h-80 xxl:h-36 text-2xl">{renderItems()}</div>
+            <div className="flex flex-col xxs:gap-2 sm:gap-6 md:gap-6 xxl:gap-7 flex-wrap xxs:h-fit md:h-96 xxl:h-40 text-2xl">{renderItems()}</div>
         </div>
     )
 }
