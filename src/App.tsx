@@ -2,7 +2,7 @@ import { About } from "./components/About"
 import { Additionals } from "./components/Additionals"
 import { Footer } from "./components/Footer"
 import { Header } from "./components/Header"
-import { Intro } from "./components/Intro"
+import { Intro, ViewMasking } from "./components/Intro"
 import { MessageMe } from "./components/Message"
 import { Portfolio } from "./components/Portfolio"
 import { useOnPageScroll } from "./hooks"
@@ -27,10 +27,23 @@ function App() {
       ></div>
 
       <div className="flex flex-col gap-20 bg-gray-800">
+        <div
+          className="relative flex flex-col gap-36"
+          style={{
+            backgroundImage: `url("https://source.unsplash.com/random/?Coding,Code")`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "100% 100%",
+            objectFit: "cover",
+          }}
+        >
+          <ViewMasking />
+          <Header />
+          <Intro />
+        </div>
         <div className='App w-3/4 mx-auto'>
           <div className="flex flex-col gap-20 py-4">
-            <Header />
-            <Intro />
+            {/* <Header />
+            <Intro /> */}
             <About />
             <Portfolio />
             <Additionals />

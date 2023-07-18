@@ -5,12 +5,12 @@ export const Intro = (): ReactElement => {
     const content = (
         <div
             id="Home"
-            className="relative xxs:text-lg lg:text-2xl flex flex-col xxs:gap-40 lg:gap-72 items-center justify-end"
+            className="relative xxs:text-lg lg:text-2xl flex flex-col xxs:gap-40 lg:gap-72 items-center justify-between"
             style={{
-                minHeight: "465px"
+                minHeight: "481px"
             }}
         >
-            <ViewMasking />
+            {/* <ViewMasking /> */}
             <ShowName />
             <ShowRoles />
             <PointingArrow />
@@ -19,20 +19,13 @@ export const Intro = (): ReactElement => {
     return content
 }
 
-const ViewMasking = () => {
+export const ViewMasking = () => {
     return (
         <div
-            className="absolute w-screen h-screen flex justify-between"
-            style={{
-                // backgroundImage: `url("${photo}")`,
-                backgroundImage: `url("https://source.unsplash.com/random/?Coding,Code")`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "100% 100%",
-                objectFit: "cover"
-            }}
+            className="absolute w-full h-full flex justify-between z-0"
         >
-            < span className="left w-1/2 bg-slate-800 opacity-80" ></span >
-            <span className="right w-1/2 bg-slate-800 opacity-90"></span>
+            < span className="left w-1/2 bg-slate-800 opacity-80 z-0" ></span >
+            <span className="right w-1/2 bg-slate-800 opacity-90 z-0"></span>
         </div >
     )
 }
@@ -42,7 +35,7 @@ const PointingArrow = (): ReactElement => {
         <a
             href="#About"
             className="animate-pulse text-4xl relative 
-                border border-zinc-600 border-b-8 text-amber-300"
+                border border-zinc-600 border-b-8 text-amber-300 z-20"
         >
             <span
                 style={{
@@ -88,7 +81,7 @@ const ShowName = (): ReactElement => {
     const content = (
         <div className="flex gap-1 justify-between items-baseline xxs:w-screen lg:w-2/4">
             <span className="w-1/2 text-right mr-1 xxs:text-2xl lg:text-6xl font-extrabold z-10">I'm</span>
-            <span className={`${className} xxs:text-lg lg:text-4xl w-1/2 text-left`}>{text}</span>
+            <span className={`${className} xxs:text-lg lg:text-4xl w-1/2 text-left z-10`}>{text}</span>
         </div>
     )
 
@@ -176,7 +169,10 @@ const ShowRoles = (): ReactElement => {
     const content = (
         <div className="test1234 relative xxs:text-xl lg:text-6xl flex xxs:gap-2 lg:gap-4">
             <span className="xxs:hidden sm:block">A Self Taught </span>
-            <span className="">{text}</span>
+            <span className="xxs:block sm:hidden">
+                <span className="text-transparent">.</span>
+            </span>
+            <span className="z-10">{text}</span>
         </div>
     )
 
