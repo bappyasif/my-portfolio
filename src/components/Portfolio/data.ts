@@ -45,12 +45,12 @@ export const projects = [
 ];
 
 export const designs = [
-    { name: "Restaurant Site", repo: "https://github.com/bappyasif/recreating-designs/tree/restaurant-site", live: "https://shorturl.at/czBO1", description: "Frontend view, Where it displays menu, popular items and events details.", imgSrc: restaurantSite },
-    { name: "Tourism Worldwide", repo: "https://github.com/bappyasif/recreating-designs/tree/travel-worldwide", live: "https://shorturl.at/grEP2", description: "Frontend view, design and user interactivity for presumeably a tourism company", imgSrc: travelWorldwide },
-    { name: "Landing Page", repo: "https://github.com/bappyasif/recreating-designs/tree/landing-page-for-abcd", live: "https://shorturl.at/iGOY8", description: "landing page prototype for a company website. this spa is a more generic design ", imgSrc: landingPage },
-    { name: "Animations Saavy", repo: "https://github.com/bappyasif/recreating-designs/tree/orbitals-design", live: "https://shorturl.at/fvAH4", description: "a single page application frontend view for a forum or news based site", imgSrc: animSaavy },
-    { name: "Self-driving Corp", repo: "https://github.com/bappyasif/recreating-designs/tree/autonomous-trucks", live: "https://shorturl.at/tT138", description: "another single page web applicatioin example, this is based ona self driving truck company", imgSrc: automatedTrucks },
-    { name: "Product Review Page", repo: "https://github.com/bappyasif/recreating-designs/tree/product-review-page-mockup", live: "https://shorturl.at/ahiL3", description: "product review page prototype desogn.", imgSrc: prodReview }
+    { name: "Restaurant Site", repo: "https://shorturl.at/mxQZ7", live: "https://shorturl.at/czBO1", description: "Frontend view, Where it displays menu, popular items and events details.", imgSrc: restaurantSite },
+    { name: "Tourism Worldwide", repo: "https://shorturl.at/krEL6", live: "https://shorturl.at/grEP2", description: "Frontend view, design and user interactivity for presumeably a tourism company", imgSrc: travelWorldwide },
+    { name: "Landing Page", repo: "https://shorturl.at/fjovK", live: "https://shorturl.at/iGOY8", description: "landing page prototype for a company website. this spa is a more generic design ", imgSrc: landingPage },
+    { name: "Animations Saavy", repo: "https://shorturl.at/fnwHM", live: "https://shorturl.at/fvAH4", description: "a single page application frontend view for a forum or news based site", imgSrc: animSaavy },
+    { name: "Self-driving Corp", repo: "https://shorturl.at/crtuB", live: "https://shorturl.at/tT138", description: "another single page web applicatioin example, this is based ona self driving truck company", imgSrc: automatedTrucks },
+    { name: "Product Review Page", repo: "https://shorturl.at/hBGHY", live: "https://shorturl.at/ahiL3", description: "product review page prototype desogn.", imgSrc: prodReview }
 ]
 
 export const testimonials = [

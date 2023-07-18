@@ -28,7 +28,8 @@ const Projects = () => {
         >
             <ReusableNoteableWorks
                 data={projects}
-                heading="Some Noteable Works - Fullstack / Frontend"
+                // heading="Some Noteable Works - Fullstack / Frontend"
+                heading="Projects: Fullstack / Frontend"
             />
             {/* <ReusableNoteableWorks
                 data={designs}
@@ -36,7 +37,8 @@ const Projects = () => {
             /> */}
             <AccordionView
                 data={designs}
-                heading="Responsive UI Design Prototypes"
+                // heading="Responsive UI Design Prototypes"
+                heading="Design Prototypes"
                 smallerSize={true}
             />
         </div>
@@ -59,7 +61,7 @@ const AccordionView = ({ data, heading, smallerSize }: ReusableProps) => {
                     <RenderAccordionCardView key={item1.name} description={item1.description} imgSrc={item1.imgSrc} live={item1.live} name={item1.name} repo={item1.repo} smallerSize={smallerSize} />
                     <RenderAccordionCardView key={item2.name} description={item2.description} imgSrc={item2.imgSrc} live={item2.live} name={item2.name} repo={item2.repo} smallerSize={smallerSize} />
                 </div>
-            
+
                 <button className="bg-transparent px-4 text-2xl next-btn" onClick={handleNext}>Next</button>
             </div>
 
@@ -81,7 +83,7 @@ const RenderAccordionCardView = ({ ...item }: ProjectProps) => {
     const { description, imgSrc, live, name, repo, smallerSize } = item;
 
     return (
-        <article className="flex flex-col justify-between items-center gap-2 xxs:w-full xxl:w-2/5">
+        <article className="flex flex-col justify-between items-center gap-4 xxs:w-full xxl:w-2/5">
             {/* {
                 smallerSize
                     ? null
@@ -122,7 +124,7 @@ const ReusableNoteableWorks = ({ data, heading }: ReusableProps) => {
         <div
             className="flex flex-col justify-center items-center gap-20"
         >
-            <h2 className="text-4xl">{heading}</h2>
+            <h2 className="xxs:text-3xl sm:text-4xl">{heading}</h2>
             <div
                 className={`flex flex-col justify-center items-center gap-16`}
             >
@@ -145,7 +147,7 @@ const RenderWork = ({ ...item }: ProjectProps) => {
 
     return (
         <article
-            className={`flex xxs:flex-col ${check() ? "lg:flex-row-reverse" : "lg:flex-row"} gap-10 items-center justify-center`}
+            className={`flex xxs:flex-col ${check() ? "xxl:flex-row-reverse" : "xxl:flex-row"} gap-10 items-center justify-center`}
         >
             <ImageView imgSrc={imgSrc} description={description} live={live} />
             <RenderProjectDetailInfo
@@ -161,11 +163,15 @@ const RenderProjectDetailInfo = ({ ...item }: DetailProps) => {
     const { description, live, name, repo, smallerSize } = item;
     const ifAccordions = () => ["Restaurant Site", "Tourism Worldwide", "Landing Page", "Animations Saavy", "Self-driving Corp", "Product Review Page"].includes(name)
     return (
-        <div className={`${smallerSize ? "w-full" : "xxs:w-full lg:w-3/4"} text-xl ${smallerSize ? "text-center" : "text-justify"} flex flex-col gap-4`}>
+        <div
+            // className={`${smallerSize ? "w-full" : "xxs:w-full lg:w-3/4"} text-xl ${smallerSize ? "text-center" : "text-justify"} flex flex-col gap-4`}
+            className={`w-full text-xl ${smallerSize ? "text-center" : "text-justify"} flex flex-col gap-2`}
+        >
             <h2 className="text-4xl">{name}</h2>
-            <a target="_blank" href={repo}>Repo: {repo}</a>
-            <a target="_blank" href={live}>Live: {live}</a>
-            <p className={`text-justify ${ifAccordions() ? "h-32 text-2xl" : "h-60 overflow-y-auto hide-scrollbar text-xl"} pr-2 custom-scrollbar`} 
+            <a target="_blank" href={repo} className={`font-bold text-cyan-400 flex ${smallerSize ? "flex-row justify-center" : ""} gap-2`}><span>Repo:</span> <span>{repo}</span></a>
+            <a target="_blank" href={live} className={`font-bold text-cyan-400 flex ${smallerSize ? "flex-row justify-center" : ""} gap-2`}><span>Live:</span> <span>{live}</span></a>
+            <p className={`text-justify ${ifAccordions() ? "xxs:h-28 sm:h-20 text-2xl" : "h-60 overflow-y-auto hide-scrollbar text-xl"} pr-2 /*custom-scrollbar*/
+            `}
             // style={{ scrollbarGutter: "unset" }}
             >{description}</p>
         </div>
@@ -181,16 +187,23 @@ const ImageView = ({ imgSrc, description, live, smallerSize }: ImageProps) => {
 
     return (
         <figure
-            className={`relative ${smallerSize ? "w-full" : "xxs:w-full lg:w-3/4"} h-full`}
+            // className={`relative ${smallerSize ? "w-full" : "xxs:w-full lg:w-3/4"} h-full`}
+            className={`relative w-full h-full`}
             onMouseEnter={handleMouseOver}
             onMouseLeave={handleMouseOut}
+        // style={{
+        //     minWidth: !smallerSize ? "341px" : "",
+        //     maxHeight: !smallerSize ? "450px" : ""
+        // }}
         >
             <img
-                className="w-full h-auto"
+                // className="w-full h-auto"
+                className={`${smallerSize ? "w-full xxs:h-40 md:h-96": "xxs:w-96 sm:w-full h-auto"}`}
                 src={imgSrc}
                 alt={description}
                 style={{
-                    height: !smallerSize ? "373px" : "263px"
+                    minHeight: !smallerSize ? "391px" : "200px",
+                    minWidth: !smallerSize ? "371px" : ""
                 }}
             />
             {

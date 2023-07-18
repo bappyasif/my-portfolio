@@ -40,11 +40,11 @@ const RenderSpecial = ({ ...item }: SpecialsProps) => {
     const adjustTopMargin = () => {
         let str = "mt-0"
         if (name === "OSP Contributions") {
-            str = "xxs:mt-2 xxl:mt-28"
+            str = "xxs:mt-0 xxl:mt-28"
         } else if (name === "FCC Forum") {
-            str = "xxs:mt-2 xxl:mt-60"
+            str = "xxs:mt-0 xxl:mt-60"
         } else if (name === "Github Repos") {
-            str = "xxs:mt-2 xxl:mt-96"
+            str = "xxs:mt-0 xxl:mt-96"
         }
 
         return str;
@@ -52,7 +52,7 @@ const RenderSpecial = ({ ...item }: SpecialsProps) => {
 
     return (
         <div
-            className={`flex align-middle ${adjustTopMargin()} h-fit hover:text-blue-200`}
+            className={`flex align-middle justify-center ${adjustTopMargin()} h-fit hover:text-blue-200`}
             onMouseEnter={handleHover}
             onMouseLeave={() => setAnimate("")}
         >
