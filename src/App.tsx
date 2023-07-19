@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import { About } from "./components/About"
 import { Additionals } from "./components/Additionals"
 import { Footer } from "./components/Footer"
@@ -15,6 +16,7 @@ function App() {
 
   const content = (
     <>
+      <Analytics />
       <div
         style={{
           height: "4px",
