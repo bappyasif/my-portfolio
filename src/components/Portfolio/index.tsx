@@ -100,6 +100,7 @@ type ProjectProps = {
     description: string,
     imgSrc: string,
     smallerSize?: boolean
+    stackUsed?: string[]
 }
 
 type ReusableProps = {
@@ -109,7 +110,7 @@ type ReusableProps = {
 }
 
 const ReusableNoteableWorks = ({ data, heading }: ReusableProps) => {
-    const renderProjects = () => data.map((item: ProjectProps) => <RenderWork key={item.name} description={item.description} live={item.live} name={item.name} repo={item.repo} imgSrc={item.imgSrc} />)
+    const renderProjects = () => data.map((item: ProjectProps) => <RenderWork key={item.name} description={item.description} live={item.live} name={item.name} repo={item.repo} imgSrc={item.imgSrc} stackUsed={item.stackUsed} />)
 
     return (
         <div
@@ -126,7 +127,7 @@ const ReusableNoteableWorks = ({ data, heading }: ReusableProps) => {
 }
 
 const RenderWork = ({ ...item }: ProjectProps) => {
-    const { name, repo, live, description, imgSrc } = item;
+    const { name, repo, live, description, imgSrc, stackUsed } = item;
 
     const check = () => {
         let reverse = false;
@@ -143,7 +144,7 @@ const RenderWork = ({ ...item }: ProjectProps) => {
             <ImageView imgSrc={imgSrc} description={description} live={live} />
             <RenderProjectDetailInfo
                 description={description} live={live}
-                name={name} repo={repo} />
+                name={name} repo={repo} stackUsed={stackUsed} />
         </article>
     )
 }
@@ -151,7 +152,10 @@ const RenderWork = ({ ...item }: ProjectProps) => {
 type DetailProps = Omit<ProjectProps, "imgSrc">
 
 const RenderProjectDetailInfo = ({ ...item }: DetailProps) => {
-    const { description, live, name, repo, smallerSize } = item;
+    const { description, live, name, repo, smallerSize, stackUsed } = item;
+
+    const renderStacks = () => stackUsed?.map(name => <span className="bg-slate-900 my-0.5 xxs:px-1.5 md:px-2.5" key={name}>{name}</span>)
+
     const ifAccordions = () => ["Restaurant Site", "Tourism Worldwide", "Landing Page", "Animations Saavy", "Self-driving Corp", "Product Review Page"].includes(name)
     return (
         <div
@@ -160,10 +164,15 @@ const RenderProjectDetailInfo = ({ ...item }: DetailProps) => {
             <h2 className="text-4xl">{name}</h2>
             <a target="_blank" href={repo} className={`font-bold flex flex-row ${smallerSize ? "justify-center" : ""} gap-2`}><span>Repo:</span> <span className="text-cyan-400">{repo}</span></a>
             <a target="_blank" href={live} className={`font-bold flex flex-row ${smallerSize ? "justify-center" : ""} gap-2`}><span>Live:</span> <span className="text-cyan-400">{live}</span></a>
-            <p className={`text-justify ${ifAccordions() ? "xxs:h-28 sm:h-20 text-2xl" : "h-60 overflow-y-auto hide-scrollbar text-xl"} pr-2 /*custom-scrollbar*/
+            <p className={`text-justify ${ifAccordions() ? "xxs:h-28 sm:h-20 text-2xl" : "h-44 overflow-y-auto hide-scrollbar text-xl"} pr-2 
             `}
+            // /*custom-scrollbar*/
             // style={{ scrollbarGutter: "unset" }}
             >{description}</p>
+            <div>
+                <h2 className="font-bold">Stack Used</h2>
+                <div className="flex gap-x-4 flex-wrap xxs:text-sm md:text-lg">{stackUsed?.length ? renderStacks() : null}</div>
+            </div>
         </div>
     )
 }
@@ -182,7 +191,7 @@ const ImageView = ({ imgSrc, description, live, smallerSize }: ImageProps) => {
             onMouseLeave={handleMouseOut}
         >
             <img
-                className={`${smallerSize ? "w-full xxs:h-40 md:h-96": "xxs:w-96 sm:w-full h-auto"}`}
+                className={`${smallerSize ? "w-full xxs:h-40 md:h-96" : "xxs:w-96 sm:w-full h-auto"}`}
                 src={imgSrc}
                 alt={description}
                 style={{
