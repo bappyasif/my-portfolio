@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useState } from "react"
+import { ReactElement, useState } from "react"
 import { AiOutlineGithub, AiOutlineTwitter } from "react-icons/ai"
 import { FaLinkedinIn, FaQuora } from "react-icons/fa"
 import { LiaHackerrank } from "react-icons/lia"
