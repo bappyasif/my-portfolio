@@ -42,7 +42,7 @@ function App() {
           <Header />
           <Intro />
         </div>
-        <div className='App w-3/4 mx-auto'>
+        <div className='App xxs:w-full sm:w-3/4 mx-auto'>
           <div className="flex flex-col gap-20 py-4">
             {/* <Header />
             <Intro /> */}

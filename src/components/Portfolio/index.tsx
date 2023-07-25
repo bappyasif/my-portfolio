@@ -169,10 +169,15 @@ const RenderProjectDetailInfo = ({ ...item }: DetailProps) => {
             // /*custom-scrollbar*/
             // style={{ scrollbarGutter: "unset" }}
             >{description}</p>
-            <div>
-                <h2 className="font-bold">Stack Used</h2>
-                <div className="flex gap-x-4 flex-wrap xxs:text-sm md:text-lg">{stackUsed?.length ? renderStacks() : null}</div>
-            </div>
+            {
+                !smallerSize
+                    ?
+                    <div>
+                        <h2 className="font-bold">Stack Used</h2>
+                        <div className="flex gap-x-4 flex-wrap xxs:text-sm md:text-lg">{stackUsed?.length ? renderStacks() : null}</div>
+                    </div>
+                    : null
+            }
         </div>
     )
 }
@@ -196,7 +201,7 @@ const ImageView = ({ imgSrc, description, live, smallerSize }: ImageProps) => {
                 alt={description}
                 style={{
                     minHeight: !smallerSize ? "391px" : "200px",
-                    minWidth: !smallerSize ? "371px" : ""
+                    minWidth: !smallerSize ? "409px" : ""
                 }}
             />
             {

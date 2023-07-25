@@ -1,4 +1,4 @@
-import { ReactElement, useState } from "react"
+import { ReactElement, useEffect, useState } from "react"
 import { AiOutlineGithub, AiOutlineTwitter } from "react-icons/ai"
 import { FaLinkedinIn, FaQuora } from "react-icons/fa"
 import { LiaHackerrank } from "react-icons/lia"
@@ -16,9 +16,9 @@ export const About = () => {
             className="flex flex-col items-center xxs:gap-6 lg:gap-16"
         >
 
-            <div className="flex xxs:flex-col xxl:flex-row xxs:gap-4 lg:gap-9 place-items-center mt-6">
+            <div className="flex xxs:flex-col xxl:flex-row xxs:gap-4 lg:gap-9 place-items-center my-6 mb-11">
                 <img
-                    className="xxs:block lg:hidden xxs:w-full xxl:w-fit aspect-square self-center"
+                    className="xxs:block lg:hidden xxs:w-fit xxl:w-fit sm:aspect-square self-center"
                     src={photo}
                     alt="picture"
                 />
@@ -34,7 +34,7 @@ export const About = () => {
                 />
 
                 <div
-                    className="xxs: w-full xxl:w-2/4 mx-auto flex flex-col gap-4 
+                    className="xxs:w-full xxl:w-2/4 mx-auto flex flex-col gap-4 
                     justify-end items-center "
                 >
                     <Heading zIdx={zIdx} setZIdx={setZIdx} />
@@ -70,7 +70,7 @@ const ContributedEntity = ({ name, imgSrc, url }: EntityProps) => {
     return (
         <div title={name}>
             <a target="_blank" href={url}>
-                <img className="xxs:w-20 sm:w-40 lg:w-64 xxl:w-80 xxs:h-16 lg:h-20" src={imgSrc} alt={name} />
+                <img className="xxs:w-28 sm:w-40 lg:w-64 xxl:w-80 xxs:h-16 lg:h-20" src={imgSrc} alt={name} />
             </a>
         </div>
     )
@@ -89,10 +89,10 @@ const Details = ({ setZIdx }: PropsType) => {
 
     return (
         <div
-            className="flex flex-col justify-start xxs:gap-2 sm:gap-9 lg:gap-11 items-start text-justify text-2xl"
+            className="flex flex-col justify-start xxs:gap-6 sm:gap-9 lg:gap-11 items-start text-justify text-2xl"
             onClick={bringHeadingTextFront}
         >
-            <p className="xxs:text-inherit xl:text-4xl xxl:text-2xl">A community driven self-taught Full Stack Developer specializing in the MERN stack (MongoDB, Express, React, Node), bringing a proven track record of building many web applications. My passion for coding and continuous learning has led me to hone my technical abilities and deepen my knowledge of the MERN stack, and other related technologies, such as Next.JS and TypeScript.</p>
+            <p className="xxs:text-2xl xl:text-4xl xxl:text-2xl xxs:px-2 sm:px-0">A community driven self-taught Full Stack Developer specializing in the MERN stack (MongoDB, Express, React, Node), bringing a proven track record of building many web applications. My passion for coding and continuous learning has led me to hone my technical abilities and deepen my knowledge of the MERN stack, and other related technologies, such as Next.JS and TypeScript.</p>
             <RenderLinks />
         </div>
     )
@@ -115,7 +115,7 @@ type LinkPropsType = {
 
 const RenderLink = ({ name, icon, url }: LinkPropsType) => {
     return (
-        <a className="text-7xl" href={url} title={name} target="_blank">
+        <a className="xxs:text-5xl sm:text-7xl" href={url} title={name} target="_blank">
             <span>{icon}</span>
         </a>
     )

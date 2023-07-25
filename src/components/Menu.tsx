@@ -8,6 +8,14 @@ type MenuProp = {
 export const Menu = ({ closeMenu }: MenuProp) => {
     const renderItems = () => menuItems.map(item => <RenderMenuItem key={item} item={item} closeMenu={closeMenu} />)
 
+    // making sure menu gets closed when user go beyond screen height
+    window.addEventListener("scroll", () => {
+        const scrolled = document.documentElement.scrollTop
+        if(scrolled > 105) {
+            closeMenu()
+        }
+    })
+
     return (
         <div
             className="absolute left-0 top-0 py-40 
@@ -15,7 +23,7 @@ export const Menu = ({ closeMenu }: MenuProp) => {
             bg-slate-800 h-screen w-screen z-40"
         >
             <RenderImage />
-            <div className="flex xxs:flex-row md:flex-col xxs:gap-2 md:gap-12 items-center flex-wrap">
+            <div className="flex xxs:flex-row justify-around md:flex-col xxs:gap-2 lg:gap-12 items-center flex-wrap">
                 {renderItems()}
             </div>
             <button
@@ -61,7 +69,7 @@ type ItemProp = {
 
 const RenderMenuItem = ({ item, closeMenu }: ItemProp) => {
     return (
-        <div className="text-right xxs:text-lg sm:text-2xl xxs:w-fit sm:w-full hover:bg-slate-600 px-6">
+        <div className="text-right xxs:text-lg lg:text-2xl xxs:w-fit sm:w-36 hover:bg-slate-600 px-6 bg-slate-950">
             <a onClick={closeMenu} href={`#${item}`}>{item}</a>
         </div>
     )
