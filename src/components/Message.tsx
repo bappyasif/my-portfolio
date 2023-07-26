@@ -13,7 +13,7 @@ export const MessageMe = () => {
                 className="flex xxs:flex-col lg:flex-row justify-center items-center gap-6 xxs:w-auto sm:w-full xxl:w-3/4 text-lg"
             >
                 <img
-                    className="w-96 aspect-square"
+                    className="w-screen sm:w-96 aspect-square"
                     src={photo}
                     alt="headshot view of ab"
                     style={{
@@ -58,7 +58,7 @@ const Form = () => {
     return (
         <form
             ref={formRef}
-            className="w-96 flex flex-col gap-4"
+            className="w-screen sm:w-96 flex flex-col gap-4"
             action=""
             onSubmit={handleSubmit}
         >

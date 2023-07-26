@@ -159,11 +159,11 @@ const RenderProjectDetailInfo = ({ ...item }: DetailProps) => {
     const ifAccordions = () => ["Restaurant Site", "Tourism Worldwide", "Landing Page", "Animations Saavy", "Self-driving Corp", "Product Review Page"].includes(name)
     return (
         <div
-            className={`w-full text-xl ${smallerSize ? "text-center" : "text-justify"} flex flex-col gap-2`}
+            className={`xxs:w-screen sm:w-full text-xl ${smallerSize ? "text-center" : "text-justify"} flex flex-col gap-2`}
         >
             <h2 className="text-4xl">{name}</h2>
-            <a target="_blank" href={repo} className={`font-bold flex flex-row ${smallerSize ? "justify-center" : ""} gap-2`}><span>Repo:</span> <span className="text-cyan-400">{repo}</span></a>
-            <a target="_blank" href={live} className={`font-bold flex flex-row ${smallerSize ? "justify-center" : ""} gap-2`}><span>Live:</span> <span className="text-cyan-400">{live}</span></a>
+            <a target="_blank" href={repo} className={`font-bold flex flex-row ${smallerSize ? "justify-center" : ""} gap-2 flex-wrap`}><span>Repo:</span> <span className="text-cyan-400">{repo}</span></a>
+            <a target="_blank" href={live} className={`font-bold flex flex-row ${smallerSize ? "justify-center" : ""} gap-2 flex-wrap`}><span>Live:</span> <span className="text-cyan-400">{live}</span></a>
             <p className={`text-justify ${ifAccordions() ? "xxs:h-28 sm:h-20 text-2xl" : "h-44 overflow-y-auto hide-scrollbar text-xl"} pr-2 
             `}
             // /*custom-scrollbar*/
@@ -196,12 +196,12 @@ const ImageView = ({ imgSrc, description, live, smallerSize }: ImageProps) => {
             onMouseLeave={handleMouseOut}
         >
             <img
-                className={`${smallerSize ? "w-full xxs:h-40 md:h-96" : "xxs:w-96 sm:w-full h-auto"}`}
+                className={`${smallerSize ? "w-full xxs:h-40 md:h-96" : "xxs:w-screen sm:w-full h-auto"}`}
                 src={imgSrc}
                 alt={description}
                 style={{
-                    minHeight: !smallerSize ? "391px" : "200px",
-                    minWidth: !smallerSize ? "409px" : ""
+                    minHeight: !smallerSize ? "366px" : "200px",
+                    minWidth: !smallerSize ? "375px" : ""
                 }}
             />
             {
