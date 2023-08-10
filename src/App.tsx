@@ -32,7 +32,7 @@ function App() {
         <div
           className="relative flex flex-col gap-36"
           style={{
-            backgroundImage: `url("https://source.unsplash.com/random/?Coding,Code")`,
+            backgroundImage: `url("https://source.unsplash.com/random/?Coding,Code,Javascript")`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "100% 100%",
             objectFit: "cover",
@@ -58,7 +58,7 @@ function App() {
           className='w-full flex flex-col items-center'
           style={{
             // backgroundImage: `url("${photo}")`,
-            backgroundImage: `url("https://source.unsplash.com/random/?Coding")`,
+            backgroundImage: `url("https://source.unsplash.com/random/?Coding,js")`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "100% 100%",
             objectFit: "cover",

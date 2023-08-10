@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Mentions } from "./Mentions"
 import { Skills } from "./Skills"
-import { designs, projects } from "./data"
+import { collaborativeProjects, curriculamProjects, designs, explorativeProjects } from "./data"
 import { useForAccordionSlides } from "../../hooks"
 
 export const Portfolio = () => {
@@ -27,9 +27,21 @@ const Projects = () => {
             className="flex flex-col justify-center items-center gap-20"
         >
             <ReusableNoteableWorks
+                data={explorativeProjects}
+                heading="Explorative Projects - Fullstack"
+            />
+            <ReusableNoteableWorks
+                data={curriculamProjects}
+                heading="Curriculam Projects - Fullstack"
+            />
+            <ReusableNoteableWorks
+                data={collaborativeProjects}
+                heading="Collaborative Project - Frontend"
+            />
+            {/* <ReusableNoteableWorks
                 data={projects}
                 heading="Projects: Fullstack / Frontend"
-            />
+            /> */}
             {/* <ReusableNoteableWorks
                 data={designs}
                 heading="Responsive UI Design Prototypes"
@@ -95,6 +107,7 @@ const RenderAccordionCardView = ({ ...item }: ProjectProps) => {
 
 type ProjectProps = {
     name: string,
+    tagline?: string,
     repo: string,
     live: string,
     description: string,
@@ -110,11 +123,11 @@ type ReusableProps = {
 }
 
 const ReusableNoteableWorks = ({ data, heading }: ReusableProps) => {
-    const renderProjects = () => data.map((item: ProjectProps) => <RenderWork key={item.name} description={item.description} live={item.live} name={item.name} repo={item.repo} imgSrc={item.imgSrc} stackUsed={item.stackUsed} />)
+    const renderProjects = () => data.map((item: ProjectProps) => <RenderWork key={item.name} description={item.description} live={item.live} name={item.name} repo={item.repo} imgSrc={item.imgSrc} stackUsed={item.stackUsed} tagline={item.tagline} />)
 
     return (
         <div
-            className="flex flex-col justify-center items-center gap-20"
+            className="flex flex-col justify-center items-center gap-11"
         >
             <h2 className="xxs:text-3xl sm:text-4xl">{heading}</h2>
             <div
@@ -127,11 +140,11 @@ const ReusableNoteableWorks = ({ data, heading }: ReusableProps) => {
 }
 
 const RenderWork = ({ ...item }: ProjectProps) => {
-    const { name, repo, live, description, imgSrc, stackUsed } = item;
+    const { name, repo, live, description, imgSrc, stackUsed, tagline } = item;
 
     const check = () => {
         let reverse = false;
-        if (["OdBo", "Myth Busters", "Animations Saavy", "Product Review Page"].includes(name)) {
+        if (["Just News", "Standalone Twitter - Prototype"].includes(name)) {
             reverse = true
         }
         return reverse
@@ -144,7 +157,7 @@ const RenderWork = ({ ...item }: ProjectProps) => {
             <ImageView imgSrc={imgSrc} description={description} live={live} />
             <RenderProjectDetailInfo
                 description={description} live={live}
-                name={name} repo={repo} stackUsed={stackUsed} />
+                name={name} repo={repo} stackUsed={stackUsed} tagline={tagline} />
         </article>
     )
 }
@@ -152,7 +165,7 @@ const RenderWork = ({ ...item }: ProjectProps) => {
 type DetailProps = Omit<ProjectProps, "imgSrc">
 
 const RenderProjectDetailInfo = ({ ...item }: DetailProps) => {
-    const { description, live, name, repo, smallerSize, stackUsed } = item;
+    const { description, live, name, repo, smallerSize, stackUsed, tagline } = item;
 
     const renderStacks = () => stackUsed?.map(name => <span className="bg-slate-900 my-0.5 xxs:px-1.5 md:px-2.5" key={name}>{name}</span>)
 
@@ -162,6 +175,11 @@ const RenderProjectDetailInfo = ({ ...item }: DetailProps) => {
             className={`xxs:w-screen sm:w-full text-xl ${smallerSize ? "text-center" : "text-justify"} flex flex-col gap-2`}
         >
             <h2 className="text-4xl">{name}</h2>
+            {
+                !smallerSize
+                    ? <p className="flex flex-row gap-2"><span className="font-bold">Tagline: </span>{tagline}</p>
+                    : null
+            }
             <a target="_blank" href={repo} className={`font-bold flex flex-row ${smallerSize ? "justify-center" : ""} gap-2 flex-wrap`}><span>Repo:</span> <span className="text-cyan-400">{repo}</span></a>
             <a target="_blank" href={live} className={`font-bold flex flex-row ${smallerSize ? "justify-center" : ""} gap-2 flex-wrap`}><span>Live:</span> <span className="text-cyan-400">{live}</span></a>
             <p className={`text-justify ${ifAccordions() ? "xxs:h-28 sm:h-20 text-2xl" : "h-44 overflow-y-auto hide-scrollbar text-xl"} pr-2 
