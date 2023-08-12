@@ -12,7 +12,11 @@ export const Header = (): ReactElement => {
 
   return (
     <div className="flex xxs:w-full lg:w-3/4 justify-between text-4xl mx-auto">
-        <p className="z-20">Greetings :)</p>
+        <p className="z-20 flex gap-x-2 items-center">
+          <span>Greetings</span>
+          <span className="">:)</span>
+          {/* <span className=""><VscSmiley /></span> */}
+        </p>
         <button className="z-20" onClick={openMenu}><AiOutlineMenuFold /></button>
         {
           show

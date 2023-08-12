@@ -27,16 +27,18 @@ const Projects = () => {
             className="flex flex-col justify-center items-center gap-20"
         >
             <ReusableNoteableWorks
+                data={collaborativeProjects}
+                heading="Collaborative Project - Frontend"
+            />
+
+            <ReusableNoteableWorks
                 data={explorativeProjects}
                 heading="Explorative Projects - Fullstack"
             />
+            
             <ReusableNoteableWorks
                 data={curriculamProjects}
                 heading="Curriculam Projects - Fullstack"
-            />
-            <ReusableNoteableWorks
-                data={collaborativeProjects}
-                heading="Collaborative Project - Frontend"
             />
             {/* <ReusableNoteableWorks
                 data={projects}
@@ -144,7 +146,7 @@ const RenderWork = ({ ...item }: ProjectProps) => {
 
     const check = () => {
         let reverse = false;
-        if (["Just News", "Standalone Twitter - Prototype"].includes(name)) {
+        if (["4m's", "OdBo"].includes(name)) {
             reverse = true
         }
         return reverse

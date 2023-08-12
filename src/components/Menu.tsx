@@ -1,5 +1,6 @@
 import { AiOutlineClose } from "react-icons/ai"
-import photo from "../assets/about-pic.jpeg"
+// import photo from "../assets/about-pic.jpeg"
+import photo from "../assets/contact-pic.jpg"
 
 type MenuProp = {
     closeMenu: () => void
@@ -11,7 +12,7 @@ export const Menu = ({ closeMenu }: MenuProp) => {
     // making sure menu gets closed when user go beyond screen height
     window.addEventListener("scroll", () => {
         const scrolled = document.documentElement.scrollTop
-        if(scrolled > 105) {
+        if (scrolled > 105) {
             closeMenu()
         }
     })
@@ -21,9 +22,18 @@ export const Menu = ({ closeMenu }: MenuProp) => {
             className="absolute left-0 top-0 py-40 
             flex xxs:flex-col sm:flex-row gap-10 justify-center items-center
             bg-slate-800 h-screen w-screen z-40"
+            style={{
+                backgroundImage: `url("https://source.unsplash.com/random/?Coding,Code,Javascript")`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "100% 100%",
+                objectFit: "cover",
+                backgroundColor: "rgba(17,17,17,0.6)",
+                backgroundBlendMode: "darken"
+            }}
         >
+            <div className="h-full w-full opacity-60 bg-slate-800 absolute z-0"></div>
             <RenderImage />
-            <div className="flex xxs:flex-row justify-around md:flex-col xxs:gap-2 lg:gap-12 items-center flex-wrap">
+            <div className="flex xxs:flex-row justify-around md:flex-col xxs:gap-2 lg:gap-12 items-center flex-wrap z-10">
                 {renderItems()}
             </div>
             <button
