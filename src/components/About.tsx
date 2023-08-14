@@ -68,7 +68,7 @@ type EntityProps = {
 
 const ContributedEntity = ({ name, imgSrc, url }: EntityProps) => {
     return (
-        <div title={name}>
+        <div title={"Click to see my contributing PRs for " + name}>
             <a target="_blank" href={url}>
                 <img className="xxs:w-28 sm:w-40 lg:w-64 xxl:w-80 xxs:h-16 lg:h-20" src={imgSrc} alt={name} />
             </a>
