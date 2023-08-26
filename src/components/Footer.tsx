@@ -46,7 +46,7 @@ const RenderNavs = ({ ...items }: NavsProps) => {
 
     return (
         <div
-            className="flex xxs:flex-col md:flex-row justify-between xxs:gap-11 lg:gap-6 w-full "
+            className="flex xxs:flex-col lg:flex-row justify-between xxs:gap-11 lg:gap-6 w-full "
         >
             <RenderNavSection
                 items={learningSites}
@@ -71,7 +71,10 @@ const RenderNavSection = ({ items, heading }: NavSectionProps) => {
     return (
         <div className="flex flex-col gap-4 items-start">
             <h2 className="xxs:text-4xl xxl:text-6xl">{heading}</h2>
-            <div className="flex flex-col xxs:gap-2 sm:gap-6 md:gap-6 xxl:gap-7 flex-wrap xxs:h-fit md:h-96 xxl:h-40 text-2xl">{renderItems()}</div>
+            <div 
+            // className="flex flex-col xxs:gap-2 sm:gap-6 md:gap-6 xxl:gap-7 flex-wrap xxs:h-fit md:h-96 xxl:h-40 text-2xl"
+            className="flex flex-col xxs:gap-2 sm:gap-4 xl:gap-7 flex-wrap xxs:h-fit sm:h-56 md:h-80 xxl:h-60 text-2xl"
+            >{renderItems()}</div>
         </div>
     )
 }

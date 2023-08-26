@@ -6,7 +6,7 @@ export const Mentions = () => {
 
     return (
         <div id="Mentions" className="flex flex-col xxs:gap-6 lg:gap-11">
-            <h2 className="text-4xl">Special Mentions</h2>
+            <h2 className="text-4xl font-extrabold">Special Mentions</h2>
             <Specials />
         </div>
     )
@@ -52,11 +52,11 @@ const RenderSpecial = ({ ...item }: SpecialsProps) => {
 
     return (
         <div
-            className={`flex align-middle justify-center ${adjustTopMargin()} h-fit hover:text-blue-200`}
+            className={`${adjustTopMargin()} h-fit hover:text-blue-200`}
             onMouseEnter={handleHover}
             onMouseLeave={() => setAnimate("")}
         >
-            <div className={`${name === animate ? "animate-bounce" : ""}`}>
+            <div className={`${name === animate ? "animate-bounce" : "mx-auto"} flex flex-col items-center justify-center`}>
                 <h2>{name}</h2>
                 <RenderCircleWithText count={count} />
                 <p>{text}</p>
@@ -72,7 +72,7 @@ type SvgProps = {
 
 const RenderCircleWithText = ({ count }: SvgProps) => {
     return (
-        <svg className="flex justify-center hover:animate-pulse">
+        <svg className="flex items-center justify-center hover:animate-pulse">
             <RenderCircle />
             <RenderText count={count} />
         </svg>

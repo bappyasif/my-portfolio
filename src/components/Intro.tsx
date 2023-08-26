@@ -48,7 +48,7 @@ const PointingArrow = (): ReactElement => {
                 }}
             ></span>
             <span
-                className="z-20 absolute -bottom-4 left-2 animate-bounce"
+                className="z-20 absolute -bottom-4 left-1 animate-bounce"
             >
                 <AiOutlineArrowDown />
             </span>

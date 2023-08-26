@@ -8,12 +8,16 @@ export const MessageMe = () => {
             id="Contact"
             className="w-full flex flex-col gap-6 items-center"
         >
-            <h2 className="text-4xl">Let's Get In Touch</h2>
+            <h2 className="text-4xl font-extrabold">Let's Get In Touch</h2>
+            <p className="xxs:text-xl md:text-2xl xl:text-3xl flex flex-col gap-y-2">
+                <h3>Are You A Charitable Organization And Want To Revamp Your Website?</h3>
+                <h3>I Can Help You Build That Slick Website, And That Too For Free*</h3>
+            </p>
             <div
                 className="flex xxs:flex-col lg:flex-row justify-center items-center gap-6 xxs:w-auto sm:w-full xxl:w-3/4 text-lg"
             >
                 <img
-                    className="w-screen sm:w-96 aspect-square"
+                    className="w-screen sm:w-96 aspect-square opacity-80"
                     src={photo}
                     alt="headshot view of ab"
                     style={{
@@ -38,21 +42,21 @@ const Form = () => {
 
     const sendEmail = () => {
         emailjs.sendForm(import.meta.env.VITE_EMAIL_SERVICE_NAME, import.meta.env.VITE_EMAIL_TEMPLATE_NAME, formRef.current, import.meta.env.VITE_EMAIL_PUBLIC_KEY)
-          .then(() => {
-              console.log("success!!");
-              formRef.current.reset()
-          }, (error) => {
-              console.log(error.text, "error!!");
-          });
-      };
+            .then(() => {
+                console.log("success!!");
+                formRef.current.reset()
+            }, (error) => {
+                console.log(error.text, "error!!");
+            });
+    };
 
     const handleSubmit = (evt: FormEvent<HTMLFormElement>): void => {
         evt.preventDefault()
         sendEmail();
     }
 
-    const renderFieldsets = () => formFields.map(item => <Fieldset label={item.label} placeholder={item.placeholder} type={item.type} key={item.label} 
-        
+    const renderFieldsets = () => formFields.map(item => <Fieldset label={item.label} placeholder={item.placeholder} type={item.type} key={item.label}
+
     />)
 
     return (

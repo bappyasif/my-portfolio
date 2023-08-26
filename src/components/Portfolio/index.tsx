@@ -10,7 +10,7 @@ export const Portfolio = () => {
             className="flex flex-col gap-20"
         >
             <div className="flex flex-col gap-16">
-                <h2 className="text-4xl">Some Noteable Skills</h2>
+                <h2 className="text-4xl font-extrabold">Some Noteable Skills</h2>
                 <Skills />
             </div>
             <Mentions />
@@ -65,7 +65,7 @@ const AccordionView = ({ data, heading, smallerSize }: ReusableProps) => {
 
     return (
         <div className="flex flex-col gap-20">
-            <h2 className="text-4xl">{heading}</h2>
+            <h2 className="text-4xl font-extrabold">{heading}</h2>
             {/* while in bigger screen */}
             <div className="xxs:hidden xxl:flex gap-4 items-center">
                 <button className="bg-transparent px-4 text-2xl prev-btn" onClick={handlePrev}>Prev</button>
@@ -131,7 +131,7 @@ const ReusableNoteableWorks = ({ data, heading }: ReusableProps) => {
         <div
             className="flex flex-col justify-center items-center gap-11"
         >
-            <h2 className="xxs:text-3xl sm:text-4xl">{heading}</h2>
+            <h2 className="xxs:text-3xl sm:text-4xl font-extrabold">{heading}</h2>
             <div
                 className={`flex flex-col justify-center items-center gap-16`}
             >

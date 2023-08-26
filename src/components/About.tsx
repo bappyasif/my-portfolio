@@ -18,13 +18,13 @@ export const About = () => {
 
             <div className="flex xxs:flex-col xxl:flex-row xxs:gap-4 lg:gap-9 place-items-center my-6 mb-11">
                 <img
-                    className="xxs:block lg:hidden xxs:w-fit xxl:w-fit sm:aspect-square self-center"
+                    className="xxs:block lg:hidden xxs:w-fit xxl:w-fit sm:aspect-square self-center opacity-80"
                     src={photo}
                     alt="picture"
                 />
 
                 <img
-                    className="xxs:hidden lg:block xxl:w-fit aspect-square"
+                    className="xxs:hidden lg:block xxl:w-fit aspect-square opacity-80"
                     src={photo}
                     alt="picture"
                     style={{
@@ -52,7 +52,7 @@ const ShowContributingEntities = () => {
 
     return (
         <div className="w-full flex flex-col xxs:gap-10 lg:gap-16">
-            <h2 className="text-4xl">Successfull Contributions</h2>
+            <h2 className="text-4xl xxs:font-normal lg:font-extrabold">Successfull Contributions</h2>
             <div className="flex justify-between w-full">
                 {renderEntities()}
             </div>
