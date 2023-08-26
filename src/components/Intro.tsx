@@ -1,5 +1,6 @@
 import { ReactElement, useEffect, useState } from "react"
-import { AiOutlineArrowDown } from "react-icons/ai"
+// import { AiOutlineArrowDown } from "react-icons/ai"
+import { CgScrollV } from "react-icons/cg"
 
 export const Intro = (): ReactElement => {
     const content = (
@@ -35,25 +36,30 @@ const PointingArrow = (): ReactElement => {
         <a
             href="#About"
             className="animate-pulse text-6xl relative 
-                border border-zinc-600 border-b-8 text-amber-300 z-20"
+                border border-zinc-600 border-b-8 text-amber-300 z-20 flex flex-col justify-center items-center opacity-80"
         >
             <span
                 style={{
                     display: "block",
-                    width: "150px",
+                    width: "90px",
                     height: "80px",
-                    borderRight: "76px solid blue",
-                    borderLeft: "76px solid red",
-                    borderBottom: "85px solid green",
+                    borderRight: "45px solid blue",
+                    borderLeft: "45px solid red",
+                    borderBottom: "83px solid green"
+                    // borderRight: "76px solid blue",
+                    // borderLeft: "76px solid red",
+                    // borderBottom: "85px solid green",
                     // borderTop: "9px solid green"
                 }}
             ></span>
             <span
-                className="z-20 absolute -bottom-4 left-7 animate-bounce"
+                // className="z-20 absolute -bottom-4 left-0 animate-bounce"
+                className="animate-bounce absolute bottom-0"
             >
-                <AiOutlineArrowDown />
+                {/* <AiOutlineArrowDown /> */}
+                {<CgScrollV />}
             </span>
-        </a>
+        </a >
     )
 
     return content

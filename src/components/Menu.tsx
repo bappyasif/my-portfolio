@@ -1,6 +1,7 @@
 import { AiOutlineClose } from "react-icons/ai"
 // import photo from "../assets/about-pic.jpeg"
 import photo from "../assets/contact-pic.jpg"
+import { useEffect, useState } from "react"
 
 type MenuProp = {
     closeMenu: () => void
@@ -48,10 +49,16 @@ export const Menu = ({ closeMenu }: MenuProp) => {
 }
 
 const RenderImage = () => {
+    const [initAnim, setInitAnim] = useState(false)
+    
+    useEffect(() => {
+        setInitAnim(true)
+    }, [])
+
     return (
-        <>
+        <div className={`transition-all duration-1000 ${initAnim ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0"} flex justify-center`}>
             <img
-                className="opacity-80 z-10 xxs:hidden lg:block h-auto w-1/4 aspect-square rounded transition-all duration-1000 hover:translate-x-20"
+                className={`opacity-80 z-10 xxs:hidden lg:block h-auto w-1/4 aspect-square rounded transition-all duration-1000 hover:translate-x-20`}
                 src={photo}
                 alt="User Picture"
                 style={{
@@ -60,7 +67,7 @@ const RenderImage = () => {
                 }}
             />
             <img
-                className="z-10 opacity-80 xxs:block lg:hidden h-auto w-1/4 aspect-square rounded transition-all duration-1000 hover:scale-110"
+                className={`z-10 opacity-80 xxs:block lg:hidden h-auto w-1/4 aspect-square rounded transition-all duration-1000 hover:scale-110`}
                 src={photo}
                 alt="User Picture"
                 style={{
@@ -68,7 +75,7 @@ const RenderImage = () => {
                     minHeight: "440px"
                 }}
             />
-        </>
+        </div>
     )
 }
 
@@ -78,8 +85,14 @@ type ItemProp = {
 }
 
 const RenderMenuItem = ({ item, closeMenu }: ItemProp) => {
+    const [initAnim, setInitAnim] = useState(false)
+    
+    useEffect(() => {
+        setInitAnim(true)
+    }, [])
+
     return (
-        <div className=" flex justify-center items-center text-right xxs:text-lg lg:text-2xl xxs:w-fit sm:w-36 px-6 bg-slate-950 font-mono transition-all duration-500 hover:font-extrabold hover:bg-slate-600 hover:text-slate-400 hover:scale-110 rounded">
+        <div className={`flex justify-center items-center text-right xxs:text-lg lg:text-2xl xxs:w-fit sm:w-36 px-6 bg-slate-950 font-mono transition-all duration-500 ${initAnim ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"} hover:font-extrabold hover:bg-slate-600 hover:text-slate-400 hover:scale-110 rounded`}>
             <a onClick={closeMenu} href={`#${item}`}>{item}</a>
         </div>
     )
