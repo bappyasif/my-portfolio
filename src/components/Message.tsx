@@ -9,10 +9,10 @@ export const MessageMe = () => {
             className="w-full flex flex-col gap-6 items-center"
         >
             <h2 className="text-4xl font-extrabold">Let's Get In Touch</h2>
-            <p className="xxs:text-xl md:text-2xl xl:text-3xl flex flex-col gap-y-2">
+            <div className="xxs:text-xl md:text-2xl xl:text-3xl flex flex-col gap-y-2">
                 <h3>Are You A Charitable Organization And Want To Revamp Your Website?</h3>
                 <h3>I Can Help You Build That Slick Website, And That Too For Free*</h3>
-            </p>
+            </div>
             <div
                 className="flex xxs:flex-col lg:flex-row justify-center items-center gap-6 xxs:w-auto sm:w-full xxl:w-3/4 text-lg"
             >

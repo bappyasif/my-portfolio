@@ -38,7 +38,7 @@ export const Menu = ({ closeMenu }: MenuProp) => {
             </div>
             <button
                 className="absolute xxs:right-4 md:right-20 xxs:top-6 md:top-20
-                outline outline-2 rounded-full"
+                outline outline-2 rounded-full transition-all duration-1000 hover:bg-slate-950 hover:text-slate-400 hover:scale-125"
                 onClick={closeMenu}
             >
                 {<AiOutlineClose />}
@@ -51,7 +51,7 @@ const RenderImage = () => {
     return (
         <>
             <img
-                className="xxs:hidden lg:block h-auto w-1/4 aspect-square"
+                className="opacity-80 z-10 xxs:hidden lg:block h-auto w-1/4 aspect-square rounded transition-all duration-1000 hover:translate-x-20"
                 src={photo}
                 alt="User Picture"
                 style={{
@@ -60,7 +60,7 @@ const RenderImage = () => {
                 }}
             />
             <img
-                className="xxs:block lg:hidden h-auto w-1/4 aspect-square"
+                className="z-10 opacity-80 xxs:block lg:hidden h-auto w-1/4 aspect-square rounded transition-all duration-1000 hover:scale-110"
                 src={photo}
                 alt="User Picture"
                 style={{
@@ -79,7 +79,7 @@ type ItemProp = {
 
 const RenderMenuItem = ({ item, closeMenu }: ItemProp) => {
     return (
-        <div className="text-right xxs:text-lg lg:text-2xl xxs:w-fit sm:w-36 hover:bg-slate-600 px-6 bg-slate-950">
+        <div className=" flex justify-center items-center text-right xxs:text-lg lg:text-2xl xxs:w-fit sm:w-36 px-6 bg-slate-950 font-mono transition-all duration-500 hover:font-extrabold hover:bg-slate-600 hover:text-slate-400 hover:scale-110 rounded">
             <a onClick={closeMenu} href={`#${item}`}>{item}</a>
         </div>
     )

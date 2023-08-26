@@ -211,7 +211,7 @@ const ImageView = ({ imgSrc, description, live, smallerSize }: ImageProps) => {
 
     return (
         <figure
-            className={`relative w-full h-full`}
+            className={`relative w-full h-full opacity-90`}
             onMouseEnter={handleMouseOver}
             onMouseLeave={handleMouseOut}
         >

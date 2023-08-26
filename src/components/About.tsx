@@ -18,13 +18,13 @@ export const About = () => {
 
             <div className="flex xxs:flex-col xxl:flex-row xxs:gap-4 lg:gap-9 place-items-center my-6 mb-11">
                 <img
-                    className="xxs:block lg:hidden xxs:w-fit xxl:w-fit sm:aspect-square self-center opacity-80"
+                    className="xxs:block lg:hidden xxs:w-fit xxl:w-fit sm:aspect-square self-center opacity-80 rounded"
                     src={photo}
                     alt="picture"
                 />
 
                 <img
-                    className="xxs:hidden lg:block xxl:w-fit aspect-square opacity-80"
+                    className="xxs:hidden lg:block xxl:w-fit aspect-square opacity-80 rounded"
                     src={photo}
                     alt="picture"
                     style={{
@@ -92,17 +92,23 @@ const Details = ({ setZIdx }: PropsType) => {
             className="flex flex-col justify-start xxs:gap-6 sm:gap-9 lg:gap-11 items-start text-justify text-2xl"
             onClick={bringHeadingTextFront}
         >
-            <p className="xxs:text-2xl xl:text-4xl xxl:text-2xl xxs:px-2 sm:px-0">A community driven self-taught Full Stack Developer specializing in the MERN stack (MongoDB, Express, React, Node), bringing a proven track record of building many web applications. My passion for coding and continuous learning has led me to hone my technical abilities and deepen my knowledge of the MERN stack, and other related technologies, such as Next.JS and TypeScript.</p>
+            <p className="xxs:text-2xl xl:text-4xl xxl:text-2xl xxs:px-2 sm:px-0">A community focused self-taught Full Stack Developer specializing in the MERN stack (MongoDB, Express, React, Node), bringing a proven track record of building many web applications. My passion for coding and continuous learning has led me to hone my technical abilities and deepen my knowledge of the MERN stack, and other related technologies, such as Next.JS and TypeScript.</p>
             <RenderLinks />
         </div>
     )
 }
 
 const RenderLinks = () => {
-    const linkItems = () => socialLinks.map(item => <RenderLink key={item.name} icon={item.icon} name={item.name} url={item.url} />)
+    const [hoveredLink, setHoveredLink] = useState("")
+
+    const handleHoverLink = (nm:string) => setHoveredLink(nm)
+
+    const linkItems = () => socialLinks.map(item => <RenderLink key={item.name} icon={item.icon} name={item.name} url={item.url} handleHoverLink={handleHoverLink} />)
+
     return (
-        <div className="flex xxs:gap-4 lg:gap-8 justify-between text-xl w-full">
+        <div className={`flex xxs:gap-4 lg:gap-8 justify-between text-xl w-full  rounded relative ${hoveredLink ? "bg-slate-600" : ""} z-10`}>
             {linkItems()}
+            <p className="absolute bottom-1 font-extrabold flex justify-between w-full text-6xl -z-10 text-blue-950 font-mono capitalize">{hoveredLink.split("").map((ch, idx) => <span key={ch + idx}>{ch}</span>)}</p>
         </div>
     )
 }
@@ -110,13 +116,21 @@ const RenderLinks = () => {
 type LinkPropsType = {
     name: string,
     icon: ReactElement,
-    url: string
+    url: string,
+    handleHoverLink: (nm: string) => void,
 }
 
-const RenderLink = ({ name, icon, url }: LinkPropsType) => {
+const RenderLink = ({ name, icon, url, handleHoverLink }: LinkPropsType) => {
+    const handleMouseIn = () => handleHoverLink(name)
+    const handleMouseOut = () => handleHoverLink("")
     return (
-        <a className="xxs:text-5xl sm:text-7xl" href={url} title={name} target="_blank">
-            <span>{icon}</span>
+        <a
+            className="xxs:text-5xl sm:text-7xl transition-all duration-500 hover:scale-125" 
+            href={url} title={name} target="_blank"
+            onMouseEnter={handleMouseIn}
+            onMouseLeave={handleMouseOut}
+        >
+            <span className="opacity-80 hover:text-slate-950">{icon}</span>
         </a>
     )
 }

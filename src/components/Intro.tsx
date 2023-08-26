@@ -34,21 +34,22 @@ const PointingArrow = (): ReactElement => {
     const content = (
         <a
             href="#About"
-            className="animate-pulse text-4xl relative 
+            className="animate-pulse text-6xl relative 
                 border border-zinc-600 border-b-8 text-amber-300 z-20"
         >
             <span
                 style={{
                     display: "block",
-                    width: "20px",
-                    height: "40px",
-                    borderLeft: "26px solid blue",
-                    borderRight: "26px solid yellow",
-                    borderBottom: "45px solid maroon"
+                    width: "150px",
+                    height: "80px",
+                    borderRight: "76px solid blue",
+                    borderLeft: "76px solid red",
+                    borderBottom: "85px solid green",
+                    // borderTop: "9px solid green"
                 }}
             ></span>
             <span
-                className="z-20 absolute -bottom-4 left-1 animate-bounce"
+                className="z-20 absolute -bottom-4 left-7 animate-bounce"
             >
                 <AiOutlineArrowDown />
             </span>
