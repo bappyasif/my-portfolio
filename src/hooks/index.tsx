@@ -106,7 +106,7 @@ export const useHandlePercentileCount = (percentile: number) => {
         !begin && setCurrPercentile(0)
     }, [begin, currPercentile])
 
-    return { currPercentile, handleBegin, handleStop}
+    return { currPercentile, handleBegin, handleStop }
 }
 
 export const useOnPageScroll = () => {
@@ -134,4 +134,37 @@ export const useOnPageScroll = () => {
     })
 
     return { scrolled }
+}
+
+export const useForIntersectionObserver = () => {
+    const [observer, setObserver] = useState<IntersectionObserver>()
+    const observerMethod = () => {
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show")
+                } else {
+                    entry.target.classList.remove("show")
+                }
+            })
+        })
+        setObserver(obs)
+    }
+
+    const checkObserver = () => {
+        const hiddenElements = document.documentElement.querySelectorAll(".hideNow")
+        hiddenElements.forEach(el => observer?.observe(el))
+    }
+
+    window.addEventListener("scroll", checkObserver)
+
+    // useEffect(() => {
+    //     window.addEventListener("scroll", checkObserver)
+
+    //     return () => window.removeEventListener("scroll", checkObserver)
+    // }, [])
+
+    useEffect(() => {
+        observerMethod()
+    }, [])
 }

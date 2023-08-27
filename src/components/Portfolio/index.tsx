@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Mentions } from "./Mentions"
 import { Skills } from "./Skills"
 import { collaborativeProjects, curriculamProjects, designs, explorativeProjects } from "./data"
-import { useForAccordionSlides } from "../../hooks"
+import { useForAccordionSlides, useForIntersectionObserver } from "../../hooks"
 
 export const Portfolio = () => {
     return (
@@ -20,6 +20,7 @@ export const Portfolio = () => {
 }
 
 const Projects = () => {
+    useForIntersectionObserver()
 
     return (
         <div
@@ -154,7 +155,7 @@ const RenderWork = ({ ...item }: ProjectProps) => {
 
     return (
         <article
-            className={`flex xxs:flex-col ${check() ? "xxl:flex-row-reverse" : "xxl:flex-row"} gap-10 items-center justify-center`}
+            className={`hideNow flex xxs:flex-col ${check() ? "xxl:flex-row-reverse" : "xxl:flex-row"} gap-10 items-center justify-center`}
         >
             <ImageView imgSrc={imgSrc} description={description} live={live} />
             <RenderProjectDetailInfo

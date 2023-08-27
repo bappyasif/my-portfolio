@@ -177,3 +177,24 @@ input {
         background-size: 29px 42px;
     }
 }
+
+/* for projects items animation */
+.hideNow {
+    opacity: 0;
+    filter: blur(6px);
+    /* transform: translateX(-100%); */
+    transition: all 600ms;
+}
+
+@media(prefers-reduced-motion) {
+    .hideNow {
+        transition: none;
+    }
+}
+
+.show {
+    filter: blur(0);
+    /* transform: translateX(0); */
+    opacity: .81;
+}
+
