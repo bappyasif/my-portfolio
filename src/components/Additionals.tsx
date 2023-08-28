@@ -30,7 +30,7 @@ const HireMeForm = () => {
     const onMouseleave = () => setRotate(false)
     return (
         <form action="mailto:bappy.asif@icloud.com" method="post" encType="text/plain" onMouseEnter={onMouseEnter} onMouseLeave={onMouseleave}>
-            <button type="submit" className="bg-slate-400 px-6 py-2 rounded-full flex items-center"><span className="relative">Begin Process</span> <span className={`px-4 ${rotate ? "rotate-90" : ""}`}>:-)</span></button>
+            <button type="submit" className="bg-slate-400 px-6 py-2 rounded-full flex items-center transition-all duration-500 hover:bg-slate-900"><span className="relative">Begin Process</span> <span className={`transition-all duration-500 px-4 ${rotate ? "rotate-90" : ""}`}>:-)</span></button>
         </form>
     )
 }

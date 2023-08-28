@@ -163,6 +163,18 @@ const RadialProgressBar = ({ percentile }: ProgressProps) => {
                 stroke="white"
                 fill="transparent"
                 strokeWidth={stroke}
+                // strokeDasharray={circumference + ' ' + circumference}
+                style={{ strokeDashoffset }}
+                // stroke-width={stroke}
+                r={normalizedRadius}
+                cx={radius}
+                cy={radius}
+            />
+            <circle
+                // id="textcircle"
+                stroke="green"
+                fill="transparent"
+                strokeWidth={stroke}
                 strokeDasharray={circumference + ' ' + circumference}
                 style={{ strokeDashoffset }}
                 // stroke-width={stroke}

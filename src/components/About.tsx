@@ -52,7 +52,7 @@ const ShowContributingEntities = () => {
 
     return (
         <div className="w-full flex flex-col xxs:gap-10 lg:gap-16">
-            <h2 className="text-4xl xxs:font-normal lg:font-extrabold">Successfull Contributions</h2>
+            <h2 className="text-4xl font-extrabold">Successfull Contributions</h2>
             <div className="flex justify-between w-full">
                 {renderEntities()}
             </div>
@@ -70,7 +70,7 @@ const ContributedEntity = ({ name, imgSrc, url }: EntityProps) => {
     return (
         <div title={"Click to see my contributing PRs for " + name}>
             <a target="_blank" href={url}>
-                <img className="xxs:w-28 sm:w-40 lg:w-64 xxl:w-80 xxs:h-16 lg:h-20" src={imgSrc} alt={name} />
+                <img className="xxs:w-24 sm:w-32 lg:w-64 xxl:w-80 xxs:h-16 lg:h-20 rounded-sm" src={imgSrc} alt={name} />
             </a>
         </div>
     )

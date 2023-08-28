@@ -17,7 +17,7 @@ export const MessageMe = () => {
                 className="flex xxs:flex-col lg:flex-row justify-center items-center gap-6 xxs:w-auto sm:w-full xxl:w-3/4 text-lg"
             >
                 <img
-                    className="w-screen sm:w-96 aspect-square opacity-80"
+                    className="w-screen sm:w-96 aspect-square opacity-80 rounded-sm"
                     src={photo}
                     alt="headshot view of ab"
                     style={{
@@ -67,7 +67,7 @@ const Form = () => {
             onSubmit={handleSubmit}
         >
             <div className="flex flex-col gap-1">{renderFieldsets()}</div>
-            <button className="px-4 py-2 bg-slate-600 rounded-xl font-bold text-2xl" type="submit">Send Message</button>
+            <button className="px-4 py-2 bg-slate-600 rounded-xl font-bold text-2xl transition-all duration-500 hover:bg-slate-900" type="submit">Send Message</button>
         </form>
     )
 }
