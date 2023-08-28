@@ -43,14 +43,16 @@ const ShowMetric = ({ ...item }: MetricProps) => {
 
     return (
         <div
-            className="xxs:w-3/6 sm:w-1/4 lg:w-1/4 h-fit mx-auto bg-slate-600 rounded-2xl py-2 relative"
+            className="xxs:w-3/6 sm:w-1/4 lg:w-1/4 h-fit mx-auto rounded-2xl py-2 relative"
             // onClick={handleToggle}
             onMouseEnter={handleBegin}
             onMouseLeave={handleStop}
+            title={`Current ${name} Profeciency*`}
         >
             <h2 className="text-2xl">{name}</h2>
             {/* <RadialProgressBar percentile={percentile} /> */}
             {/* <CurvedTextInCircle /> */}
+            {/* <p className="rounded-full">Testing</p> */}
             <RadialProgressBar percentile={currPercentile || percentile} />
             {/* <p>{text} *</p> */}
         </div>
@@ -59,14 +61,42 @@ const ShowMetric = ({ ...item }: MetricProps) => {
 
 // const CurvedTextInCircle = () => {
 //     return (
-//         <svg className="absolute left-6" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width={260} height={200}>
+//         <svg
+//             className="absolute xxs:left-8 sm:left-4 lg:left-6"
+//             viewBox="0 0 200 200"
+//             xmlns="http://www.w3.org/2000/svg"
+//         >
+//             <path
+//                 id="circlePath"
+//                 d="
+//                     M 10, 50
+//                     a 40,40 0 1,1 80,0
+//                     40,40 0 1,1 -80,0
+//                 "
+//                 fill="none"
+//             />
+//             <text className="fill-red-800" strokeWidth={4}>
+//                 <textPath href="#circlePath"  textLength={Math.floor(Math.PI * 2 * 44)}>
+//                     Profeciency*
+//                 </textPath>
+//             </text>
+//         </svg>
+//     )
+// }
+
+// const CurvedTextInCircle = () => {
+//     return (
+//         <svg className="absolute xxs:left-8 sm:left-4 lg:left-6" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width={110} height={110}>
 //             {/* <path id="curve" d="M 0 120 C 0 120, 130 0, 260 180"></path> */}
 //             {/* <path id="curve" d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250"></path> */}
 //             {/* <path id="curve" d="M0,60a60,60 0 1,0 120,0a60,60 0 1,0 -120,0" fill="none"></path> */}
 //             {/* <path id="curve" d="M16,60a44,44 0 1,0 88,0a44,44 0 1,0 -88,0" fill="none"></path> */}
 //             {/* <path id="curve" d="M2,62a60,60 0 1,0 120,0a60,60 0 1,0 -120,0" fill="none"></path> */}
-//             <path id="curve" d="M16,60a44,44 0 1,0 88,0a44,44 0 1,0 -88,0" fill="none"></path>
-//             <text className="font-mono tracking-widest fill-green-400 text-sm">
+//             {/* <path id="curve" d="M16,60a44,44 0 1,0 88,0a44,44 0 1,0 -88,0" fill="none"></path> */}
+//             <path className="xxs:hidden xl:block" id="curve" d="M11,60a49,49 0 1,0 98,0a49,49 0 1,0 -98,0" fill="none"></path>
+//             <path className="xxs:hidden sm:block lg:hidden skew-x-2" id="curve" d={`M14,60a46,46 0 1,0 92,0a46,46 0 1,0 -92,0`} fill="none"></path>
+//             <path className="xxs:block sm:hidden" id="curve" d={`M 20,60a49,49 0 1,0 98,0a49,49 0 1,0 -98,0`} fill="none"></path>
+//             <text className="font-mono fill-red-900 text-sm stroke-red-800">
 //                 <textPath startOffset={"0%"} href="#curve">Proficiency*</textPath>
 //             </text>
 

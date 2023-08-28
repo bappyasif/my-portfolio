@@ -20,7 +20,8 @@ export const Portfolio = () => {
 }
 
 const Projects = () => {
-    useForIntersectionObserver()
+    useForIntersectionObserver(".hideNow", "show")
+    useForIntersectionObserver(".stackNow", "reveal")
 
     return (
         <div
@@ -75,7 +76,7 @@ const AccordionView = ({ data, heading, smallerSize }: ReusableProps) => {
                     <RenderAccordionCardView key={item2.name} description={item2.description} imgSrc={item2.imgSrc} live={item2.live} name={item2.name} repo={item2.repo} smallerSize={smallerSize} />
                 </div>
 
-                <button className="bg-transparent px-4 text-2xl next-btn" onClick={handleNext}>Next</button>
+                <button className="bg-transparent px-4 text-2xl next-btn self-start" onClick={handleNext}>Next</button>
             </div>
 
             {/* while in smaller screen */}
@@ -170,9 +171,10 @@ type DetailProps = Omit<ProjectProps, "imgSrc">
 const RenderProjectDetailInfo = ({ ...item }: DetailProps) => {
     const { description, live, name, repo, smallerSize, stackUsed, tagline } = item;
 
-    const renderStacks = () => stackUsed?.map(name => <span className="bg-slate-900 my-0.5 xxs:px-1.5 md:px-2.5" key={name}>{name}</span>)
+    const renderStacks = () => stackUsed?.map(name => <span className="bg-slate-900 my-0.5 xxs:px-1.5 md:px-2.5 stackNow stackElem" key={name}>{name}</span>)
 
     const ifAccordions = () => ["Restaurant Site", "Tourism Worldwide", "Landing Page", "Animations Saavy", "Self-driving Corp", "Product Review Page"].includes(name)
+    
     return (
         <div
             className={`xxs:w-screen sm:w-full text-xl ${smallerSize ? "text-center" : "text-justify"} flex flex-col gap-2`}

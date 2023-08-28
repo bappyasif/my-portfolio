@@ -53,6 +53,9 @@ input {
 .prev-btn {
     height: 450px;
     align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 83px;
 }
 
@@ -180,14 +183,27 @@ input {
 
 /* for projects items animation */
 .hideNow {
-    opacity: 0;
+    opacity: .4;
     filter: blur(6px);
     /* transform: translateX(-100%); */
     transition: all 600ms;
 }
 
+.stackNow {
+    transition: all 600ms;
+    transform: translateX(-60%);
+}
+
+.stackNow .stackElem:nth-child(2n) {
+    transition-delay: 400ms;
+}
+
+.stackNow .stackElem:nth-child(2n + 1) {
+    transition-delay: 600ms;
+}
+
 @media(prefers-reduced-motion) {
-    .hideNow {
+    .hideNow, .stackNow {
         transition: none;
     }
 }
@@ -198,3 +214,6 @@ input {
     opacity: .81;
 }
 
+.reveal {
+    transform: translateX(0);
+}

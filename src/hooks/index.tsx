@@ -136,15 +136,17 @@ export const useOnPageScroll = () => {
     return { scrolled }
 }
 
-export const useForIntersectionObserver = () => {
+export const useForIntersectionObserver = (targetClass: string, animClass:string) => {
     const [observer, setObserver] = useState<IntersectionObserver>()
     const observerMethod = () => {
         const obs = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add("show")
+                    // entry.target.classList.add("show")
+                    entry.target.classList.add(animClass)
                 } else {
-                    entry.target.classList.remove("show")
+                    // entry.target.classList.remove("show")
+                    entry.target.classList.remove(animClass)
                 }
             })
         })
@@ -152,7 +154,8 @@ export const useForIntersectionObserver = () => {
     }
 
     const checkObserver = () => {
-        const hiddenElements = document.documentElement.querySelectorAll(".hideNow")
+        // const hiddenElements = document.documentElement.querySelectorAll(".hideNow")
+        const hiddenElements = document.documentElement.querySelectorAll(targetClass)
         hiddenElements.forEach(el => observer?.observe(el))
     }
 
