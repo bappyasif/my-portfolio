@@ -6,7 +6,7 @@ export const Mentions = () => {
 
     return (
         <div id="Mentions" className="flex flex-col xxs:gap-6 lg:gap-11">
-            <h2 className="text-4xl font-extrabold">Special Mentions</h2>
+            <h2 className="xxs:text-2xl lg:text-4xl font-shojumaru">Special Mentions</h2>
             <Specials />
         </div>
     )
@@ -56,7 +56,7 @@ const RenderSpecial = ({ ...item }: SpecialsProps) => {
             onMouseEnter={handleHover}
             onMouseLeave={() => setAnimate("")}
         >
-            <div className={`${name === animate ? "animate-bounce" : "mx-auto"} flex flex-col items-center justify-center`}>
+            <div className={`${name === animate ? "animate-bounce" : "mx-auto"} flex flex-col items-center justify-center xxs:text-lg lg:text-xl font-vastShadow`}>
                 <h2>{name}</h2>
                 <RenderCircleWithText count={count} />
                 <p>{text}</p>

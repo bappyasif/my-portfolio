@@ -10,7 +10,7 @@ export const Portfolio = () => {
             className="flex flex-col gap-20"
         >
             <div className="flex flex-col gap-16">
-                <h2 className="text-4xl font-extrabold">Some Noteable Skills</h2>
+                <h2 className="xxs:text-2xl lg:text-4xl font-shojumaru">Some Noteable Skills</h2>
                 <Skills />
             </div>
             <Mentions />
@@ -67,16 +67,16 @@ const AccordionView = ({ data, heading, smallerSize }: ReusableProps) => {
 
     return (
         <div className="flex flex-col gap-20">
-            <h2 className="text-4xl font-extrabold">{heading}</h2>
+            <h2 className="xxs:text-2xl lg:text-4xl font-shojumaru">{heading}</h2>
             {/* while in bigger screen */}
             <div className="xxs:hidden xxl:flex gap-4 items-center">
-                <button className="bg-transparent px-4 text-2xl prev-btn" onClick={handlePrev}>Prev</button>
+                <button className="bg-transparent px-4 text-2xl prev-btn font-shojumaru" onClick={handlePrev}>Prev</button>
                 <div className="flex justify-around xxs:gap-6 lg:gap-20">
                     <RenderAccordionCardView key={item1.name} description={item1.description} imgSrc={item1.imgSrc} live={item1.live} name={item1.name} repo={item1.repo} smallerSize={smallerSize} />
                     <RenderAccordionCardView key={item2.name} description={item2.description} imgSrc={item2.imgSrc} live={item2.live} name={item2.name} repo={item2.repo} smallerSize={smallerSize} />
                 </div>
 
-                <button className="bg-transparent px-4 text-2xl next-btn self-start" onClick={handleNext}>Next</button>
+                <button className="bg-transparent px-4 text-2xl next-btn self-start font-shojumaru" onClick={handleNext}>Next</button>
             </div>
 
             {/* while in smaller screen */}
@@ -84,7 +84,7 @@ const AccordionView = ({ data, heading, smallerSize }: ReusableProps) => {
                 <div className="flex justify-around xxs:gap-6 lg:gap-20">
                     <RenderAccordionCardView key={item1.name} description={item1.description} imgSrc={item1.imgSrc} live={item1.live} name={item1.name} repo={item1.repo} smallerSize={smallerSize} />
                 </div>
-                <div className="flex gap-4 w-full">
+                <div className="flex gap-4 w-full font-shojumaru">
                     <button className="px-4 text-4xl py-2 bg-slate-900 w-full rounded-2xl" onClick={handlePrev}>Prev</button>
                     <button className="px-4 text-4xl py-2 bg-slate-900 w-full rounded-2xl" onClick={handleNext}>Next</button>
                 </div>
@@ -133,7 +133,7 @@ const ReusableNoteableWorks = ({ data, heading }: ReusableProps) => {
         <div
             className="flex flex-col justify-center items-center gap-11"
         >
-            <h2 className="xxs:text-3xl sm:text-4xl font-extrabold">{heading}</h2>
+            <h2 className="xxs:text-2xl lg:text-4xl font-shojumaru">{heading}</h2>
             <div
                 className={`flex flex-col justify-center items-center gap-16`}
             >
@@ -171,7 +171,7 @@ type DetailProps = Omit<ProjectProps, "imgSrc">
 const RenderProjectDetailInfo = ({ ...item }: DetailProps) => {
     const { description, live, name, repo, smallerSize, stackUsed, tagline } = item;
 
-    const renderStacks = () => stackUsed?.map(name => <span className="bg-slate-900 my-0.5 xxs:px-1.5 md:px-2.5 stackNow stackElem" key={name}>{name}</span>)
+    const renderStacks = () => stackUsed?.map(name => <span className="bg-slate-900 font-mono my-0.5 xxs:px-1.5 md:px-2.5 stackNow stackElem" key={name}>{name}</span>)
 
     const ifAccordions = () => ["Restaurant Site", "Tourism Worldwide", "Landing Page", "Animations Saavy", "Self-driving Corp", "Product Review Page"].includes(name)
     
@@ -179,25 +179,35 @@ const RenderProjectDetailInfo = ({ ...item }: DetailProps) => {
         <div
             className={`xxs:w-screen sm:w-full text-xl ${smallerSize ? "text-center" : "text-justify"} flex flex-col gap-2`}
         >
-            <h2 className="text-4xl">{name}</h2>
+            <h2 className="xxs:text-2xl lg:text-4xl font-vastShadow">{name}</h2>
             {
                 !smallerSize
-                    ? <p className="flex flex-row gap-2"><span className="font-bold">Tagline: </span>{tagline}</p>
+                    ? <p className="flex flex-col gap-2"><span className="font-bold font-vastShadow">Tagline: </span><span className="font-mono">{tagline}</span></p>
                     : null
             }
-            <a target="_blank" href={repo} className={`font-bold flex flex-row ${smallerSize ? "justify-center" : ""} gap-2 flex-wrap`}><span>Repo:</span> <span className="text-cyan-400">{repo}</span></a>
-            <a target="_blank" href={live} className={`font-bold flex flex-row ${smallerSize ? "justify-center" : ""} gap-2 flex-wrap`}><span>Live:</span> <span className="text-cyan-400">{live}</span></a>
+
+            <a target="_blank" href={repo} className={`font-bold flex ${smallerSize ? "justify-center text-sm" : "flex-col"} gap-2 flex-wrap`}>
+                <span className="font-vastShadow">Repo: </span> 
+                <span className="text-cyan-400 font-mono">{repo}</span>
+            </a>
+            
+            <a target="_blank" href={live} className={`font-bold flex ${smallerSize ? "justify-center text-sm" : "flex-col"} gap-2 flex-wrap`}>
+                <span className="font-vastShadow">Live: </span> 
+                <span className="text-cyan-400 font-mono">{live}</span>
+            </a>
+            
             <p className={`text-justify ${ifAccordions() ? "xxs:h-28 sm:h-20 text-2xl" : "h-44 overflow-y-auto hide-scrollbar text-xl"} pr-2 
-            `}
-            // /*custom-scrollbar*/
-            // style={{ scrollbarGutter: "unset" }}
+            font-serif`}
             >{description}</p>
+            
             {
                 !smallerSize
                     ?
                     <div>
-                        <h2 className="font-bold">Stack Used</h2>
-                        <div className="flex gap-x-4 flex-wrap xxs:text-sm md:text-lg">{stackUsed?.length ? renderStacks() : null}</div>
+                        <h2 className="font-vastShadow font-bold">Stack Used</h2>
+                        <div className="flex gap-x-4 flex-wrap xxs:text-sm md:text-lg">
+                            {stackUsed?.length ? renderStacks() : null}
+                        </div>
                     </div>
                     : null
             }

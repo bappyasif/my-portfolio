@@ -8,7 +8,7 @@ export const Skills = () => {
     return (
         <div
             id="Skills"
-            className="flex xxs:flex-col xl:flex-row justify-between xxs:gap-6 lg:gap-0 w-full"
+            className="flex xxs:flex-col xl:flex-row justify-between xxs:gap-6 lg:gap-0 w-full font-vastShadow"
         >
             <ShowHighPercentilesSkills data={highPercentiles} />
             <ShowRegulars data={regularPercentiles} />
@@ -49,7 +49,7 @@ const ShowMetric = ({ ...item }: MetricProps) => {
             onMouseLeave={handleStop}
             title={`Current ${name} Profeciency*`}
         >
-            <h2 className="text-2xl">{name}</h2>
+            <h2 className="text-lg">{name}</h2>
             {/* <RadialProgressBar percentile={percentile} /> */}
             {/* <CurvedTextInCircle /> */}
             {/* <p className="rounded-full">Testing</p> */}
@@ -190,7 +190,7 @@ const RadialProgressBar = ({ percentile }: ProgressProps) => {
                     </textPath>
                 </text> */}
             </circle>
-            <text className="text-2xl"
+            <text className="text-xl"
                 x="50%" y="50%" textAnchor="middle" fill="white" dy=".3em">{percentile}%
             </text>
         </svg>
@@ -202,7 +202,7 @@ const ShowRegulars = ({ data }: MetricsData) => {
 
     return (
         <div
-            className="flex justify-around xxs:w-full xxl:w-1/2 flex-wrap gap-8 text-2xl"
+            className="flex justify-around xxs:w-full xxl:w-1/2 flex-wrap gap-8"
         >
             {showMetrics()}
         </div>
@@ -221,7 +221,7 @@ const ShowSkillProgress = ({ ...item }: MetricProps) => {
             onMouseEnter={handleBegin}
             onMouseLeave={handleStop}
         >
-            <h2 className="text-xl">{name}</h2>
+            <h2 className="xxs:text-sm lg:text-lg">{name}</h2>
             {/* <LinearProgressBar percentile={percentile} /> */}
             <LinearProgressBar percentile={currPercentile || percentile} />
             {/* <p className="text-sm xxs:hidden lg:block">Current {text} *</p> */}
@@ -238,10 +238,10 @@ const LinearProgressBar = ({ percentile }: ProgressProps) => {
         <div className='w-full bg-gray-300 rounded overflow-hidden'>
             <div
                 style={{ width: `${percentile}%` }}
-                className={`h-5 ${percentile < 56 ? 'bg-red-600' : 'bg-green-600'
+                className={`h-4 ${percentile < 56 ? 'bg-red-600' : 'bg-green-600'
                     }`}
             >
-                <p className="text-sm h-fit">Profeciency*</p>
+                <p className="text-xs h-fit">Profeciency*</p>
             </div>
         </div>
     );

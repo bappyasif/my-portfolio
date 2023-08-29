@@ -8,8 +8,8 @@ export const MessageMe = () => {
             id="Contact"
             className="w-full flex flex-col gap-6 items-center"
         >
-            <h2 className="text-4xl font-extrabold">Let's Get In Touch</h2>
-            <div className="xxs:text-xl md:text-2xl xl:text-3xl flex flex-col gap-y-2">
+            <h2 className="xxs:text-2xl lg:text-4xl font-shojumaru">Let's Get In Touch</h2>
+            <div className="xxs:text-xl xl:text-2xl flex flex-col gap-y-2 font-mono">
                 <h3>Are You A Charitable Organization And Want To Revamp Your Website?</h3>
                 <h3>I Can Help You Build That Slick Website, And That Too For Free*</h3>
             </div>
@@ -67,7 +67,7 @@ const Form = () => {
             onSubmit={handleSubmit}
         >
             <div className="flex flex-col gap-1">{renderFieldsets()}</div>
-            <button className="px-4 py-2 bg-slate-600 rounded-xl font-bold text-2xl transition-all duration-500 hover:bg-slate-900" type="submit">Send Message</button>
+            <button className="px-4 py-2 bg-slate-600 rounded-xl font-bold font-vastShadow text-2xl transition-all duration-500 hover:bg-slate-900" type="submit">Send Message</button>
         </form>
     )
 }
@@ -77,19 +77,19 @@ const Fieldset = ({ ...item }: FieldsetProps) => {
 
     return (
         <fieldset className="flex flex-col justify-start items-start">
-            <label className="text-2xl" htmlFor={label}>{label} *</label>
+            <label className="text-xl font-vastShadow" htmlFor={label}>{label} *</label>
             {
                 label === "Message"
-                    ? <textarea className="w-full" required={true} name={label.toLowerCase()} id={label} cols={30} rows={4}></textarea>
-                    : <input className="w-full" required={true} name={label.toLowerCase()} id={label} type={type} placeholder={placeholder} />
+                    ? <textarea className="w-full font-mono" required={true} name={label.toLowerCase()} id={label} cols={30} rows={4}></textarea>
+                    : <input className="w-full font-mono" required={true} name={label.toLowerCase()} id={label} type={type} placeholder={placeholder} />
             }
         </fieldset>
     )
 }
 
 const formFields = [
-    { label: "Name", type: "text", placeholder: "You Name" },
-    { label: "Email", type: "email", placeholder: "You Email" },
-    { label: "Subject", type: "text", placeholder: "Subject" },
+    { label: "Name", type: "text", placeholder: "Your Name" },
+    { label: "Email", type: "email", placeholder: "Your Email" },
+    { label: "Subject", type: "text", placeholder: "Subject Here" },
     { label: "Message", type: "textarea", placeholder: "Message" }
 ]

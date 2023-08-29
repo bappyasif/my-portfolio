@@ -86,7 +86,7 @@ const ShowName = (): ReactElement => {
     }, [])
 
     const content = (
-        <div className="flex gap-1 justify-between items-baseline xxs:w-screen lg:w-2/4">
+        <div className="flex gap-1 justify-between items-baseline xxs:w-screen lg:w-2/4 font-mono">
             <span className="w-1/2 text-right mr-1 xxs:text-2xl lg:text-6xl font-extrabold z-10">I'm</span>
             <span className={`${className} xxs:text-lg lg:text-4xl w-1/2 text-left z-10`}>{text}</span>
         </div>
@@ -174,7 +174,7 @@ const ShowRoles = (): ReactElement => {
     }, [])
 
     const content = (
-        <div className="test1234 relative xxs:text-xl lg:text-6xl flex xxs:gap-2 lg:gap-4">
+        <div className="test1234 relative xxs:text-xl lg:text-6xl flex xxs:gap-2 lg:gap-4 font-mono">
             <span className="xxs:hidden sm:block">A Self Taught </span>
             <span className="xxs:block sm:hidden">
                 <span className="text-transparent">.</span>

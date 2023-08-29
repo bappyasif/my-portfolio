@@ -14,7 +14,12 @@ export default {
       xl: '1350px',
       xxl: '1590px'
     },
-    extend: {},
+    extend: {
+      fontFamily :{
+        vastShadow: ["vastShadow-regular","sans-serif"],
+        shojumaru: ["shojumaru-regular","sans"],
+      }
+    },
   },
   plugins: [],
 }

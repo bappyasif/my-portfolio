@@ -20,7 +20,7 @@ const ShowCopyrights = () => {
     const getYear = () => new Date().getFullYear();
 
     return (
-        <div>This portfolio is developed by a.b. &copy; {getYear()} and this design is inspired from <a href="#">colorlib</a> templates</div>
+        <div className="font-shojumaru">This portfolio is developed by <span className="font-vastShadow">a.b. &copy; {getYear()}</span> and this design is inspired from <a className="font-vastShadow" href="#">colorlib</a> templates</div>
     )
 }
 
@@ -70,10 +70,10 @@ const RenderNavSection = ({ items, heading }: NavSectionProps) => {
 
     return (
         <div className="flex flex-col gap-4 items-start">
-            <h2 className="xxs:text-4xl xxl:text-6xl">{heading}</h2>
+            <h2 className="xxs:text-2xl xxl:text-4xl font-shojumaru">{heading}</h2>
             <div 
             // className="flex flex-col xxs:gap-2 sm:gap-6 md:gap-6 xxl:gap-7 flex-wrap xxs:h-fit md:h-96 xxl:h-40 text-2xl"
-            className="flex flex-col xxs:gap-2 sm:gap-4 xl:gap-7 flex-wrap xxs:h-fit sm:h-56 md:h-80 xxl:h-60 text-2xl"
+            className={`flex flex-col xxs:gap-2 sm:gap-4 md:gap-2 xl:gap-7 flex-wrap ${items?.length !! < 4 ? "h-fit" : "xxs:h-fit sm:h-56 md:h-52 lg:h-64 xxs:text-xs lg:text-xl"}`}
             >{renderItems()}</div>
         </div>
     )
@@ -83,7 +83,7 @@ const RenderNav = ({ ...item }: NavProps) => {
     const { name, url, icon } = item;
 
     return (
-        <div className="text-justify flex gap-4 items-center">
+        <div className="text-justify flex gap-4 items-center font-vastShadow">
             {icon ? <span>{icon}</span> : null}
             <a target="_blank" href={url}>{name}</a>
         </div>

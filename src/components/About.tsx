@@ -53,7 +53,7 @@ const ShowContributingEntities = () => {
 
     return (
         <div className="w-full flex flex-col xxs:gap-10 lg:gap-16">
-            <h2 className="text-4xl font-extrabold">Successfull Contributions</h2>
+            <h2 className="xxs:text-2xl lg:text-4xl font-shojumaru">Successfull Contributions</h2>
             <div className="flex justify-between w-full">
                 {renderEntities()}
             </div>
@@ -93,7 +93,7 @@ const Details = ({ setZIdx }: PropsType) => {
             className="flex flex-col justify-start xxs:gap-6 sm:gap-9 lg:gap-11 items-start text-justify text-2xl"
             onClick={bringHeadingTextFront}
         >
-            <p className="xxs:text-2xl xl:text-4xl xxl:text-2xl xxs:px-2 sm:px-0">A community focused self-taught Full Stack Developer specializing in the MERN stack (MongoDB, Express, React, Node), bringing a proven track record of building many web applications. My passion for coding and continuous learning has led me to hone my technical abilities and deepen my knowledge of the MERN stack, and other related technologies, such as Next.JS and TypeScript.</p>
+            <p className="xxs:text-2xl xl:text-4xl xxl:text-2xl xxs:px-2 sm:px-0 font-serif">A community focused self-taught Full Stack Developer specializing in the MERN stack (MongoDB, Express, React, Node), bringing a proven track record of building many web applications. My passion for coding and continuous learning has led me to hone my technical abilities and deepen my knowledge of the MERN stack, and other related technologies, such as Next.JS and TypeScript.</p>
             <RenderLinks />
         </div>
     )
@@ -170,7 +170,7 @@ const Heading = ({ zIdx, setZIdx }: HeadingProps) => {
             >
                 {/* when on bigger screen */}
                 <p
-                    className={`relative xxs:hidden lg:block text-7xl text-blue-950 opacity-90 
+                    className={`relative xxs:hidden lg:block text-7xl text-blue-950 opacity-90 font-shojumaru
                 ${zIdx === true ? "z-20" : "z-0"}`}
                     style={{
                         fontSize: "200px",
@@ -180,23 +180,23 @@ const Heading = ({ zIdx, setZIdx }: HeadingProps) => {
                     ABOUT
                 </p>
                 <h2
-                    className={`relative xxs:hidden lg:block text-blue-400 font-extrabold ${zIdx === true ? "z-0" : "z-20"} w-fit m-auto`}
+                    className={`relative xxs:hidden lg:block text-blue-400 font-vastShadow ${zIdx === true ? "z-0" : "z-20"} w-fit m-auto`}
                     style={{
-                        fontSize: "90px",
+                        fontSize: "80px",
                         transform: "translateX(0px) translateY(-175px)"
                     }}
                 >Hi, call me ab :)</h2>
 
                 {/* when in smaller screen */}
                 <p
-                    className={`relative xxs:block lg:hidden text-7xl text-blue-950 opacity-90 
+                    className={`relative xxs:block lg:hidden text-7xl text-blue-950 opacity-90 font-shojumaru
                 ${zIdx === true ? "z-20" : "z-0"}`}
                     onClick={handleOnClickSelectionOfText}
                 >
                     ABOUT
                 </p>
                 <h2
-                    className={`relative xxs:block lg:hidden xxs:text-4xl lg:text-5xl xxs:-translate-y-14 lg:-translate-y-16 text-red-400 font-extrabold ${zIdx === true ? "z-0" : "z-20"} w-fit m-auto`}
+                    className={`relative xxs:block lg:hidden xxs:text-2xl lg:text-5xl xxs:-translate-y-14 lg:-translate-y-16 text-red-400 font-vastShadow ${zIdx === true ? "z-0" : "z-20"} w-fit m-auto`}
                 >Hi, call me ab :)</h2>
             </div>
         </div>

@@ -38,8 +38,7 @@ export const Menu = ({ closeMenu }: MenuProp) => {
                 {renderItems()}
             </div>
             <button
-                className="absolute xxs:right-4 md:right-20 xxs:top-6 md:top-20
-                outline outline-2 rounded-full transition-all duration-1000 hover:bg-slate-950 hover:text-slate-400 hover:scale-125"
+                className="absolute xxs:right-4 md:right-20 xxs:top-6 md:top-2 xl:top-20 outline outline-2 rounded-full transition-all duration-1000 hover:bg-slate-950 hover:text-slate-400 hover:scale-125"
                 onClick={closeMenu}
             >
                 {<AiOutlineClose />}
@@ -92,7 +91,7 @@ const RenderMenuItem = ({ item, closeMenu }: ItemProp) => {
     }, [])
 
     return (
-        <div className={`flex justify-center items-center text-right xxs:text-lg lg:text-2xl xxs:w-fit sm:w-36 px-6 bg-slate-950 font-mono transition-all duration-500 ${initAnim ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"} hover:font-extrabold hover:bg-slate-600 hover:text-slate-400 hover:scale-110 rounded`}>
+        <div className={`flex justify-center items-center text-right xxs:text-lg lg:text-2xl xxs:w-fit sm:w-36 lg:w-44 px-6 bg-slate-950 font-shojumaru transition-all duration-500 ${initAnim ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"} hover:font-extrabold hover:bg-slate-600 hover:text-slate-400 hover:scale-110 rounded`}>
             <a onClick={closeMenu} href={`#${item}`}>{item}</a>
         </div>
     )
