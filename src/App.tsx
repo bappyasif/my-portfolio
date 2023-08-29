@@ -28,7 +28,7 @@ function App() {
         }}
       ></div>
 
-      <div className="flex flex-col gap-20 bg-gray-800">
+      <div className="flex flex-col gap-20 bg-gray-800 bg-gradient-to-tr from-gray-800 to-gray-700">
         <div
           className="relative flex flex-col gap-36"
           style={{

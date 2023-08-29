@@ -6,6 +6,7 @@ import mdnLogo from "../assets/mdn-logo.jpg"
 import topLogo from "../assets/top-logo.png"
 import w3cLogo from "../assets/w3c-logo.png"
 import photo from "../assets/about-pic.jpeg"
+import { useForIntersectionObserver } from "../hooks"
 
 export const About = () => {
     const [zIdx, setZIdx] = useState<boolean>(false)
@@ -123,9 +124,10 @@ type LinkPropsType = {
 const RenderLink = ({ name, icon, url, handleHoverLink }: LinkPropsType) => {
     const handleMouseIn = () => handleHoverLink(name)
     const handleMouseOut = () => handleHoverLink("")
+    useForIntersectionObserver(".stacking", "reveal")
     return (
         <a
-            className="xxs:text-5xl sm:text-7xl transition-all duration-500 hover:scale-125" 
+            className="xxs:text-5xl sm:text-7xl transition-all duration-500 hover:scale-125 stacking" 
             href={url} title={name} target="_blank"
             onMouseEnter={handleMouseIn}
             onMouseLeave={handleMouseOut}
