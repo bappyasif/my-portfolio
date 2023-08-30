@@ -80,8 +80,8 @@ const Fieldset = ({ ...item }: FieldsetProps) => {
             <label className="text-xl" htmlFor={label}>{label} *</label>
             {
                 label === "Message"
-                    ? <textarea className="w-full font-extralight" required={true} name={label.toLowerCase()} id={label} cols={30} rows={4}></textarea>
-                    : <input className="w-full font-extralight" required={true} name={label.toLowerCase()} id={label} type={type} placeholder={placeholder} />
+                    ? <textarea className="w-full font-extralight rounded px-0.5" required={true} name={label.toLowerCase()} id={label} cols={30} rows={4}></textarea>
+                    : <input className="w-full font-extralight rounded px-0.5" required={true} name={label.toLowerCase()} id={label} type={type} placeholder={placeholder} />
             }
         </fieldset>
     )

@@ -185,7 +185,7 @@ const Heading = ({ zIdx, setZIdx }: HeadingProps) => {
                         fontSize: "62px",
                         transform: "translateX(0px) translateY(-155px)"
                     }}
-                >Hi, call me ab :)</h2>
+                >Hi, call me A.B.</h2>
 
                 {/* when in smaller screen */}
                 <p
@@ -197,7 +197,7 @@ const Heading = ({ zIdx, setZIdx }: HeadingProps) => {
                 </p>
                 <h2
                     className={`relative xxs:block lg:hidden xxs:text-2xl lg:text-4xl xxs:-translate-y-14 lg:-translate-y-16 text-red-400 font-martianMono ${zIdx === true ? "z-0" : "z-20"} w-fit m-auto`}
-                >Hi, call me ab :)</h2>
+                >Hi, call me A.B.</h2>
             </div>
         </div>
     )

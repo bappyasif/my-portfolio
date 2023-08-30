@@ -29,7 +29,7 @@ type MetricsData = {
 const ShowHighPercentilesSkills = ({ data }: MetricsData) => {
     const renderMetrics = () => data?.map(item => <ShowMetric name={item.name} percentile={item.percentile} text={item.text} key={item.name} />)
     return (
-        <div className="flex flex-wrap xxs:gap-0 sm:gap-1 lg:gap-4 xxs:w-full xxl:w-1/2">
+        <div className="flex flex-wrap xxs:gap-x-0 gap-y-4 sm:gap-x-1 lg:gap-x-4 xxs:w-full xxl:w-1/2">
             {renderMetrics()}
         </div>
     )
@@ -201,7 +201,7 @@ const ShowRegulars = ({ data }: MetricsData) => {
 
     return (
         <div
-            className="flex justify-around xxs:w-full xxl:w-1/2 flex-wrap gap-8"
+            className="flex justify-around xxs:w-full xxl:w-1/2 flex-wrap gap-x-8 gap-y-6"
         >
             {showMetrics()}
         </div>

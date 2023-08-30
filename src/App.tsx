@@ -36,6 +36,7 @@ function App() {
             backgroundRepeat: "no-repeat",
             backgroundSize: "100% 100%",
             objectFit: "cover",
+            // backgroundAttachment: "fixed"
           }}
         >
           <ViewMasking />
@@ -63,7 +64,8 @@ function App() {
             backgroundSize: "100% 100%",
             objectFit: "cover",
             backgroundColor: "rgba(17,17,17,0.6)",
-            backgroundBlendMode: "darken"
+            backgroundBlendMode: "darken",
+            backgroundAttachment: "fixed"
           }}
         >
           <div className="w-3/4 flex flex-col gap-20">
