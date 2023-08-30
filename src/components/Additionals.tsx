@@ -16,9 +16,9 @@ export const Additionals = () => {
 const HireMe = () => {
     return (
         <div
-            className="pattern h-60 w-full flex flex-col justify-center items-center gap-6 text-teal-800 font-extrabold xxs:text-xl sm:text-3xl lg:text-4xl"
+            className="pattern h-60 w-full flex flex-col justify-center items-center gap-6 text-teal-800 font-extrabold font-martianMono"
         >
-            <h2 className="font-mono">Im available for Freelance or Contractual or Fulltime or Valued Internships</h2>
+            <h2 className="xxs:text-lg sm:text-xl lg:text-2xl">Im available for Freelance or Contractual or Fulltime or Valued Internships</h2>
             <HireMeForm />
         </div>
     )

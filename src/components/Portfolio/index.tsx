@@ -10,7 +10,7 @@ export const Portfolio = () => {
             className="flex flex-col gap-20"
         >
             <div className="flex flex-col gap-16">
-                <h2 className="xxs:text-2xl lg:text-4xl font-shojumaru">Some Noteable Skills</h2>
+                <h2 className="xxs:text-2xl lg:text-4xl font-martianMono font-extrabold">Some Noteable Skills</h2>
                 <Skills />
             </div>
             <Mentions />
@@ -37,7 +37,7 @@ const Projects = () => {
                 data={explorativeProjects}
                 heading="Explorative Projects - Fullstack"
             />
-            
+
             <ReusableNoteableWorks
                 data={curriculamProjects}
                 heading="Curriculam Projects - Fullstack"
@@ -66,17 +66,17 @@ const AccordionView = ({ data, heading, smallerSize }: ReusableProps) => {
     const item2 = data[cnInfo.nextSlide]
 
     return (
-        <div className="flex flex-col gap-20">
-            <h2 className="xxs:text-2xl lg:text-4xl font-shojumaru">{heading}</h2>
+        <div className="flex flex-col gap-20 font-martianMono">
+            <h2 className="xxs:text-2xl lg:text-4xl font-extrabold">{heading}</h2>
             {/* while in bigger screen */}
             <div className="xxs:hidden xxl:flex gap-4 items-center">
-                <button className="bg-transparent px-4 text-2xl prev-btn font-shojumaru" onClick={handlePrev}>Prev</button>
+                <button className="bg-transparent px-4 text-2xl prev-btn" onClick={handlePrev}>Prev</button>
                 <div className="flex justify-around xxs:gap-6 lg:gap-20">
                     <RenderAccordionCardView key={item1.name} description={item1.description} imgSrc={item1.imgSrc} live={item1.live} name={item1.name} repo={item1.repo} smallerSize={smallerSize} />
                     <RenderAccordionCardView key={item2.name} description={item2.description} imgSrc={item2.imgSrc} live={item2.live} name={item2.name} repo={item2.repo} smallerSize={smallerSize} />
                 </div>
 
-                <button className="bg-transparent px-4 text-2xl next-btn self-start font-shojumaru" onClick={handleNext}>Next</button>
+                <button className="bg-transparent px-4 text-2xl next-btn self-start" onClick={handleNext}>Next</button>
             </div>
 
             {/* while in smaller screen */}
@@ -84,7 +84,7 @@ const AccordionView = ({ data, heading, smallerSize }: ReusableProps) => {
                 <div className="flex justify-around xxs:gap-6 lg:gap-20">
                     <RenderAccordionCardView key={item1.name} description={item1.description} imgSrc={item1.imgSrc} live={item1.live} name={item1.name} repo={item1.repo} smallerSize={smallerSize} />
                 </div>
-                <div className="flex gap-4 w-full font-shojumaru">
+                <div className="flex gap-4 w-full">
                     <button className="px-4 text-4xl py-2 bg-slate-900 w-full rounded-2xl" onClick={handlePrev}>Prev</button>
                     <button className="px-4 text-4xl py-2 bg-slate-900 w-full rounded-2xl" onClick={handleNext}>Next</button>
                 </div>
@@ -133,7 +133,7 @@ const ReusableNoteableWorks = ({ data, heading }: ReusableProps) => {
         <div
             className="flex flex-col justify-center items-center gap-11"
         >
-            <h2 className="xxs:text-2xl lg:text-4xl font-shojumaru">{heading}</h2>
+            <h2 className="xxs:text-2xl lg:text-4xl font-martianMono font-extrabold">{heading}</h2>
             <div
                 className={`flex flex-col justify-center items-center gap-16`}
             >
@@ -171,40 +171,50 @@ type DetailProps = Omit<ProjectProps, "imgSrc">
 const RenderProjectDetailInfo = ({ ...item }: DetailProps) => {
     const { description, live, name, repo, smallerSize, stackUsed, tagline } = item;
 
-    const renderStacks = () => stackUsed?.map(name => <span className="bg-slate-900 font-mono my-0.5 xxs:px-1.5 md:px-2.5 stackNow stackElem" key={name}>{name}</span>)
+    const renderStacks = () => stackUsed?.map(name => <span className="bg-slate-900 my-0.5 xxs:px-1.5 md:px-2.5 stackNow stackElem font-extralight xxs:text-xs md:text-sm lg:text-md" key={name}>{name}</span>)
 
     const ifAccordions = () => ["Restaurant Site", "Tourism Worldwide", "Landing Page", "Animations Saavy", "Self-driving Corp", "Product Review Page"].includes(name)
-    
+
     return (
         <div
-            className={`xxs:w-screen sm:w-full text-xl ${smallerSize ? "text-center" : "text-justify"} flex flex-col gap-2`}
+            className={`xxs:w-screen sm:w-full ${smallerSize ? "text-center" : "text-justify"} flex flex-col gap-y-2 font-martianMono`}
         >
-            <h2 className="xxs:text-2xl lg:text-4xl font-vastShadow">{name}</h2>
+            <h2 className={`${smallerSize ? "xxs:text-xl lg:text-2xl" : "xxs:text-2xl lg:text-4xl"} font-semibold`}>{name}</h2>
+
             {
                 !smallerSize
-                    ? <p className="flex flex-col gap-2"><span className="font-bold font-vastShadow">Tagline: </span><span className="font-mono">{tagline}</span></p>
+                    ? <p className="flex flex-col gap-y-0.5">
+                        <span className="font-bold">Tagline </span>
+                        <span className="font-extralight xxs:text-sm lg:text-lg">{tagline}</span>
+                    </p>
                     : null
             }
 
-            <a target="_blank" href={repo} className={`font-bold flex ${smallerSize ? "justify-center text-sm" : "flex-col"} gap-2 flex-wrap`}>
-                <span className="font-vastShadow">Repo: </span> 
-                <span className="text-cyan-400 font-mono">{repo}</span>
+            <a target="_blank" href={repo} className={` flex ${smallerSize ? "justify-center gap-x-2 items-end" : "flex-col"} gap-y-0.5 flex-wrap`}>
+                <span className={`font-bold ${smallerSize ? "xxs:text-md lg:text-lg" : "xxs:text-lg lg:text-xl"}`}>Repo </span>
+                <span className="text-cyan-400 font-extralight xxs:text-sm lg:text-lg">{repo}</span>
             </a>
-            
-            <a target="_blank" href={live} className={`font-bold flex ${smallerSize ? "justify-center text-sm" : "flex-col"} gap-2 flex-wrap`}>
-                <span className="font-vastShadow">Live: </span> 
-                <span className="text-cyan-400 font-mono">{live}</span>
+
+            <a target="_blank" href={live} className={` flex ${smallerSize ? "justify-center gap-x-2 items-end" : "flex-col"} gap-y-0.5 flex-wrap`}>
+                <span className={`font-bold ${smallerSize ? "xxs:text-md lg:text-lg" : "xxs:text-lg lg:text-xl"}`}>Live </span>
+                <span className="text-cyan-400 font-extralight xxs:text-sm lg:text-lg">{live}</span>
             </a>
-            
-            <p className={`text-justify ${ifAccordions() ? "xxs:h-28 sm:h-20 text-2xl" : "h-44 overflow-y-auto hide-scrollbar text-xl"} pr-2 
-            font-serif`}
-            >{description}</p>
-            
+
+            <div className={` flex ${smallerSize ? "justify-center" : "flex-col"} gap-y-0.5 flex-wrap`}>
+                {
+                    smallerSize
+                        ? null
+                        : <span className="font-bold xxs:text-lg lg:text-xl">Description </span>
+                }
+                <p className={`text-justify ${ifAccordions() ? "xxs:h-28 sm:h-20 xxs:text-xs lg:text-sm" : "h-44 overflow-y-auto hide-scrollbar xxs:text-sm lg:text-lg"} pr-2 font-extralight`}
+                >{description}</p>
+            </div>
+
             {
                 !smallerSize
                     ?
                     <div>
-                        <h2 className="font-vastShadow font-bold">Stack Used</h2>
+                        <h2 className="font-bold">Stack Used</h2>
                         <div className="flex gap-x-4 flex-wrap xxs:text-sm md:text-lg">
                             {stackUsed?.length ? renderStacks() : null}
                         </div>

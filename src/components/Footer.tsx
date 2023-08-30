@@ -50,11 +50,11 @@ const RenderNavs = ({ ...items }: NavsProps) => {
         >
             <RenderNavSection
                 items={learningSites}
-                heading="Learnign Sites"
+                heading="Learning Sites"
             />
             <RenderNavSection
                 items={recruitingSites}
-                heading="Recruiting Sites"
+                heading="Job Sites"
             />
             {/* <RenderNavSection
                 items={socials}

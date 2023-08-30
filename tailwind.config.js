@@ -18,6 +18,7 @@ export default {
       fontFamily :{
         vastShadow: ["vastShadow-regular","sans-serif"],
         shojumaru: ["shojumaru-regular","sans"],
+        martianMono: ["martianMono-regular", "mono"]
       }
     },
   },

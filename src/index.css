@@ -14,6 +14,11 @@
     src: url("../fonts/VastShadow-Regular.ttf");
   }
 
+  @font-face {
+    font-family: "martianMono-regular";
+    src: url("../fonts/MartianMono.ttf");
+  }
+
 @layer utilities {
     .custom-scrollbar::-webkit-scrollbar {
         width: 20px;

@@ -8,7 +8,7 @@ export const Skills = () => {
     return (
         <div
             id="Skills"
-            className="flex xxs:flex-col xl:flex-row justify-between xxs:gap-6 lg:gap-0 w-full font-vastShadow"
+            className="flex xxs:flex-col xl:flex-row justify-between xxs:gap-6 lg:gap-0 w-full font-martianMono"
         >
             <ShowHighPercentilesSkills data={highPercentiles} />
             <ShowRegulars data={regularPercentiles} />

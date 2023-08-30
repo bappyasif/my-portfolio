@@ -53,7 +53,7 @@ const ShowContributingEntities = () => {
 
     return (
         <div className="w-full flex flex-col xxs:gap-10 lg:gap-16">
-            <h2 className="xxs:text-2xl lg:text-4xl font-shojumaru">Successfull Contributions</h2>
+            <h2 className="xxs:text-2xl lg:text-4xl font-martianMono font-extrabold">Successfull Contributions</h2>
             <div className="flex justify-between w-full">
                 {renderEntities()}
             </div>
@@ -90,10 +90,10 @@ const Details = ({ setZIdx }: PropsType) => {
 
     return (
         <div
-            className="flex flex-col justify-start xxs:gap-6 sm:gap-9 lg:gap-11 items-start text-justify text-2xl"
+            className="flex flex-col justify-start xxs:gap-6 sm:gap-9 lg:gap-11 items-start text-justify font-martianMono"
             onClick={bringHeadingTextFront}
         >
-            <p className="xxs:text-2xl xl:text-4xl xxl:text-2xl xxs:px-2 sm:px-0 font-serif">A community focused self-taught Full Stack Developer specializing in the MERN stack (MongoDB, Express, React, Node), bringing a proven track record of building many web applications. My passion for coding and continuous learning has led me to hone my technical abilities and deepen my knowledge of the MERN stack, and other related technologies, such as Next.JS and TypeScript.</p>
+            <p className="xxs:text-xs lg:text-sm xxs:px-2 sm:px-0">A community focused self-taught Full Stack Developer specializing in the MERN stack (MongoDB, Express, React, Node), bringing a proven track record of building many web applications. My passion for coding and continuous learning has led me to hone my technical abilities and deepen my knowledge of the MERN stack, and other related technologies, such as Next.JS and TypeScript.</p>
             <RenderLinks />
         </div>
     )
@@ -107,9 +107,9 @@ const RenderLinks = () => {
     const linkItems = () => socialLinks.map(item => <RenderLink key={item.name} icon={item.icon} name={item.name} url={item.url} handleHoverLink={handleHoverLink} />)
 
     return (
-        <div className={`flex xxs:gap-4 lg:gap-8 justify-between text-xl w-full  rounded relative ${hoveredLink ? "bg-slate-600" : ""} z-10`}>
+        <div className={`flex xxs:gap-4 lg:gap-8 justify-between text-xl w-full  rounded relative ${hoveredLink ? "bg-slate-600" : "bg-transparent"} z-10`}>
             {linkItems()}
-            <p className="absolute bottom-1 font-extrabold flex justify-between w-full text-6xl -z-10 text-blue-950 font-mono capitalize">{hoveredLink.split("").map((ch, idx) => <span key={ch + idx}>{ch}</span>)}</p>
+            <p className="absolute bottom-1 font-extrabold flex justify-between w-full text-6xl -z-10 text-blue-950 capitalize">{hoveredLink.split("").map((ch, idx) => <span key={ch + idx}>{ch}</span>)}</p>
         </div>
     )
 }
@@ -180,10 +180,10 @@ const Heading = ({ zIdx, setZIdx }: HeadingProps) => {
                     ABOUT
                 </p>
                 <h2
-                    className={`relative xxs:hidden lg:block text-blue-400 font-vastShadow ${zIdx === true ? "z-0" : "z-20"} w-fit m-auto`}
+                    className={`relative xxs:hidden lg:block text-blue-400 font-bold font-martianMono ${zIdx === true ? "z-0" : "z-20"} w-fit m-auto`}
                     style={{
-                        fontSize: "80px",
-                        transform: "translateX(0px) translateY(-175px)"
+                        fontSize: "62px",
+                        transform: "translateX(0px) translateY(-155px)"
                     }}
                 >Hi, call me ab :)</h2>
 
@@ -196,7 +196,7 @@ const Heading = ({ zIdx, setZIdx }: HeadingProps) => {
                     ABOUT
                 </p>
                 <h2
-                    className={`relative xxs:block lg:hidden xxs:text-2xl lg:text-5xl xxs:-translate-y-14 lg:-translate-y-16 text-red-400 font-vastShadow ${zIdx === true ? "z-0" : "z-20"} w-fit m-auto`}
+                    className={`relative xxs:block lg:hidden xxs:text-2xl lg:text-4xl xxs:-translate-y-14 lg:-translate-y-16 text-red-400 font-martianMono ${zIdx === true ? "z-0" : "z-20"} w-fit m-auto`}
                 >Hi, call me ab :)</h2>
             </div>
         </div>
