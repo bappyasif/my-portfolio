@@ -8,7 +8,7 @@ export const Skills = () => {
     return (
         <div
             id="Skills"
-            className="flex xxs:flex-col xl:flex-row justify-between xxs:gap-6 lg:gap-0 w-full font-martianMono"
+            className="flex xxs:flex-col xl:flex-row justify-between items-center xxs:gap-6 lg:gap-0 w-full font-martianMono"
         >
             <ShowHighPercentilesSkills data={highPercentiles} />
             <ShowRegulars data={regularPercentiles} />
@@ -145,7 +145,7 @@ The second one allows you to move the starting point of this dash-gap sequence a
 const RadialProgressBar = ({ percentile }: ProgressProps) => {
 
     const radius = 60;
-    const stroke = 8
+    const stroke = 6
 
     const normalizedRadius = radius - stroke * 2;
     const circumference = normalizedRadius * 2 * Math.PI;
@@ -165,7 +165,6 @@ const RadialProgressBar = ({ percentile }: ProgressProps) => {
                 strokeWidth={stroke}
                 // strokeDasharray={circumference + ' ' + circumference}
                 style={{ strokeDashoffset }}
-                // stroke-width={stroke}
                 r={normalizedRadius}
                 cx={radius}
                 cy={radius}
@@ -181,17 +180,17 @@ const RadialProgressBar = ({ percentile }: ProgressProps) => {
                 r={normalizedRadius}
                 cx={radius}
                 cy={radius}
-            >
-                {/* you can’t yet make text cling to a <circle> or <rect></rect> */}
+            />
+            {/* you can’t yet make text cling to a <circle> or <rect></rect> */}
 
-                {/* <text dx="50">
+            {/* <text dx="50">
                     <textPath xlinkHref="#textcircle">
                         Red Hot Chilli Peppers
                     </textPath>
                 </text> */}
-            </circle>
-            <text className="text-xl"
-                x="50%" y="50%" textAnchor="middle" fill="white" dy=".3em">{percentile}%
+
+            <text className="text-lg"
+                x="50%" y="50%" textAnchor="middle" fill="white" dy=".5em" dx=".1em">{percentile}%
             </text>
         </svg>
     )
@@ -217,7 +216,7 @@ const ShowSkillProgress = ({ ...item }: MetricProps) => {
 
     return (
         <div
-            className={`xxs:w-2/5 lg:w-1/3 flex flex-col justify-end gap-2`}
+            className={`xxs:w-2/5 lg:w-1/3 h-fit flex flex-col justify-end gap-2`}
             onMouseEnter={handleBegin}
             onMouseLeave={handleStop}
         >

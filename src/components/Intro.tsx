@@ -6,7 +6,7 @@ export const Intro = (): ReactElement => {
     const content = (
         <div
             id="Home"
-            className="relative xxs:text-lg lg:text-2xl flex flex-col xxs:gap-40 lg:gap-72 items-center justify-between"
+            className="relative xxs:text-lg lg:text-2xl flex flex-col xxs:gap-40 lg:gap-48 items-center justify-between"
             style={{
                 minHeight: "481px"
             }}

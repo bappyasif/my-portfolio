@@ -30,7 +30,7 @@ function App() {
 
       <div className="flex flex-col gap-20 bg-gray-800 bg-gradient-to-tr from-gray-800 to-gray-700">
         <div
-          className="relative flex flex-col gap-36"
+          className="relative flex flex-col gap-y-52"
           style={{
             backgroundImage: `url("https://source.unsplash.com/random/?Coding,Code,Javascript")`,
             backgroundRepeat: "no-repeat",
