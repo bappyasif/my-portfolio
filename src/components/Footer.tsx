@@ -20,7 +20,7 @@ const ShowCopyrights = () => {
     const getYear = () => new Date().getFullYear();
 
     return (
-        <div className="font-shojumaru">This portfolio is developed by <span className="font-vastShadow">A.B. &copy; {getYear()}</span> and this design is inspired from <a className="font-vastShadow" href="#">colorlib</a> templates</div>
+        <div className="font-shojumaru xxs:text-xs lg:text-sm">This portfolio is developed by <span className="font-vastShadow">A.B. &copy; {getYear()}</span> and this design is inspired from <a className="font-vastShadow" href="#">colorlib</a> templates</div>
     )
 }
 

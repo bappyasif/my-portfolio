@@ -10,17 +10,28 @@ export const Header = (): ReactElement => {
 
   const openMenu = () => setShow(true);
 
-  const tokenizedWord = "greetings".split("").map((ch, idx) => <span className="scaleUpAndDown" key={idx}>{ch}</span>)
+  // const tokenizedWord = "greetings".split("").map((ch, idx) => <span className="scaleUpAndDown" key={idx}>{ch}</span>)
 
   return (
     <div className="flex xxs:w-full lg:w-3/4 justify-between text-4xl mx-auto">
-      <p className="z-20 flex gap-x-2 items-center">
+      <p className="z-20 flex gap-x-2 items-center xxs:pl-2 lg:pl-0">
         {/* <span className="xxs:font-normal lg:font-extrabold font-shojumaru animated-text xxs:text-xl md:text-2xl">Greetings</span> */}
         {/* <span className="xxs:font-normal lg:font-extrabold font-shojumaru xxs:text-xl md:text-2xl">Greetings 🖖</span> */}
         {/* <span className="xxs:font-normal lg:font-extrabold font-shojumaru 
         xxs:text-xl md:text-2xl animate-bounce">Greetings</span> */}
-        <span className="xxs:font-normal lg:font-extrabold font-shojumaru xxs:text-xl md:text-2xl">{tokenizedWord}</span>
-        <span className="xxs:font-normal lg:font-extrabold font-shojumaru xxs:text-xl md:text-2xl scaleUpAndDown">🖖</span>
+        
+        {/* <span className="xxs:font-normal lg:font-extrabold font-shojumaru xxs:text-xl md:text-2xl">{tokenizedWord}</span> */}
+        <span className="xxs:font-normal lg:font-extrabold font-shojumaru xxs:text-xl md:text-2xl scaleUpAndDown">G</span>
+        <span className="xxs:font-normal lg:font-extrabold font-shojumaru xxs:text-xl md:text-2xl scaleUpAndDown">R</span>
+        <span className="xxs:font-normal lg:font-extrabold font-shojumaru xxs:text-xl md:text-2xl scaleUpAndDown">E</span>
+        <span className="xxs:font-normal lg:font-extrabold font-shojumaru xxs:text-xl md:text-2xl scaleUpAndDown">E</span>
+        <span className="xxs:font-normal lg:font-extrabold font-shojumaru xxs:text-xl md:text-2xl scaleUpAndDown">T</span>
+        <span className="xxs:font-normal lg:font-extrabold font-shojumaru xxs:text-xl md:text-2xl scaleUpAndDown">I</span>
+        <span className="xxs:font-normal lg:font-extrabold font-shojumaru xxs:text-xl md:text-2xl scaleUpAndDown">N</span>
+        <span className="xxs:font-normal lg:font-extrabold font-shojumaru xxs:text-xl md:text-2xl scaleUpAndDown">G</span>
+        <span className="xxs:font-normal lg:font-extrabold font-shojumaru xxs:text-xl md:text-2xl scaleUpAndDown">S</span>
+        <span className="xxs:font-normal lg:font-extrabold font-shojumaru xxs:text-xl md:text-2xl moveSideToSide">🖖</span>
+        
         {/* <span className="xxs:font-normal lg:font-extrabold font-shojumaru xxs:text-xl md:text-2xl">
         <span>Greetings</span>
         <span className="scaleUpAndDown">🖖</span>

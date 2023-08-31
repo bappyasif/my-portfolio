@@ -147,7 +147,8 @@ const RadialProgressBar = ({ percentile }: ProgressProps) => {
     const radius = 60;
     const stroke = 6
 
-    const normalizedRadius = radius - stroke * 2;
+    const normalizedRadius = radius - (stroke + 1) * 2;
+    const normalizedRadiusForWhite = radius - stroke * 2;
     const circumference = normalizedRadius * 2 * Math.PI;
 
     const strokeDashoffset = circumference - percentile / 100 * circumference;
@@ -164,8 +165,8 @@ const RadialProgressBar = ({ percentile }: ProgressProps) => {
                 fill="transparent"
                 strokeWidth={stroke}
                 // strokeDasharray={circumference + ' ' + circumference}
-                style={{ strokeDashoffset }}
-                r={normalizedRadius}
+                // style={{ strokeDashoffset }}
+                r={normalizedRadiusForWhite}
                 cx={radius}
                 cy={radius}
             />

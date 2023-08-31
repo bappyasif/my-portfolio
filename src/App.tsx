@@ -28,7 +28,13 @@ function App() {
         }}
       ></div>
 
-      <div className="flex flex-col gap-20 bg-gray-800 bg-gradient-to-tr from-gray-800 to-gray-700">
+      <div
+      // className="flex flex-col gap-20 bg-gray-800 bg-gradient-to-tr from-gray-800 to-gray-700" 
+      className="flex flex-col gap-20 bg-gray-800"
+      style={{
+        backgroundImage: `repeat-radial-gradient(#1f2937, #374151 ${scrolled}%, #1f2937 ${scrolled + 11}%)`
+      }}
+      >
         <div
           className="relative flex flex-col gap-y-52"
           style={{

@@ -290,32 +290,69 @@ input {
     /* animation: infinite ease-in-out frontBack; */
     /* animation: infinite alternate-reverse 1.1s changeSize; */
     /* animation: alternate infinite .2s frontBack; */
-    animation: frontBack 1s linear infinite;
+    animation: upDown 2s linear alternate infinite;
     /* animation: turn 1s infinite */
 }
 
-@keyframes frontBack {
+.scaleUpAndDown:nth-child(2) {
+    animation-delay: 400ms;
+}
+
+.scaleUpAndDown:nth-child(3) {
+    animation-delay: 500ms;
+}
+
+.scaleUpAndDown:nth-child(4) {
+    animation-delay: 600ms;
+}
+
+.scaleUpAndDown:nth-child(5) {
+    animation-delay: 700ms;
+}
+
+.scaleUpAndDown:nth-child(6) {
+    animation-delay: 800ms;
+}
+
+.scaleUpAndDown:nth-child(7) {
+    animation-delay: 900ms;
+}
+
+.scaleUpAndDown:nth-child(8) {
+    animation-delay: 1000ms;
+}
+
+.scaleUpAndDown:nth-child(9) {
+    animation-delay: 1100ms;
+}
+
+@keyframes upDown {
     from {
         /* transform: translateY(0); */
         transform: scale(1);
+        color: darkgoldenrod;
         /* transform: rotate(0deg); */
         /* font-size: 1rem; */
     }
 
     to {
-
+        color: seagreen;
         /* font-size: 1.3rem; */
         /* transform: rotate(180deg); */
-        transform: scale(1.1);
+        transform: scale(1.61);
         /* transform: translateY(20); */
     }
 }
 
+.moveSideToSide {
+    animation: sideToSide 2s linear alternate-reverse infinite;
+}
 
-@keyframes turn {
+
+@keyframes sideToSide {
   0%
-    {transform: rotate(0deg)}
+    {transform: translate3d(-6px, 0px, 0)}
 
   100%
-    {transform: rotate(360deg)}
+  {transform: translate3d(6px, 0px, 0)}
 }
