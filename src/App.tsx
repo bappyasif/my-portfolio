@@ -32,7 +32,14 @@ function App() {
       // className="flex flex-col gap-20 bg-gray-800 bg-gradient-to-tr from-gray-800 to-gray-700" 
       className="flex flex-col gap-20 bg-gray-800"
       style={{
-        backgroundImage: `repeat-radial-gradient(#1f2937, #374151 ${scrolled}%, #1f2937 ${scrolled + 11}%)`
+        // backgroundImage: `repeat-radial-gradient(#1f2937, #374151 ${scrolled}%, #1f2937 ${scrolled + 11}%)`
+        // background: "repeating-linear-gradient(transparent, #1f2937 40px),repeating-linear-gradient(0.25turn, transparent, #374151 20px)"
+
+        // background: `repeating-linear-gradient(45deg, #1f2937, #374151 ${scrolled}%, #1f2937 ${scrolled + 5}%)`
+
+        background: `repeating-linear-gradient(29deg, #1f2937, #374151 11%, #1f2937 20%)`
+
+        // background: `repeating-linear-gradient(29deg, rgb(55 65 81), rgb(31 41 55), 11%, rgb(55 65 81) 20%)`
       }}
       >
         <div
