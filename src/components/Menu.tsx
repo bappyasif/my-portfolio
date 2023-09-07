@@ -49,7 +49,7 @@ export const Menu = ({ closeMenu }: MenuProp) => {
 
 const RenderImage = () => {
     const [initAnim, setInitAnim] = useState(false)
-    
+
     useEffect(() => {
         setInitAnim(true)
     }, [])
@@ -85,7 +85,7 @@ type ItemProp = {
 
 const RenderMenuItem = ({ item, closeMenu }: ItemProp) => {
     const [initAnim, setInitAnim] = useState(false)
-    
+
     useEffect(() => {
         setInitAnim(true)
     }, [])

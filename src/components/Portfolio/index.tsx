@@ -9,7 +9,9 @@ export const Portfolio = () => {
         <div
             className="flex flex-col gap-20"
         >
-            <div className="flex flex-col gap-16">
+            <div 
+                className="flex flex-col gap-16 bg-[conic-gradient(var(--tw-gradient-stops))] from-slate-700 via-slate-800 to-slate-900 rounded-lg py-4"
+            >
                 <h2 className="xxs:text-2xl lg:text-4xl font-martianMono font-extrabold">Some Noteable Skills</h2>
                 <Skills />
             </div>
@@ -66,7 +68,9 @@ const AccordionView = ({ data, heading, smallerSize }: ReusableProps) => {
     const item2 = data[cnInfo.nextSlide]
 
     return (
-        <div className="flex flex-col gap-20 font-martianMono">
+        <div 
+            className="flex flex-col gap-20 font-martianMono bg-[conic-gradient(var(--tw-gradient-stops))] from-slate-700 via-slate-800 to-slate-900 rounded-lg py-4"
+        >
             <h2 className="xxs:text-2xl lg:text-4xl font-extrabold">{heading}</h2>
             {/* while in bigger screen */}
             <div className="xxs:hidden xxl:flex gap-4 items-center">

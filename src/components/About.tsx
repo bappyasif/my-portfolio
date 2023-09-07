@@ -14,7 +14,7 @@ export const About = () => {
     return (
         <div
             id="About"
-            className="flex flex-col items-center xxs:gap-6 lg:gap-16"
+            className="flex flex-col items-center xxs:gap-6 lg:gap-16 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-gray-700 via-slate-800 to-slate-950 rounded-lg pb-6"
         >
 
             <div className="flex xxs:flex-col xxl:flex-row xxs:gap-4 lg:gap-9 place-items-center my-6 mb-11">
