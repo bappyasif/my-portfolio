@@ -76,7 +76,7 @@ const AccordionView = ({ data, heading, smallerSize }: ReusableProps) => {
         >
             <h2 className="xxs:text-2xl lg:text-4xl font-extrabold">{heading}</h2>
             {/* while in bigger screen */}
-            <div className="xxs:hidden xxl:flex gap-4 items-center">
+            <div className="xxs:hidden xxl:flex gap-4 items-center xxs:pb-0 lg:pb-4">
                 <button className="bg-transparent px-4 text-2xl prev-btn" onClick={handlePrev}>Prev</button>
                 <div className="flex justify-around xxs:gap-6 lg:gap-20">
                     <RenderAccordionCardView key={item1.name} description={item1.description} imgSrc={item1.imgSrc} live={item1.live} name={item1.name} repo={item1.repo} smallerSize={smallerSize} />

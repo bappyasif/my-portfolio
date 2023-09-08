@@ -7,6 +7,7 @@ import { Intro, ViewMasking } from "./components/Intro"
 import { MessageMe } from "./components/Message"
 import { Portfolio } from "./components/Portfolio"
 import { useOnPageScroll } from "./hooks"
+import { AnimateParticles } from "./components/AnimateParticles"
 
 function App() {
 
@@ -52,6 +53,11 @@ function App() {
             // backgroundAttachment: "fixed"
           }}
         >
+          {
+            scrolled < 8
+            ? <AnimateParticles />
+            : null
+          }
           <ViewMasking />
           <Header />
           <Intro />
