@@ -9,7 +9,7 @@ export const Portfolio = () => {
         <div
             className="flex flex-col gap-20"
         >
-            <div 
+            <div
                 className="flex flex-col gap-16 bg-[conic-gradient(var(--tw-gradient-stops))] from-slate-700 via-slate-800 to-slate-900 rounded-lg py-4"
             >
                 <h2 className="xxs:text-2xl lg:text-4xl font-martianMono font-extrabold">Some Noteable Skills</h2>
@@ -68,8 +68,11 @@ const AccordionView = ({ data, heading, smallerSize }: ReusableProps) => {
     const item2 = data[cnInfo.nextSlide]
 
     return (
-        <div 
-            className="flex flex-col gap-20 font-martianMono bg-[conic-gradient(var(--tw-gradient-stops))] from-slate-700 via-slate-800 to-slate-900 rounded-lg py-4"
+        <div
+            className="flex flex-col xxs:gap-6 lg:gap-20 font-martianMono rounded-lg py-4"
+            style={{
+                backgroundImage: "conic-gradient( rgb(100 116 139) 60%, #1e293b 80%, #0f172a 30% )"
+            }}
         >
             <h2 className="xxs:text-2xl lg:text-4xl font-extrabold">{heading}</h2>
             {/* while in bigger screen */}
@@ -89,8 +92,8 @@ const AccordionView = ({ data, heading, smallerSize }: ReusableProps) => {
                     <RenderAccordionCardView key={item1.name} description={item1.description} imgSrc={item1.imgSrc} live={item1.live} name={item1.name} repo={item1.repo} smallerSize={smallerSize} />
                 </div>
                 <div className="flex gap-4 w-full">
-                    <button className="px-4 text-4xl py-2 bg-slate-900 w-full rounded-2xl" onClick={handlePrev}>Prev</button>
-                    <button className="px-4 text-4xl py-2 bg-slate-900 w-full rounded-2xl" onClick={handleNext}>Next</button>
+                    <button className="px-4 xxs:text-xl lg:text-4xl py-1 bg-slate-900 w-full rounded-2xl" onClick={handlePrev}>Prev</button>
+                    <button className="px-4 xxs:text-xl lg:text-4xl py-1 bg-slate-900 w-full rounded-2xl" onClick={handleNext}>Next</button>
                 </div>
             </div>
         </div>
@@ -101,7 +104,7 @@ const RenderAccordionCardView = ({ ...item }: ProjectProps) => {
     const { description, imgSrc, live, name, repo, smallerSize } = item;
 
     return (
-        <article className="flex flex-col justify-between items-center gap-16 xxs:w-full xxl:w-2/5">
+        <article className="flex flex-col justify-between items-center xxs:gap-4 lg:gap-16 xxs:w-full xxl:w-2/5">
             <ImageView
                 description={description} imgSrc={imgSrc} live={live} smallerSize={smallerSize}
             />
@@ -210,7 +213,7 @@ const RenderProjectDetailInfo = ({ ...item }: DetailProps) => {
                         ? null
                         : <span className="font-bold xxs:text-lg lg:text-xl">Description </span>
                 }
-                <p className={`text-justify ${ifAccordions() ? "xxs:h-28 sm:h-20 xxs:text-xs lg:text-sm" : "h-44 overflow-y-auto hide-scrollbar xxs:text-sm lg:text-lg"} pr-2 font-extralight`}
+                <p className={`text-justify ${ifAccordions() ? "xxs:h-11 sm:h-13 xxs:text-xs lg:text-sm" : "h-44 overflow-y-auto hide-scrollbar xxs:text-sm lg:text-lg"} pr-2 font-extralight`}
                 >{description}</p>
             </div>
 

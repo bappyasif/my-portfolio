@@ -19,6 +19,12 @@ export default {
         vastShadow: ["vastShadow-regular","sans-serif"],
         shojumaru: ["shojumaru-regular","sans"],
         martianMono: ["martianMono-regular", "mono"]
+      },
+      backgroundImage: {
+        'gradient-conic-tr': 'conic-gradient(at top right, var(--gradient-color-stops))',
+        'gradient-conic-tl': 'conic-gradient(at top left, var(--gradient-color-stops))',
+        'gradient-conic-br': 'conic-gradient(at bottom right, var(--gradient-color-stops))',
+        'gradient-conic-bl': 'conic-gradient(at bottom left, var(--gradient-color-stops))',
       }
     },
   },

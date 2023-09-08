@@ -7,7 +7,7 @@ export const Mentions = () => {
     return (
         <div 
             id="Mentions" 
-            className="flex flex-col xxs:gap-6 lg:gap-11 bg-[conic-gradient(var(--tw-gradient-stops))] from-slate-900 via-slate-800 to-slate-600 rounded-lg py-4"
+            className="flex flex-col xxs:gap-6 lg:gap-11 bg-[conic-gradient(var(--tw-gradient-stops))] from-slate-700 from-0% via-slate-800 via-55% to-transparent rounded-lg py-4"
         >
             <h2 className="xxs:text-2xl lg:text-4xl font-martianMono font-extrabold">Special Mentions</h2>
             <Specials />
