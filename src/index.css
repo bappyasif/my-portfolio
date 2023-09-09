@@ -239,7 +239,7 @@ input {
 }
 
 @media(prefers-reduced-motion) {
-    .hideNow, .stackNow, .stacking {
+    .hideNow, .stackNow, .stacking, .slideFromRight {
         transition: none;
     }
 }
@@ -355,4 +355,45 @@ input {
 
   100%
   {transform: translate3d(6px, 0px, 0)}
+}
+
+/* .slideInFromRight {
+    animation: fromRight 1.3s ease-in-out 1.1s 1;
+}
+
+@keyframes fromRight {
+    from {
+        transform: translateX(350px)
+    }
+
+    to {
+        transform: translateX(0px)
+    }
+} */
+
+.slideInFromRight {
+    animation: fromRight 1.3s ease-in-out 1.1s 1;
+}
+
+@keyframes fromRight {
+    from {
+        transform: translateX(0px)
+    }
+
+    to {
+        transform: translateX(350px)
+    }
+}
+
+.slideFromRight {
+    /* transition: all 800ms;
+    transform: translateX(60%); */
+    /* transition: all 600ms;
+    transform: translateX(60%); */
+    transition: all 600ms;
+    transform: translateX(-60%);
+}
+
+.showNow {
+    transform: translateX(0);
 }

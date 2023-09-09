@@ -7,6 +7,9 @@ export const MessageMe = () => {
         <div
             id="Contact"
             className="w-full flex flex-col gap-6 items-center font-martianMono bg-[conic-gradient(var(--tw-gradient-stops))] from-slate-900 via-slate-800 to-slate-600 rounded-lg py-4"
+            style={{
+                backgroundImage: "conic-gradient( #0f172a 22%, #1e293b 0%, #1e293b 90% )"
+            }}
         >
             <h2 className="xxs:text-2xl lg:text-4xl font-extrabold">Let's Get In Touch</h2>
             <div className="xxs:text-sm xl:text-lg flex flex-col gap-y-2 font-light">

@@ -69,9 +69,9 @@ const AccordionView = ({ data, heading, smallerSize }: ReusableProps) => {
 
     return (
         <div
-            className="flex flex-col xxs:gap-6 lg:gap-20 font-martianMono rounded-lg py-4"
+            className="flex flex-col xxs:gap-6 lg:gap-20 font-martianMono rounded-lg py-4 bg-slate-700"
             style={{
-                backgroundImage: "conic-gradient( rgb(100 116 139) 60%, #1e293b 80%, #0f172a 30% )"
+                backgroundImage: "conic-gradient( rgb(51 65 85) 60%, #1e293b 80%, #0f172a 30% )"
             }}
         >
             <h2 className="xxs:text-2xl lg:text-4xl font-extrabold">{heading}</h2>
