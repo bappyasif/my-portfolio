@@ -155,7 +155,7 @@ const RenderWork = ({ ...item }: ProjectProps) => {
 
     const check = () => {
         let reverse = false;
-        if (["4m's", "OdBo"].includes(name)) {
+        if (["What's Cooking", "Just News", "Standalone Twitter - Prototype"].includes(name)) {
             reverse = true
         }
         return reverse
